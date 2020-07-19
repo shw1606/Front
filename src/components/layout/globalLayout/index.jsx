@@ -4,7 +4,8 @@ import React from "react";
 import Header from "components/header";
 
 // global layout style
-import GlobalLayoutStyle from "styles/layout/globalLayout";
+import GlobalLayoutStyle from "components/layout/globalLayout/style";
+// import GlobalLayoutStyle from "styles/layout/globalLayout";
 
 const GlobalLayout = ({ children }) => {
   return (
