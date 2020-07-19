@@ -6,16 +6,16 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 // router pages
-import Home from "pages/home.jsx";
-import Search from "pages/search.jsx";
-import Tags from "pages/tags.jsx";
+import Home from "pages/home";
+import Search from "pages/search";
+import Tags from "pages/tags";
 
 // root redux & root saga
 import RootRedux from "store/index";
 import RootSaga from "saga/index";
 
 // style reset
-import StyleReset from "styles/styleReset";
+import StyleReset from "components/styleReset";
 
 // global layout
 import GlobalLayout from "components/layout/globalLayout";
