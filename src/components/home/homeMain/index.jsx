@@ -1,9 +1,13 @@
 import React from "react";
 
+import HomeMainTabContainer from "components/home/homeMain/homeMainTabContainer";
+
 const HomeMain = () => {
   return (
     <>
-      <main>HomeMain</main>
+      <main>
+        <HomeMainTabContainer />
+      </main>
     </>
   );
 };
