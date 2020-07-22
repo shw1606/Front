@@ -6,19 +6,19 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 // router pages
-import Home from "pages/home.jsx";
-import Search from "pages/search.jsx";
-import Tags from "pages/tags.jsx";
+import Home from "pages/Home.jsx";
+import Search from "pages/Search.jsx";
+import Tags from "pages/Tags.jsx";
 
 // root redux & root saga
 import RootRedux from "store/index";
 import RootSaga from "saga/index";
 
 // style reset
-import StyleReset from "styles/styleReset";
+import StyleReset from "styles/StyleReset";
 
-// global layout
-import GlobalLayout from "components/layout/globalLayout";
+// global Layout
+import GlobalLayout from "components/Layout/GlobalLayout";
 
 /*
 > Provider : react-redux에서 제공하는 컴포넌트
