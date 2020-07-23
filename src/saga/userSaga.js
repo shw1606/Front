@@ -6,7 +6,7 @@ function userApi() {
 
 function* user() {
   try {
-    const result = yield delay(userApi, 2000);
+    const result = yield delay(2000);
     yield put({
       action: "성공 액션 부분",
       data: result,
@@ -20,7 +20,7 @@ function* user() {
 }
 
 function* watchUser() {
-  yield takeLatest(user, "요청 액션 부분");
+  yield takeLatest("요청 액션 부분", user);
 }
 
 export default function* () {

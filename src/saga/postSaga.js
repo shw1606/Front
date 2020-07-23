@@ -1,28 +1,43 @@
-import { all, delay, fork, put, takeLatest } from "redux-saga/effects";
+import axios from "axios";
+import { all, call, delay, fork, put, takeLatest } from "redux-saga/effects";
 
-function postApi() {
-  console.log("네트워크 통신 부분");
+// import postDummy1 from "saga/dummy.json";
+// import postDummy2 from "saga/aditional1.json";
+// import postDummy3 from "saga/aditional2.json";
+// import postDummy4 from "saga/aditional3.json";
+
+// load post actions
+import {
+  POSTS_LOAD_REQUEST,
+  POSTS_LOAD_SUCCESS,
+  POSTS_LOAD_FAILURE,
+} from "store/actions/postAction";
+
+function loadPostsApi({ id = 0, heart = 0 }) {
+  // return id === 0 ? postDummy1 : postDummy2;
+  // return axios.get(`/postIoad?id=${id}&heart=${heart}`)
 }
 
-function* post() {
+function* loadPosts(action) {
   try {
-    const result = yield delay(postApi, 2000);
+    yield delay(1000);
+    const result = yield call(loadPostsApi, action.data);
     yield put({
-      action: "성공 액션 부분",
-      data: result,
+      type: POSTS_LOAD_SUCCESS,
+      data: result.data,
     });
   } catch (error) {
     yield put({
-      action: "성공 실패 부분",
+      type: POSTS_LOAD_FAILURE,
       data: error,
     });
   }
 }
 
-function* watchPost() {
-  yield takeLatest(post, "요청 액션 부분");
+function* watchLoadPosts() {
+  yield takeLatest(POSTS_LOAD_REQUEST, loadPosts);
 }
 
 export default function* () {
-  yield all([fork(watchPost)]);
+  yield all([fork(watchLoadPosts)]);
 }
