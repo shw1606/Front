@@ -4,16 +4,16 @@ import React from "react";
 import HomeAside from "components/Home/HomeAside";
 import HomeMain from "components/Home/HomeMain";
 
-// Home Layout style
-import HomeLayoutStyle from "styles/Layout/HomeLayout";
+// Home layout style
+import HomeStyle from "pages/Home/style";
 
 const Home = () => {
   return (
     <>
-      <HomeLayoutStyle>
+      <HomeStyle>
         <HomeMain />
         <HomeAside />
-      </HomeLayoutStyle>
+      </HomeStyle>
     </>
   );
 };

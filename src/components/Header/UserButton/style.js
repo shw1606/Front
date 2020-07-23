@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {FaRegUserCircle, TiArrowSortedDown, BsSearch} from "react-icons/all";
-import { USER_BUTTON } from "styles/Header";
+import { USER_BUTTON } from "components/Styles/Header";
 import { NavLink } from "react-router-dom";
 
 export const UserButtonWrapper = styled.div`
