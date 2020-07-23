@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 
 export const HeaderLayout = styled.div`
     display: flex;
+
 `;
 
 export const HeaderLogo = styled(Link)` 
