@@ -15,7 +15,7 @@ import RootRedux from "store/index";
 import RootSaga from "saga/index";
 
 // style reset
-import StyleReset from "components/StyleReset";
+import StyleReset from "components/styleReset";
 
 // global Layout
 import GlobalLayout from "components/Layout/GlobalLayout";
