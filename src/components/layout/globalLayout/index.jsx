@@ -1,18 +1,17 @@
 import React from "react";
 
 // header component
-import Header from "components/header";
+import Header from "components/Header";
 
 // global layout style
-import GlobalLayoutStyle from "components/layout/globalLayout/style";
-// import GlobalLayoutStyle from "styles/layout/globalLayout";
+import GlobalLayoutStyle from "./style";
 
 const GlobalLayout = ({ children }) => {
   return (
     <>
       <GlobalLayoutStyle>
         <Header />
-        <div>{children}</div>
+        {children}
       </GlobalLayoutStyle>
     </>
   );
