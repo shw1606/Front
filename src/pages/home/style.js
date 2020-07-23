@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const HomeLayoutStyle = styled.div`
+export const HomeContainer = styled.div`
+  margin-top: 2rem;
+`;
+
+export const MainContainer = styled.div`
   display: flex;
   margin-top: 2rem;
   main {
@@ -11,5 +15,3 @@ const HomeLayoutStyle = styled.div`
     width: 16rem;
   }
 `;
-
-export default HomeLayoutStyle;

@@ -1,19 +1,23 @@
 import React from "react";
 
 // components
-import HomeAside from "components/home/homeAside";
-import HomeMain from "components/home/homeMain";
+import HomeAside from "components/Home/homeAside";
+import HomeTabContainer from "components/Home/HomeTabContainer";
+import HomePostLayout from "components/Home/HomePostLayout";
 
 // home layout style
-import HomeStyle from "pages/home/style";
+import { HomeContainer, MainContainer } from "./style";
 
 const Home = () => {
   return (
     <>
-      <HomeStyle>
-        <HomeMain />
-        <HomeAside />
-      </HomeStyle>
+      <HomeContainer>
+        <HomeTabContainer />
+        <MainContainer>
+          <HomePostLayout />
+          <HomeAside />
+        </MainContainer>
+      </HomeContainer>
     </>
   );
 };
