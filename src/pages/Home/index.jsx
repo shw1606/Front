@@ -1,11 +1,11 @@
 import React from "react";
 
 // components
-import HomeAside from "components/home/homeAside";
-import HomeMain from "components/home/homeMain";
+import HomeAside from "components/Home/HomeAside";
+import HomeMain from "components/Home/HomeMain";
 
 // home layout style
-import HomeStyle from "pages/home/style";
+import HomeStyle from "pages/Home/style";
 
 const Home = () => {
   return (

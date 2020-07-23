@@ -1,6 +1,6 @@
 import React from "react";
 
-import HomeMainTab from "components/home/homeMain/homeMainTab";
+import HomeMainTab from "components/Home/HomeMain/HomeMainTab";
 
 const HomeMainContainer = () => {
   return (
