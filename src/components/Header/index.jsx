@@ -5,7 +5,7 @@ import UserButton from "./UserButton";
 import SearchButton from "./SearchButton";
 
 const Header = () => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
     return (
         <HeaderLayout>
@@ -13,8 +13,8 @@ const Header = () => {
             <Menu>
                 <SearchButton/>
                 {isLoggedIn
-                    ? <LoginButton/>
-                    : <UserButton/>
+                    ? <UserButton/>
+                    : <LoginButton/>
                 }
             </Menu>
         </HeaderLayout>
