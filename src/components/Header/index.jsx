@@ -1,23 +1,24 @@
 import React from "react";
-import {HeaderLayout, HeaderLogo, SearchBtn, HeaderWrapper} from "./style";
+import {HeaderLayout, HeaderLogo, Menu} from "./style";
 import LoginButton from "./LoginButton";
 import UserButton from "./UserButton";
+import SearchButton from "./SearchButton";
 
 const Header = () => {
-    const isLoggedIn = false;
+  const isLoggedIn = true;
 
     return (
-        <HeaderWrapper>
-            <HeaderLayout>
-                <HeaderLogo to="/"> clonelog </HeaderLogo>
-                <SearchBtn/>
+        <HeaderLayout>
+            <HeaderLogo to="/"> clonelog </HeaderLogo>
+            <Menu>
+                <SearchButton/>
                 {isLoggedIn
                     ? <LoginButton/>
                     : <UserButton/>
                 }
-            </HeaderLayout>
-        </HeaderWrapper>
+            </Menu>
+        </HeaderLayout>
+
     );
 };
-
 export default Header;
