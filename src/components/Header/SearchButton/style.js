@@ -4,6 +4,7 @@ import {SEARCH_BUTTON} from "../../Styles/Header";
 
 export const SearchButtonWrapper = styled.div`
     margin: 20px 0.5em 0 0;
+    padding: 0.5em;
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -13,9 +14,7 @@ export const SearchButtonWrapper = styled.div`
 `;
 
 export const SearchIcon = styled(FiSearch)`
-    width: 15px;
-    height: 15px;
-    margin: 7px;
+    width: 17px;
+    height: 17px;
     color: black;
-    cursor: pointer;
 `;
