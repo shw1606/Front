@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {FaRegUserCircle, TiArrowSortedDown, BsSearch} from "react-icons/all";
+import {FaRegUserCircle, TiArrowSortedDown} from "react-icons/all";
 import { USER_BUTTON } from "components/Styles/Header";
 
 import { NavLink } from "react-router-dom";
@@ -19,11 +19,6 @@ export const DropdownBtn = styled.div`
     top: 1vh;
     right: 1vw;
     height: 6vh;
-`;
-
-export const SearchBtn = styled(BsSearch)`
-    width: 5vw;
-    height: 5vh;
 `;
 
 export const ArrowDown = styled(TiArrowSortedDown)`

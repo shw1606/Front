@@ -19,7 +19,7 @@ function DropdownMenu({username}) {
             </DropdownBtn>
             {userDropdownVisible &&
             <DropdownContent ref={contentRef}>
-                <DropdownItem> 메뉴1 </DropdownItem>
+                <StyledLink to="/login"> 내 벨로그 </StyledLink>
                 <StyledLink to="/login"> 로그아웃 </StyledLink>
             </DropdownContent>
             }
