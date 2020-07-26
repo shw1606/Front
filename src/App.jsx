@@ -15,7 +15,7 @@ import RootRedux from "store/index";
 import RootSaga from "saga/index";
 
 // style reset
-import StyleReset from "components/StyleReset";
+import StyleReset from "components/styleReset";
 
 // global Layout
 import GlobalLayout from "components/Layout/GlobalLayout";
@@ -28,7 +28,6 @@ import GlobalLayout from "components/Layout/GlobalLayout";
 */
 const App = () => {
   return (
-    <BrowserRouter>
       <Provider store={store()}>
         <StyleReset />
         <GlobalLayout>
@@ -40,7 +39,6 @@ const App = () => {
             </Switch>
         </GlobalLayout>
       </Provider>
-    </BrowserRouter>
   );
 };
 
