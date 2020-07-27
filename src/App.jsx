@@ -15,7 +15,7 @@ import RootRedux from "store/index";
 import RootSaga from "saga/index";
 
 // style reset
-import StyleReset from "components/StyleReset";
+import StyleReset from "components/styleReset";
 
 // global Layout
 import GlobalLayout from "components/Layout/GlobalLayout";
@@ -28,21 +28,17 @@ import GlobalLayout from "components/Layout/GlobalLayout";
 */
 const App = () => {
   return (
-    <>
       <Provider store={store()}>
         <StyleReset />
         <GlobalLayout>
-          <BrowserRouter>
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/search" component={Search} />
               <Route path="/tags" exact component={Tags} />
               <Route path="/tags:tag" exact component={Tags} />
             </Switch>
-          </BrowserRouter>
         </GlobalLayout>
       </Provider>
-    </>
   );
 };
 

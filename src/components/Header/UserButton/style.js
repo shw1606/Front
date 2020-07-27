@@ -1,43 +1,50 @@
 import styled from 'styled-components';
-import {FaRegUserCircle, TiArrowSortedDown, BsSearch} from "react-icons/all";
+import {FaRegUserCircle, TiArrowSortedDown} from "react-icons/all";
 import { USER_BUTTON } from "components/Styles/Header";
 
 import { NavLink } from "react-router-dom";
 
 export const UserButtonWrapper = styled.div`
     display: flex;
-    width: 10vw;
 `;
 
 export const WriteBtn = styled.button`
-    width: 10vw;
-    height: 3vh;
+    margin: 20px 0 0 0;
+    width: 82px;
+    height: 24px;
+    font-size: 11px;
+    font-weight: bold;
+    color: ${USER_BUTTON.TEXT_COLOR};
+    border: 1.5px solid ${USER_BUTTON.TEXT_COLOR};
+    cursor: pointer;
+    border-radius: 15px; 
+    background-color: ${USER_BUTTON.COLOR};
+    &:hover {
+        background-color: ${USER_BUTTON.COLOR_ON_HOVER};
+        color: ${USER_BUTTON.COLOR};
+    }
+    &:focus {
+        outline: none;
+    }
 `;
 
 export const DropdownBtn = styled.div`
     display: flex;
-    top: 1vh;
-    right: 1vw;
-    height: 6vh;
-`;
-
-export const SearchBtn = styled(BsSearch)`
-    width: 5vw;
-    height: 5vh;
+    width: px;
 `;
 
 export const ArrowDown = styled(TiArrowSortedDown)`
-    margin: 0.5em 0 0 0.1em;
-    color: ${USER_BUTTON.COLOR};
+    margin: 0.5em 0 0 3px;
+    color: ${USER_BUTTON.BORDER_COLOR};
     &:hover {
         color: ${USER_BUTTON.COLOR_ON_HOVER};
     }
 `;
 
 export const UserProfile = styled(FaRegUserCircle)`
-    color: ${USER_BUTTON.COLOR_ON_HOVER};
-    width: 3vw;
-    height: 3vh;
+    color: ${USER_BUTTON.TEXT_COLOR};
+    width: 30px;
+    height: 30px;
 `;
 
 export const DropdownMenuWrapper = styled.div`
@@ -45,19 +52,19 @@ export const DropdownMenuWrapper = styled.div`
     float: right;
     position: relative;
     border: none;
-    margin: 0;
+    margin: 17px 0 0 1em;
     padding: 0;
     cursor: pointer;
 `;
 
 export const DropdownContent = styled.div`
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 20vw;
+    background-color: white;
+    width: 150px;
     margin-top: 0.3em;
     right: 0; 
     border-radius: 2%;
-    border: 0.1em solid ${USER_BUTTON.BORDER_COLOR};
+    border: 1px solid ${USER_BUTTON.BORDER_COLOR};
     z-index: 200;
 `;
 
@@ -70,7 +77,7 @@ export const StyledLink = styled(NavLink)`
     &:hover {
         color: black;
         text-decoration: none;
-        background-color: ${USER_BUTTON.COLOR};
+        background-color: ${USER_BUTTON.DROPDOWN_CONTENT_COLOR};
     }
 `;
 
