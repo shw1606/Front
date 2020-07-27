@@ -9,6 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import Home from "pages/Home";
 import Search from "pages/Search";
 import Tags from "pages/Tags";
+import PostDetail from "pages/PostDetail";
 
 // root redux & root saga
 import RootRedux from "store/index";
@@ -35,9 +36,11 @@ const App = () => {
           <BrowserRouter>
             <Switch>
               <Route path="/" exact component={Home} />
+              <Route path="/recent" exact component={Home} />
               <Route path="/search" component={Search} />
               <Route path="/tags" exact component={Tags} />
               <Route path="/tags:tag" exact component={Tags} />
+              <Route path="/@:author/:title" exact component={PostDetail} />
             </Switch>
           </BrowserRouter>
         </GlobalLayout>
