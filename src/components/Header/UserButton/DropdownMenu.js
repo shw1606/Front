@@ -1,26 +1,29 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {DropdownItem, DropdownContent, DropdownBtn, DropdownMenuWrapper, UserProfile, ArrowDown, StyledLink} from './style';
+import React, {useRef, useState} from 'react';
+import {DropdownContent, DropdownBtn, DropdownMenuWrapper, UserProfile, ArrowDown, StyledLink} from './style';
 import useDropdownOutsideClick from "hooks/useOutsideClick";
 
 function DropdownMenu({username}) {
-    const [userDropdownVisible, setUserDropdownVisible] = useState(false);
+    const [dropdownVisible, setDropdownVisible] = useState(false);
 
     const toggleDropdown = () => {
-        setUserDropdownVisible(!userDropdownVisible);
+        setDropdownVisible(!dropdownVisible);
     };
 
     const contentRef = useRef(null);
-    useDropdownOutsideClick(contentRef, setUserDropdownVisible);
+    useDropdownOutsideClick(contentRef, setDropdownVisible);
 
     return (
         <DropdownMenuWrapper>
             <DropdownBtn onClick={toggleDropdown}>
                 <UserProfile/> <ArrowDown/>
             </DropdownBtn>
-            {userDropdownVisible &&
+            {dropdownVisible &&
             <DropdownContent ref={contentRef}>
-                <DropdownItem> 메뉴1 </DropdownItem>
-                <StyledLink to="/login"> 로그아웃 </StyledLink>
+                <StyledLink to="/"> 내 벨로그 </StyledLink>
+                <StyledLink to="/"> 임시 글 </StyledLink>
+                <StyledLink to="/"> 읽기 목록 </StyledLink>
+                <StyledLink to="/"> 설정 </StyledLink>
+                <StyledLink to="/"> 로그아웃 </StyledLink>
             </DropdownContent>
             }
         </DropdownMenuWrapper>
