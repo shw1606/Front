@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { LOGIN_BUTTON } from "components/Styles/Header";
 
 export const LoginBtn = styled.button`
     margin: 20px 0 0 0;
@@ -11,9 +10,9 @@ export const LoginBtn = styled.button`
     border: none;
     cursor: pointer;
     border-radius: 15px; 
-    background-color: ${LOGIN_BUTTON.COLOR};
+    background-color: #343a40;
     &:hover {
-        background-color: ${LOGIN_BUTTON.COLOR_ON_HOVER}
+        background-color: #868e96;
     }
     &:focus {
         outline: none;

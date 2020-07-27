@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {LOGIN} from "../Styles/Login";
 import {FaFacebook, FcGoogle, GoMarkGithub} from "react-icons/all";
 import {Link} from "react-router-dom";
 
@@ -31,16 +30,16 @@ export const EmailLoginFormWrapper = styled.div`
 `;
 export const EmailLoginForm = styled.input`
     width: 320px;
-    border: 1px solid ${LOGIN.BORDER_COLOR};
+    border: 1px solid #d4d4d4;
     border-radius: 2px;
     padding-left: 1em;
     font-size: 11px;
-    color: ${LOGIN.BORDER_COLOR};
+    color: #d4d4d4;
 `;
 
 export const EmailLoginButton = styled.div`
     width: 80px;
-    background: ${LOGIN.MAIN_COLOR};
+    background: #12b886;
     margin-left: -2px;
     color: white;
     padding: 1em;
@@ -77,7 +76,7 @@ export const GoogleLoginButton = styled(FcGoogle)`
     padding: 5px;
     cursor: pointer;
     border-radius: 50%;
-    border: 1px solid ${LOGIN.BORDER_COLOR};
+    border: 1px solid #d4d4d4;
 `;
 
 export const FacebookLoginButton = styled(FaFacebook)`
@@ -103,5 +102,5 @@ export const RegisterTitle = styled.div`
 export const RegisterLink = styled(Link)`
     font-size: 11px;
     font-weight: bold;
-    color: ${LOGIN.MAIN_COLOR};
+    color: #12b886;
 `;
