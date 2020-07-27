@@ -44,41 +44,57 @@ export const PostImage = styled(Link)`
   }
 `;
 
-export const PostDescription = styled.div`
+export const MainInfo = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
   flex: 1 1 0%;
-  a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    h4 {
-      font-size: 1rem;
-      line-height: 1.5;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow-x: hidden;
-      overflow-y: hidden;
-      color: rgb(33, 37, 41);
-      margin: 0px 0px 0.25rem;
-      @media (max-width: 767px) {
-        white-space: initial;
-      }
-    }
-  } /* a */
-  div {
-    font-size: 0.75rem;
+`;
+
+export const Payload = styled(Link)`
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  h4 {
+    font-size: 1rem;
     line-height: 1.5;
-    color: rgb(134, 142, 150);
-    .separator {
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: rgb(33, 37, 41);
+    margin: 0px 0px 0.25rem;
+    @media (max-width: 767px) {
+      white-space: initial;
     }
+  }
+  p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    height: 3.9375rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    color: rgb(73, 80, 87);
+    margin: 0px 0px 1.5rem;
+    overflow: hidden;
   }
 `;
 
-export const PostSubInfo = styled.div`
+export const Date = styled.div`
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgb(134, 142, 150);
+  .separator {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+`;
+
+export const SubInfo = styled.div`
   display: flex;
   font-size: 0.75rem;
   line-height: 1.5;
