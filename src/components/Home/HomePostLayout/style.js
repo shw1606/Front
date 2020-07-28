@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HomePostLayoutStyle = styled.ul`
+export const HomePostLayoutStyle = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin: -1rem;
@@ -8,5 +8,3 @@ const HomePostLayoutStyle = styled.ul`
     margin: 0px;
   }
 `;
-
-export default HomePostLayoutStyle;
