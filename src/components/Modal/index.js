@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {ModalOverlay, ModalWrapper, ModalInner, CloseButton} from "./style";
+import * as S from "./style";
 
 function Modal({ onClose, visible, children}) {
     const onMaskClick = (e) => {
@@ -16,19 +16,19 @@ function Modal({ onClose, visible, children}) {
 
     useEffect(() => {
         if (visible) document.body.style.overflow = 'hidden';
-        else document.body.style.overflow = 'unset';
-    }, [visible])
+        return () => document.body.style.overflow = 'unset';
+    }, [visible]);
 
     return (
         <>
-            <ModalOverlay visible={visible}/>
-            <ModalWrapper visible={visible}
-                          onClick={onMaskClick}>
-                <ModalInner>
-                    <CloseButton onClick={close} />
+            <S.ModalOverlay visible={visible}/>
+            <S.ModalWrapper visible={visible}
+                            onClick={onMaskClick}>
+                <S.ModalInner>
+                    <S.CloseButton onClick={close} />
                     {children}
-                </ModalInner>
-            </ModalWrapper>
+                </S.ModalInner>
+            </S.ModalWrapper>
         </>
     )
 }

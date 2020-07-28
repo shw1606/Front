@@ -1,14 +1,14 @@
 import React from "react";
-import {SearchButtonWrapper, SearchIcon} from "./style";
 import {NavLink} from "react-router-dom";
+import * as S from './style';
 
 const SearchButton = () => {
     return (
-      <SearchButtonWrapper>
+      <S.SearchButtonWrapper>
           <NavLink to="/search">
-              <SearchIcon/>
+              <S.SearchIcon/>
           </NavLink>
-      </SearchButtonWrapper>
+      </S.SearchButtonWrapper>
     );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
 import { createStore, compose, applyMiddleware } from "redux";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 // router pages
@@ -19,7 +19,7 @@ import RootSaga from "saga/index";
 import StyleReset from "components/styleReset";
 
 // global Layout
-import GlobalLayout from "components/Layout/GlobalLayout";
+import GlobalLayout from "components/Common/GlobalLayout";
 
 /*
 > Provider : react-redux에서 제공하는 컴포넌트
@@ -29,19 +29,19 @@ import GlobalLayout from "components/Layout/GlobalLayout";
 */
 const App = () => {
   return (
-      <Provider store={store()}>
-        <StyleReset />
-        <GlobalLayout>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/recent" exact component={Home} />
-              <Route path="/search" component={Search} />
-              <Route path="/tags" exact component={Tags} />
-              <Route path="/tags:tag" exact component={Tags} />
-              <Route path="/@:author/:title" exact component={PostDetail} />
-            </Switch>
-        </GlobalLayout>
-      </Provider>
+    <Provider store={store()}>
+      <StyleReset />
+      <GlobalLayout>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/recent" exact component={Home} />
+          <Route path="/search" component={Search} />
+          <Route path="/tags" exact component={Tags} />
+          <Route path="/tags:tag" exact component={Tags} />
+          <Route path="/@:author/:title" exact component={PostDetail} />
+        </Switch>
+      </GlobalLayout>
+    </Provider>
   );
 };
 
