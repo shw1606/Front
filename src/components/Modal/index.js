@@ -16,14 +16,14 @@ function Modal({ onClose, visible, children}) {
 
     useEffect(() => {
         if (visible) document.body.style.overflow = 'hidden';
-        else document.body.style.overflow = 'unset';
-    }, [visible])
+        return () => document.body.style.overflow = 'unset';
+    }, [visible]);
 
     return (
         <>
             <S.ModalOverlay visible={visible}/>
             <S.ModalWrapper visible={visible}
-                          onClick={onMaskClick}>
+                            onClick={onMaskClick}>
                 <S.ModalInner>
                     <S.CloseButton onClick={close} />
                     {children}
