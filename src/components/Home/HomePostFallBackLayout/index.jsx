@@ -4,20 +4,20 @@ import React from "react";
 import FallBackItem from "./FallBackItem";
 
 // style
-import { Container, ContainerWrapper } from "./style";
+import * as S from "./style";
 
 const HomePostFallBackLayout = () => {
   return (
     <>
-      <ContainerWrapper>
-        <Container>
+      <S.ContainerWrapper>
+        <S.Container>
           {Array(8)
             .fill()
             .map(() => (
               <FallBackItem />
             ))}
-        </Container>
-      </ContainerWrapper>
+        </S.Container>
+      </S.ContainerWrapper>
     </>
   );
 };

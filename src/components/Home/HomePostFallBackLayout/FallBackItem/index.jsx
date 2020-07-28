@@ -1,21 +1,21 @@
 import React, { memo } from "react";
 
-import { Container, Image, Description, Author } from "./style";
+import * as S from "./style";
 
 const FallBackItem = () => {
   return (
-    <Container>
-      <Image></Image>
-      <Description>
+    <S.Container>
+      <S.Image />
+      <S.Description>
         <div className="title"></div>
         <div className="payload"></div>
         <div className="date"></div>
-      </Description>
-      <Author>
+      </S.Description>
+      <S.Author>
         <div className="profile"></div>
         <div className="name"></div>
-      </Author>
-    </Container>
+      </S.Author>
+    </S.Container>
   );
 };
 
