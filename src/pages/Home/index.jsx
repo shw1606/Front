@@ -6,18 +6,18 @@ import HomeTabContainer from "components/Home/HomeTabContainer";
 import HomePostLayout from "components/Home/HomePostLayout";
 
 // home layout style
-import { HomeContainer, MainContainer } from "./style";
+import * as S from "./style";
 
 const Home = () => {
   return (
     <>
-      <HomeContainer>
+      <S.HomeContainer>
         <HomeTabContainer />
-        <MainContainer>
+        <S.MainContainer>
           <HomePostLayout />
           <HomeAside />
-        </MainContainer>
-      </HomeContainer>
+        </S.MainContainer>
+      </S.HomeContainer>
     </>
   );
 };

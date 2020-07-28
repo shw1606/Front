@@ -3,7 +3,7 @@ import React, { lazy, Suspense, useCallback, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // style
-import HomePostLayoutStyle from "./style";
+import * as S from "./style";
 
 // action
 import { RECENT_POSTS_LOAD_REQUEST } from "store/actions/postAction";
@@ -70,12 +70,12 @@ const Recent = () => {
   return (
     <>
       <Suspense fallback="">
-        <HomePostLayoutStyle>
+        <S.HomePostLayoutStyle>
           {recentPosts &&
             recentPosts.map((post, index) => (
               <HomePost key={index} data={post} />
             ))}
-        </HomePostLayoutStyle>
+        </S.HomePostLayoutStyle>
       </Suspense>
       {showPostFallback || <HomePostFallBackLayout />}
     </>
