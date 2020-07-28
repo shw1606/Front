@@ -1,13 +1,13 @@
 import React from 'react';
-import {UserButtonWrapper, WriteBtn} from "./style";
 import DropdownMenu from "./DropdownMenu";
+import * as S from './style';
 
 const UserButton = () => {
     return (
-        <UserButtonWrapper>
-            <WriteBtn> 새 글 작성 </WriteBtn>
+        <S.UserButtonWrapper>
+            <S.WriteBtn> 새 글 작성 </S.WriteBtn>
             <DropdownMenu/>
-        </UserButtonWrapper>
+        </S.UserButtonWrapper>
     );
 };
 

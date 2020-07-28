@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {FiSearch} from "react-icons/all";
-import {SEARCH_BUTTON} from "../../Styles/Header";
 
 export const SearchButtonWrapper = styled.div`
     margin: 20px 0.5em 0 0;
@@ -9,7 +8,7 @@ export const SearchButtonWrapper = styled.div`
     height: 30px;
     border-radius: 15px;
     &:hover {
-        background-color: ${SEARCH_BUTTON.COLOR};
+        background-color: rgba(0,0,0,0.043);
     }
 `;
 

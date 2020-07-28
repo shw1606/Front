@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import {FaRegUserCircle, TiArrowSortedDown} from "react-icons/all";
-import { USER_BUTTON } from "components/Styles/Header";
-
 import { NavLink } from "react-router-dom";
 
 export const UserButtonWrapper = styled.div`
@@ -14,14 +12,14 @@ export const WriteBtn = styled.button`
     height: 24px;
     font-size: 11px;
     font-weight: bold;
-    color: ${USER_BUTTON.TEXT_COLOR};
-    border: 1.5px solid ${USER_BUTTON.TEXT_COLOR};
+    color: #343a40;
+    border: 1.5px solid #343a40;
     cursor: pointer;
     border-radius: 15px; 
-    background-color: ${USER_BUTTON.COLOR};
+    background-color: #fff;
     &:hover {
-        background-color: ${USER_BUTTON.COLOR_ON_HOVER};
-        color: ${USER_BUTTON.COLOR};
+        background-color: #212529;
+        color: #fff;
     }
     &:focus {
         outline: none;
@@ -35,14 +33,14 @@ export const DropdownBtn = styled.div`
 
 export const ArrowDown = styled(TiArrowSortedDown)`
     margin: 0.5em 0 0 3px;
-    color: ${USER_BUTTON.BORDER_COLOR};
+    color: #d4d4d4;
     &:hover {
-        color: ${USER_BUTTON.COLOR_ON_HOVER};
+        color: #212529;
     }
 `;
 
 export const UserProfile = styled(FaRegUserCircle)`
-    color: ${USER_BUTTON.TEXT_COLOR};
+    color: #343a40;
     width: 30px;
     height: 30px;
 `;
@@ -64,7 +62,7 @@ export const DropdownContent = styled.div`
     margin-top: 0.3em;
     right: 0; 
     border-radius: 2%;
-    border: 1px solid ${USER_BUTTON.BORDER_COLOR};
+    border: 1px solid #d4d4d4;
     z-index: 200;
 `;
 
@@ -77,7 +75,7 @@ export const StyledLink = styled(NavLink)`
     &:hover {
         color: black;
         text-decoration: none;
-        background-color: ${USER_BUTTON.DROPDOWN_CONTENT_COLOR};
+        background-color: rgba(0,0,0,0.043);
     }
 `;
 
@@ -88,5 +86,5 @@ export const DropdownItem = styled.div`
     min-height: 2vh;
     text-decoration: none;
     display: block;
-    border-bottom: 0.1em solid ${USER_BUTTON.BORDER_COLOR}
+    border-bottom: 0.1em solid #d4d4d4
 `;

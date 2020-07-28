@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {LoginBtn} from "./style";
+import * as S from "./style";
 import Modal from "components/Modal";
 import Login from "components/Login";
 
@@ -13,7 +13,7 @@ const LoginButton = () => {
     };
     return (
         <>
-            <LoginBtn onClick={openModal}> 로그인 </LoginBtn>
+            <S.LoginBtn onClick={openModal}> 로그인 </S.LoginBtn>
             {
                 modalVisible &&
                 <Modal visible={modalVisible}

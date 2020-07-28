@@ -1,5 +1,5 @@
 import React from "react";
-import {HeaderLayout, HeaderLogo, Menu} from "./style";
+import * as S from "./style";
 import LoginButton from "./LoginButton";
 import UserButton from "./UserButton";
 import SearchButton from "./SearchButton";
@@ -8,17 +8,16 @@ const Header = () => {
   const isLoggedIn = false;
 
     return (
-        <HeaderLayout>
-            <HeaderLogo to="/"> clonelog </HeaderLogo>
-            <Menu>
+        <S.HeaderLayout>
+            <S.HeaderLogo to="/"> clonelog </S.HeaderLogo>
+            <S.Menu>
                 <SearchButton/>
                 {isLoggedIn
                     ? <UserButton/>
                     : <LoginButton/>
                 }
-            </Menu>
-        </HeaderLayout>
-
+            </S.Menu>
+        </S.HeaderLayout>
     );
 };
 export default Header;
