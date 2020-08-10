@@ -30,13 +30,13 @@ const PostDetail = ({ match }) => {
   return (
     <>
       <S.Container>
+        <LeftButtonsContainer />
         <PostHeader />
         <PostSeries />
         <PostContent />
         <PostUserInfo />
         <PostSeriesNavigator />
         <CommentContainer />
-        <LeftButtonsContainer />
       </S.Container>
     </>
   );
