@@ -37,7 +37,7 @@ const App = () => {
           <Route path="/recent" exact component={Home} />
           <Route path="/search" component={Search} />
           <Route path="/tags" exact component={Tags} />
-          <Route path="/tags:tag" exact component={Tags} />
+          <Route path="/tags/:tag" exact component={Tags} />
           <Route path="/@:author/:title" exact component={PostDetail} />
         </Switch>
       </GlobalLayout>

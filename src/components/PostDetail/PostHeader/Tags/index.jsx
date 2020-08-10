@@ -10,7 +10,7 @@ const Tags = () => {
       {post.tags &&
           post.tags.map((tag, index) => (
               <S.Tag key={index}>
-                <S.StyledLink to=''>{tag}</S.StyledLink>
+                <S.StyledLink to={`/tags/${tag}`}>{tag}</S.StyledLink>
               </S.Tag>
           ))
       }
