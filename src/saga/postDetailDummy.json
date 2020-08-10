@@ -31,7 +31,41 @@
     },
     "comments": [
       {
-        "_id": "t5tr23edsd",
+        "_id": "1111111",
+        "post_id": 1213213213123,
+        "author": "이이이이",
+        "comment_context": "안녕하세요",
+        "updated_at": "2020년 7월 28일",
+        "re_comments": [
+          {
+            "_id": "22222222",
+            "post_id": 1213213213123,
+            "author": "이이이이",
+            "comment_context": "안녕하세요",
+            "updated_at": "2020년 7월 28일",
+            "re_comments": [
+              {
+                "_id": "33333333",
+                "post_id": 1213213213123,
+                "author": "이이이이",
+                "comment_context": "안녕하세요",
+                "updated_at": "2020년 7월 28일",
+                "re_comments": []
+              },
+              {
+                "_id": "44444444",
+                "post_id": 1213213213123,
+                "author": "는이ㅏ루나ㅓ우라ㅣㄴㅇㄹ",
+                "comment_context": "는이ㅏ루나ㅓ우라ㅣㄴㅇㄹ",
+                "updated_at": "2020년 7월 28일",
+                "re_comments": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "55555555",
         "post_id": 1213213213123,
         "author": "이이이이",
         "comment_context": "안녕하세요",
