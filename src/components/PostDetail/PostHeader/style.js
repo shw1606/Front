@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 
 export const PostTitle = styled.div`
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #343a40;
 `;
