@@ -80,7 +80,7 @@ const PostContent = () => {
   function CodeBlock(props) {
     const { language, value } = props;
     return (
-      <SyntaxHighlighter language={language}>
+      <SyntaxHighlighter language={language} customStyle={{backgroundColor: '#f1f3f5'}}>
         {value}
       </SyntaxHighlighter>
     );
@@ -90,7 +90,7 @@ const PostContent = () => {
     const { value } = props;
     return (
       <span style={{
-        backgroundColor: '#f5f2f0',
+        backgroundColor: '#f1f3f5',
         padding: '0.2em 0.4em',
       }}>
         {value}
