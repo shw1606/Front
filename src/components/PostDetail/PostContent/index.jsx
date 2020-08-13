@@ -17,12 +17,11 @@ const PostContent = () => {
                      code: CodeBlock,
                      inlineCode: InlineCodeBlock,
                      link: Link,
-                     linkReference: Link,
+                     linkReference: LinkReference,
                      image: Image,
                      imageReference: Image,
-                     listItem: ListItem,
                      thematicBreak: ThematicBreak,
-                     paragraph: props => <React.Fragment {...props} />
+                     paragraph: Paragraph
                    }}/>
   );
 
@@ -37,51 +36,43 @@ const PostContent = () => {
 
   function Paragraph(props) {
     return (
-      <React.Fragment>
-      <div>
-        {props.children}
-      </div>
-      </React.Fragment>
-    );
-  }
-
-  function ListItem(props) {
-    return (
-      <li style={{
-        padding: '0.2em 0',
-        lineHeight: '1.6em'
+      <p style={{
+        margin: '1em 0',
+        lineHeight: '2em'
       }}>
         {props.children}
-      </li>
-    )
+      </p>
+    );
   }
 
   function Image(props) {
     return (
-      <img src={props.src} style={{
-        maxWidth: '100%'
+      <img src={props.src}
+           style={{
+             maxWidth: '100%'
       }}/>
-    )
-  }
-
-  function Root(props) {
-    return (
-      <div style={{
-        whiteSpace: 'pre',
-        padding: '0.2em 0'
-      }}>
-        {props.children}
-      </div>
     )
   }
 
   function Link(props) {
     return (
-      <div style={{
-        color: '#0ca678'
+      <a href={props.href}
+         style={{
+           color: '#0ca678'
+      }}>
+        {props.href}
+      </a>
+    )
+  }
+
+  function LinkReference(props) {
+    return (
+      <a href={props.href}
+         style={{
+           color: '#0ca678'
       }}>
         {props.children}
-      </div>
+      </a>
     )
   }
 
