@@ -2,6 +2,7 @@ import React from "react";
 import {useSelector} from "react-redux";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import breaks from 'remark-breaks';
 
 const PostContent = () => {
   const content = useSelector((state) => state.postDetailReducer.postInfo.context);
@@ -9,19 +10,19 @@ const PostContent = () => {
     <ReactMarkdown source={content}
                    skipHtml={false}
                    escapeHtml={false}
+                   plugins={[breaks]}
                    renderers={{
                      blockquote: BlockQuoteBlock,
                      tableCell: TableCellBlock,
                      code: CodeBlock,
                      inlineCode: InlineCodeBlock,
-                     root: Root,
                      link: Link,
                      linkReference: Link,
                      image: Image,
                      imageReference: Image,
                      listItem: ListItem,
                      thematicBreak: ThematicBreak,
-                     paragraph: Paragraph
+                     paragraph: props => <React.Fragment {...props} />
                    }}/>
   );
 
@@ -36,9 +37,11 @@ const PostContent = () => {
 
   function Paragraph(props) {
     return (
+      <React.Fragment>
       <div>
         {props.children}
       </div>
+      </React.Fragment>
     );
   }
 
