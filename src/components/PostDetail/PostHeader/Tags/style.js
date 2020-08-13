@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const TagsWrapper = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   width: 100%;
 `;
 

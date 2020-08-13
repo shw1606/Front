@@ -12,7 +12,7 @@ const PostHeader = () => {
         <h1> {post.title} </h1>
       </S.PostTitle>
       <S.PostInfo>
-        <S.StyledLink> {post.author} </S.StyledLink>
+        <S.StyledLink to={`/@${post.author}`}> {post.author} </S.StyledLink>
         ·
         <span> {post.updated_at} </span>
       </S.PostInfo>
