@@ -9,13 +9,13 @@ const HomePost = ({ data }) => {
   return (
     <>
       <S.HomePostStyle>
-        <S.PostImage to={`/@${data.author}/${data.title}?id=${data.id}`}>
+        <S.PostImage to={`/@${data.author}/${data.title}`}>
           <div>
             <img src={data.thumnail} />
           </div>
         </S.PostImage>
         <S.MainInfo>
-          <S.Payload to={`/@${data.author}/${data.title}?id=${data.id}`}>
+          <S.Payload to={`/@${data.author}/${data.title}`}>
             <h4>{data.title}</h4>
             <div>
               <p>{data.content}</p>
@@ -29,7 +29,7 @@ const HomePost = ({ data }) => {
           </S.Date>
         </S.MainInfo>
         <S.SubInfo>
-          <Link to={`/@${data.author}/${data.title}?id=${data.id}`}>
+          <Link to={`/@${data.author}/${data.title}`}>
             <img src={data.avatar} />
             <span>
               by <b>{data.author}</b>

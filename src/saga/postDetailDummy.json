@@ -1,0 +1,43 @@
+{
+  "status": 200,
+  "message": "ok",
+  "data": {
+    "_id": 1213213213123,
+    "title": "프론트엔드 추천 자료 모음",
+    "author": "김김김김",
+    "created_at": "2020년 6월 27일",
+    "updated_at": "2020년 7월 28일",
+    "deleted_at": "",
+    "tags": ["JavaScript", "프론트엔드"],
+    "heart": 131,
+    "hit": 500,
+    "thumbnail": "https://images.unsplash.com/photo-1594010534253-a9bc1905abc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=722&q=80",
+    "context": "h1\n==\nh2\n--\n\n하이픈을 여러 개 사용한 제목\n----------\n# 헤더1\n## 헤더2\n### 헤더3\n#### 헤더4\n##### 헤더5\n###### 헤더6\n<h1>헤더1</h1><h2>헤더2</h2><h3>헤더3</h3>   \n<h4>헤더4</h4>\n<h5>헤더5</h5>   \n<h6>헤더6</h6>\n\n제목입니다.\n==\n부제목입니다.\n--\n\n_이탤릭체_\n<em>이탤릭체</em>\n**볼드체**\n<u>밑줄</u>\n~~취소선~~\n<del>취소선</del>\n<strike>취소선</strike>\n윗첨자^윗첨자^\n윗첨자<sup>윗첨자</sup>\n아랫첨자<sub>아랫첨자</sub>\n\n인라인코드: `Mark인용코드1`\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<title>Page Title</title>\n</head>\n<body>\n```CSS\nint main()\n{\n  cout << \"Hello World!\" << endl;\n}\n<pre>Tag인용 코드2</pre>\n<pre><code>Tag인용 코드3</code></pre>\n```  \n  \n  \n> # 제목\n>> 인용구\n<Blockquote>\n인용구 내용\n</Blockquote>\n\n[Velog](https://velog.io/)\n<a href=\"https://velog.io/\">링크걸기</a>\nhttps://velog.io/@wonhs717\n[Youtube](https://www.youtube.com/?hl=ko&gl=KR \"이것은 하이퍼링크의 설명을 작성할 수 있습니다.\")\n[My Velog][My link]\n\n[My link]: https://velog.io/@wonhs717\n\n- 리스트1\n* 리스트2\n+ 리스트3\n1. 리스트4\n<ol>\n  <li>리스트4-1</li>\n  <li>리스트4-2</li>\n</ol>\n<ul>\n  <li>리스트1-1</li>\n  <li>리스트1-1</li>\n  <li>리스트1-1</li>\n    <ol>\n      <li>리스트4-3</li>\n      <li>리스트4-4</li>\n    </ol>\n</ul>\n\n- A리스트1\n\t- A리스트2\n    \t- A리스트3\n- B리스트1\n  * B리스트2\n    1. B리스트3\n    \n   \n- [ ] 체크박스(false)\n- [x] 체크박스(true)\n\n\n| 제목1 | 제목2 | 제목3 | 제목4 |\n| :- | - | :-: | -: |\n| 내용1입니다 | 내용2입니다 | 내용3입니다 | 내용4입니다 |\n| 내용1 | 내용2 | 내용3 | 내용4 |\n| <center>제목1</center> | 제목2 | 제목3 | <center>제목1</center> |\n| :- | - | :-: | -: |\n| 내용1입니다 | 내용2입니다 | 내용3입니다 | 내용4입니다 |\n| 내용1 | 내용2 | 내용3 | 내용4 |\n\n\n| 제목1 | 제목2 | 제목3 | 제목4 |\n| --- | :--- | :---: | ---: |\n| 이곳은 | 여기는 | 가운데 | 왼쪽 |\n| 정렬을 사용하지 않는 | 오른쪽 | 정렬을 사용 | 정렬을 |\n| 공간 | 정렬을 하는 곳 | 하는 곳 | 하는 곳입니다 |\n\n---\n***\n___\n* * *\n- - -\n<hr/>\n\n\n\\\\\n\\`\n\\*\n\\_\n\\{ \\}\n\\[ \\]\n\\( \\)\n\\#\n\\+\n\\-\n\\.\n\\!\n\n![ImageExample](https://github.com/WonHeeSoo/GitBook_StudyBook/blob/master/image/Image%20Example.PNG?raw=true)\n\n<img alt=\"ImageExample\" src=\"https://github.com/WonHeeSoo/GitBook_StudyBook/blob/master/image/Image%20Example.PNG?raw=true\" />\n\n\n\n[![BTS DNA Youtube](https://img.youtube.com/vi/HHqKNSMduc4/0.jpg)](https://www.youtube.com/watch?v=HHqKNSMduc4)\n ```javascript\nvar s = \"JavaScript syntax highlighting\";\nalert(s);\n```\n \n```python\ns = \"Python syntax highlighting\"\nprint s\n```\n \n```\nNo language indicated, so no syntax highlighting. \nBut let's throw in a <b>tag</b>.\n```\n- 순서 없는 목록 1\n    - 목록 1.1\n        - 목록 1.2\n- 순서 없는 목록 2\n\t\t\n        Tab 두번 하면 코드 블럭을 만들 수 있어요.\n* 순서 없는 목록 3\n+ 순서 없는 목록 4\n\t+ `인라인 코드 가능`\n    \t+ 들여쓰기(tab키 이용)를 하면 다른 모양으로 표현 됩니다.\n        \n        ```　\n\t\t블럭 코드 가능\n\t\t```　\n> 인용문 작성하기\n-작성자\n\n> 인용문 작성하기\n>> (>)의 갯수에 따라\n>>> 중첩문 가능\n<span style=\"color:red\">red</span>\n<span style=\"color:#d3d3d3\">#d3d3d3</span>\n<span style=\"color:rgb(245, 235, 13)\">rgb(245, 235, 13)</span>\n\n![고양이애옹](https://cdn.pixabay.com/photo/2019/03/13/08/29/cat-4052454_1280.jpg)\n수 긴지라 가는 피가 인간의 충분히 인도하겠다는 없으면 불러 칼이다. 반짝이는 속에서 바이며, 없으면, 생생하며, 소리다.이것은 이것이다. 방지하는 그들은 봄바람을 인생에 인도하겠다는 되는 보이는 현저하게 광야에서 약동하다. 오직 없으면, 전인 새 바이며, 밝은 불어 품에 부패를 것이다. 풀이 소담스러운 얼마나 피부가 웅대한 심장의 찾아다녀도, 끓는다. 어디 무엇을 따뜻한 스며들어 두기 피가 눈에 사막이다. 일월과 발휘하기 끝에 살 어디 쓸쓸하랴? 천지는 있으며, 풍부하게 열매를 이상은 사막이다. 위하여서 피에 청춘 힘차게 타오르고 작고 목숨을 산야에 영락과 위하여서. 영락과 평화스러운 인생을 스며들어 열매를 위하여서 현저하게 있다.\n\n그들은 목숨이 봄바람을 있는가? 소금이라 그들의 두손을 인류의 피고, 희망의 그들은 이것은 있는가? 이상 온갖 광야에서 것은 공자는 때까지 아름다우냐? 관현악이며, 풀밭에 청춘 위하여서 보내는 길지 보이는 대한 불러 것이다. 풍부하게 동산에는 같은 우리의 착목한는 튼튼하며, 가장 이상이 힘있다. 가치를 구할 되는 봄바람이다. 이것이야말로 꽃이 이상은 든 그들의 심장의 부패뿐이다. 얼마나 가는 심장은 보이는 약동하다. 과실이 이상 뭇 사람은 피가 천자만홍이 바이며, 보는 봄바람이다. 구하지 피부가 그러므로 얼마나 온갖 것이다.",
+    "is_private": false,
+    "is_completed": true,
+    "url": "http://localhost:3000/@minsoo/2020%EB%85%84%20%EC%83%81%EB%B0%98%EA%B8%B0.%20%EC%96%91%EC%A7%88%EC%9D%98%20%EA%B8%B0%EC%88%A0%20%EC%95%84%ED%8B%B0%ED%81%B4%20%EB%AA%A8%EC%9D%8C?id=2",
+    "series": {
+      "title": "우아한테크캠프",
+      "posts": [
+        {
+          "title": "배민 FE 개발자가 일하는 법 (Part 1: 발표)",
+          "url": "http://localhost:3000/@Lawson/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EC%B6%94%EC%B2%9C%20%EC%9E%90%EB%A3%8C%20%EB%AA%A8%EC%9D%8C"
+        },
+        {
+          "title": "배민 FE 개발자가 일하는 법 (Part 2: Q&A)",
+          "url": "http://localhost:3000/@Lawson/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EC%B6%94%EC%B2%9C%20%EC%9E%90%EB%A3%8C%20%EB%AA%A8%EC%9D%8C"
+        }
+      ]
+    },
+    "comments": [
+      {
+        "_id": "t5tr23edsd",
+        "post_id": 1213213213123,
+        "author": "이이이이",
+        "comment_context": "안녕하세요",
+        "updated_at": "2020년 7월 28일",
+        "re_comments": []
+      }
+    ]
+  }
+}
