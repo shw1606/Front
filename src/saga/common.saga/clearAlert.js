@@ -1,4 +1,4 @@
-import { all, delay, fork, takeEvery, put } from "redux-saga/effects";
+import { delay, takeEvery, put } from "redux-saga/effects";
 
 // action
 import {
@@ -14,10 +14,6 @@ function* clearAlert(action) {
   });
 }
 
-function* watchClearAlert() {
+export default function* watchClearAlert() {
   yield takeEvery(LOCAL_REQUEST_CLEAR_ALERT, clearAlert);
-}
-
-export default function* () {
-  yield all([fork(watchClearAlert)]);
 }
