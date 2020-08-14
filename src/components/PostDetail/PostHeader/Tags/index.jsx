@@ -8,8 +8,8 @@ const Tags = () => {
   return(
     <S.TagsWrapper>
       {post.tags &&
-          post.tags.map((tag, index) => (
-              <S.Tag key={index}>
+          post.tags.map(tag => (
+              <S.Tag key={tag.toString()}>
                 <S.StyledLink to={`/tags/${tag}`}>{tag}</S.StyledLink>
               </S.Tag>
           ))
