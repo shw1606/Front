@@ -30,6 +30,6 @@ function* loadRecentPosts(action) {
   }
 }
 
-export function* watchLoadRecentPosts() {
+export default function* watchLoadRecentPosts() {
   yield takeLatest(RECENT_POSTS_LOAD_REQUEST, loadRecentPosts);
 }

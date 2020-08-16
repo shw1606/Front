@@ -8,7 +8,7 @@ import {
 } from "store/actions/postDetailAction";
 
 // dummy
-import dummy from "./postDetailDummy.json";
+import dummy from "../postDetailDummy.json";
 
 function loadPostDetailAPI() {
   return dummy;

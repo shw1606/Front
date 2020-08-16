@@ -3,9 +3,9 @@ import axios from "axios";
 
 //actions
 import {
-  RECENT_POSTS_LOAD_REQUEST,
-  RECENT_POSTS_LOAD_SUCCESS,
-  RECENT_POSTS_LOAD_FAILURE,
+  TRENDING_POSTS_LOAD_REQUEST,
+  TRENDING_POSTS_LOAD_SUCCESS,
+  TRENDING_POSTS_LOAD_FAILURE,
 } from "store/actions/postAction";
 
 import postDummy3 from "saga/aditional2.json";
@@ -20,17 +20,17 @@ function* loadRecentPosts(action) {
     yield delay(1000);
     const result = yield call(loadRecentPostsApi);
     yield put({
-      type: RECENT_POSTS_LOAD_SUCCESS,
+      type: TRENDING_POSTS_LOAD_SUCCESS,
       data: result.data,
     });
   } catch (error) {
     yield put({
-      type: RECENT_POSTS_LOAD_FAILURE,
+      type: TRENDING_POSTS_LOAD_FAILURE,
       data: error,
     });
   }
 }
 
 export default function* watchLoadRecentPosts() {
-  yield takeLatest(RECENT_POSTS_LOAD_REQUEST, loadRecentPosts);
+  yield takeLatest(TRENDING_POSTS_LOAD_REQUEST, loadRecentPosts);
 }
