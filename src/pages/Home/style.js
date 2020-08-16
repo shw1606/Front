@@ -14,8 +14,8 @@ export const MainContainer = styled.div`
     flex: 1 1 0%;
   }
   aside {
-    margin-left: 4rem;
-    width: 12rem;
+    margin-left: 6rem;
+    width: 16rem;
     height: 100%;
   }
 `;
