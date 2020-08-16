@@ -1,8 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
 
 const StyleReset = createGlobalStyle`
-    *, :not ReactMarkdown {
+    *, :not(ReactMarkdown)  {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
