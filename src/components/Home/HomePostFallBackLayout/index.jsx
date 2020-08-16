@@ -14,7 +14,9 @@ const HomePostFallBackLayout = () => {
           {Array(8)
             .fill()
             .map(() => (
-              <FallBackItem />
+              <FallBackItem
+                key={Math.floor(Math.random() * 1000) + "Fallback"}
+              />
             ))}
         </S.Container>
       </S.ContainerWrapper>

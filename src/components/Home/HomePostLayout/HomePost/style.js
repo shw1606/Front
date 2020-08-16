@@ -5,7 +5,7 @@ export const HomePostStyle = styled.li`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 19rem;
+  width: 16rem;
   margin: 1rem;
   border-radius: 4px;
   background: white;

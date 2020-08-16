@@ -1,10 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
 
 const StyleReset = createGlobalStyle`
-    ${reset};
-    * {
+    *, :not(ReactMarkdown)  {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
     html,
     body {
@@ -18,6 +18,9 @@ const StyleReset = createGlobalStyle`
     }
     a {
         text-decoration :none;
+    }
+    table {
+        border-collapse: collapse;
     }
 `;
 
