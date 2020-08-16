@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import * as S from "./style";
 
@@ -14,4 +14,4 @@ const NoticeItem = ({ notice, className }) => {
     </li>
   );
 };
-export default NoticeItem;
+export default memo(NoticeItem);
