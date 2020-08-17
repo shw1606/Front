@@ -16,3 +16,13 @@ export const StyledAsideLinks = styled.div`
 export const StyledCopyright = styled.div`
   color: rgb(173, 181, 189);
 `;
+
+export const StyledAside = styled.div`
+  width: 12rem;
+  @media (max-width: 945px) {
+    display: none;
+  }
+  @media (min-width: 1440px) {
+    width: 16rem;
+  }
+`;
