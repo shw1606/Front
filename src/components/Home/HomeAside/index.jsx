@@ -7,7 +7,7 @@ import * as S from "./style";
 const HomeAside = () => {
   return (
     <>
-      <aside>
+      <S.StyledAside>
         <div>
           <HomeAsideNotice />
           <HomeAsideTags />
@@ -22,7 +22,7 @@ const HomeAside = () => {
             © 2020 · clonelog
           </S.StyledCopyright>
         </S.StyledAsideBottom>
-      </aside>
+      </S.StyledAside>
     </>
   );
 };
