@@ -20,6 +20,7 @@ import StyleReset from "components/styleReset";
 
 // global Layout
 import GlobalLayout from "components/Common/GlobalLayout";
+import User from "./pages/User";
 
 /*
 > Provider : react-redux에서 제공하는 컴포넌트
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/tags" exact component={Tags} />
           <Route path="/tags/:tag" exact component={Tags} />
           <Route path="/@:author/:title" exact component={PostDetail} />
+          <Route path="/@:author" exact component={User} />
         </Switch>
       </GlobalLayout>
     </Provider>
