@@ -1,10 +1,10 @@
-import { all, delay, fork, put, takeLatest } from "redux-saga/effects";
+import { delay, put, takeLatest } from "redux-saga/effects";
 
-function userApi() {
+function laodUserApi() {
   console.log("네트워크 통신 부분");
 }
 
-function* user() {
+function* laodUser() {
   try {
     const result = yield delay(2000);
     yield put({
@@ -19,10 +19,6 @@ function* user() {
   }
 }
 
-function* watchUser() {
-  yield takeLatest("요청 액션 부분", user);
-}
-
-export default function* () {
-  yield all([fork(watchUser)]);
+export default function* watchlaodUser() {
+  yield takeLatest("요청 액션 부분", laodUser);
 }

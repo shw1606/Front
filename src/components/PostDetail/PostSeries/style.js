@@ -41,6 +41,7 @@ export const SeriesList = styled.ol`
   font-size: 1rem;
   color: rgb(73, 80, 87);
   counter-reset: item 0;
+  list-style-type: none;
 `;
 
 export const SeriesItemli = styled.li`

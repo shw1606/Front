@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // componenets
 import CommentContainer from "components/PostDetail/CommentContainer";
@@ -18,6 +18,7 @@ import * as S from "./style";
 
 const PostDetail = ({ match }) => {
   const dispatch = useDispatch();
+  const postInfo = useSelector((state) => state.postDetailReducer.postInfo);
 
   useEffect(() => {
     const { author, title } = match.params;
@@ -29,15 +30,17 @@ const PostDetail = ({ match }) => {
 
   return (
     <>
-      <S.Container>
-        <PostHeader />
-        <PostSeries />
-        <PostContent />
-        <PostUserInfo />
-        <PostSeriesNavigator />
-        <CommentContainer />
-        <LeftButtonsContainer />
-      </S.Container>
+      {postInfo ? (
+        <S.Container>
+          <LeftButtonsContainer />
+          <PostHeader />
+          <PostSeries />
+          <PostContent />
+          <PostUserInfo />
+          <PostSeriesNavigator />
+          <CommentContainer />
+        </S.Container>
+      ) : null}
     </>
   );
 };

@@ -1,9 +1,10 @@
 import { all, call } from "redux-saga/effects";
 
-import postSaga from "saga/postSaga";
-import postDetailSaga from "saga/postDetailSaga";
-import userSaga from "saga/userSaga";
+import common from "./common.saga";
+import home from "./home.saga";
+import postDetail from "./postDetail.saga";
+import user from "./user.saga";
 
 export default function* () {
-  yield all([call(postSaga), call(postDetailSaga), call(userSaga)]);
+  yield all([call(common), call(home), call(postDetail), call(user)]);
 }
