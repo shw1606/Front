@@ -23,6 +23,7 @@ import GlobalLayout from "components/Common/GlobalLayout";
 import User from "./pages/User";
 import UserSeries from "./components/User/UserSeries";
 import UserAbout from "./components/User/UserAbout";
+import UserPostListFallBack from "./components/User/UserPostListFallBack";
 
 /*
 > Provider : react-redux에서 제공하는 컴포넌트
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/@:author/:title" component={PostDetail} />
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
+          <Route path="/fallback" component={UserPostListFallBack} />
         </Switch>
       </GlobalLayout>
     </Provider>

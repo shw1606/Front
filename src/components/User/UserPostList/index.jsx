@@ -1,7 +1,12 @@
-import React, {Fragment} from 'react';
+import React, { Fragment, lazy, Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import * as S from './style';
 import dummy from 'saga/userPostListDummy.json';
 import UserPostListItem from "./UserPostListItem";
+
+import {useInfiniteScroll} from "hooks";
+
+
 
 function UserPostList({ username }) {
   const posts = dummy.data;
