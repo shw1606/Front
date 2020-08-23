@@ -1,14 +1,10 @@
-import React, {useEffect, Fragment} from 'react';
+import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { LOAD_USER_PROFILE_REQUEST } from "store/actions/userAction";
-import dummy from 'saga/userDummy.json';
 import * as S from './style';
 
 const UserProfile = ({ id }) => {
   const dispatch = useDispatch();
-  const userProfile = dummy.data;
-
-  /*
   const userProfile = useSelector((state) => state.userReducer.userProfile);
 
   useEffect(() => {
@@ -18,7 +14,6 @@ const UserProfile = ({ id }) => {
       id
     });
   }, [id]);
-  */
 
   return (
     <>
