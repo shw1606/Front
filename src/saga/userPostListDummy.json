@@ -13,7 +13,8 @@
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
       "heart": 30,
       "created_at": "2020-07-03T08:12:49.927+00:00",
-      "updated_at": "2020-07-03T08:12:49.927+00:00"
+      "updated_at": "2020-07-03T08:12:49.927+00:00",
+      "tags": ["JavaScript", "프론트엔드", "ux", "그리드 뷰", "블로그", "디자인", "A B 테스트", "마이크로서비스", "밋업", "백엔드", "후기", "행사"]
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
       "heart": 29,
       "created_at": "2020-07-05T08:12:49.927+00:00",
-      "updated_at": "2020-07-03T08:12:49.927+00:00"
+      "updated_at": "2020-07-03T08:12:49.927+00:00",
+      "tags": ["블로그", "디자인", "A B 테스트", "마이크로서비스", "밋업", "백엔드", "후기", "행사"]
     },
     {
       "id": 1,
@@ -35,7 +37,8 @@
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
       "heart": 28,
       "created_at": "2020-07-03T08:12:49.927+00:00",
-      "updated_at": "2020-07-03T08:12:49.927+00:00"
+      "updated_at": "2020-07-03T08:12:49.927+00:00",
+      "tags": ["블로그", "디자인", "A B 테스트", "마이크로서비스", "밋업", "백엔드", "후기", "행사"]
     },
     {
       "id": 2,
@@ -46,7 +49,8 @@
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
       "heart": 27,
       "created_at": "2020-07-05T08:12:49.927+00:00",
-      "updated_at": "2020-07-03T08:12:49.927+00:00"
+      "updated_at": "2020-07-03T08:12:49.927+00:00",
+      "tags": ["블로그", "디자인", "A B 테스트", "마이크로서비스", "밋업", "백엔드", "후기", "행사"]
     },
     {
       "id": 1,

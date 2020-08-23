@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
 export const UserPostListWrapper = styled.div`
+  margin-top: 2.5rem;
   width: 100%;
-  @media (max-width: 944px) {
-    width: calc(50% - 2rem);
-  }
-  @media (max-width: 767px) {
-    width: 100%;
-  }
 `;

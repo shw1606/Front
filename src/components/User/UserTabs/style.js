@@ -7,8 +7,12 @@ export const TabsWrapper = styled.div`
 `;
 
 export const UserTab = styled(Link)`
+  display: inline-block;
   color: ${props => props.active === 1 ? '#20c997' : '#212529'};
-  padding: 0 2rem;
+  border-bottom: ${props => props.active === 1 ? '2.5px solid #20c997' : 'none'};
+  transition: all 0.3s, transform 0.3s;
+  width: 8rem;
+  height: 2.7rem;
   font-size: 1.5rem;
   font-weight: bold;
 `;

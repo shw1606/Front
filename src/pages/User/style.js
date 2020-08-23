@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const UserContainer = styled.div`
   padding: 0 4rem 0 4rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
 
   @media (max-width: 1024px) {
     margin-top: 2rem;
