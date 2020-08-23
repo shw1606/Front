@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-
 import * as S from "./style";
 
 const FallBackItem = () => {

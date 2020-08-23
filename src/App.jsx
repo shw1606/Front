@@ -10,6 +10,7 @@ import Home from "pages/Home";
 import Search from "pages/Search";
 import Tags from "pages/Tags";
 import PostDetail from "pages/PostDetail";
+import User from "./pages/User";
 
 // root redux & root saga
 import RootRedux from "store/index";
@@ -20,10 +21,8 @@ import StyleReset from "components/styleReset";
 
 // global Layout
 import GlobalLayout from "components/Common/GlobalLayout";
-import User from "./pages/User";
-import UserSeries from "./components/User/UserSeries";
-import UserAbout from "./components/User/UserAbout";
-import UserPostListFallBack from "./components/User/UserPostListFallBack";
+
+import UserSeriesFallBack from "./components/User/UserSeriesFallBack";
 
 /*
 > Provider : react-redux에서 제공하는 컴포넌트
@@ -45,6 +44,7 @@ const App = () => {
           <Route path="/@:author/:title" component={PostDetail} />
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
+          <Route path="/fallback" component={UserSeriesFallBack} />
         </Switch>
       </GlobalLayout>
     </Provider>

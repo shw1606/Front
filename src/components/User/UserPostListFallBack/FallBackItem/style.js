@@ -7,14 +7,10 @@ export const FallBackItemWrapper = styled.div`
   background: white;
   margin-bottom: 3rem;
   border-bottom: 1px solid #e9ecef;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
-  transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 `;
 
 export const ImageWrapper = styled.div`
   display: block;
-  color: inherit;
-  text-decoration: none;
   position: relative;
   width: 100%;
   padding-top: 52.1921%;
