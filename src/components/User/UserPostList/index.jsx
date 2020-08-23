@@ -14,7 +14,7 @@ function UserPostList() {
             <UserPostListItem post={post}/>
           )}
           </Fragment>
-        : <div> 포스트가 없습니다. </div>
+        : <S.UserPostNotFound> 포스트가 없습니다. </S.UserPostNotFound>
       }
     </S.UserPostListWrapper>
   );

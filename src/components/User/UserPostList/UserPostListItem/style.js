@@ -34,7 +34,7 @@ export const PostImageWrapper = styled.div`
     height: 100%;
     display: block;
     object-fit: cover;
-  
+  }
 `;
 
 export const PostContent = styled.div`

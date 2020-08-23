@@ -1,0 +1,51 @@
+{
+  "status": 200,
+  "message": "ok",
+  "data": [
+    {
+      "id": 1213213213123,
+      "user_id": 121321321312,
+      "name": "벨로그에 그리드뷰 되살리기",
+      "thumbnail": "https://cdn.pixabay.com/photo/2020/08/11/21/39/clouds-5481190_1280.jpg",
+      "url_slug": "grid",
+      "posts": 3,
+      "updated_at": "2020년 7월 28일"
+    },
+    {
+      "id": 121321213113123,
+      "user_id": 121321321312,
+      "name": "벨로그에 그리드뷰 되살리기",
+      "thumbnail": "https://cdn.pixabay.com/photo/2020/04/27/17/42/sand-5100918_1280.jpg",
+      "url_slug": "grid",
+      "posts": 3,
+      "updated_at": "2020년 7월 28일"
+    },
+    {
+      "id": 12132121387827,
+      "user_id": 121321321312,
+      "name": "벨로그에 그리드뷰 되살리기",
+      "thumbnail": "https://cdn.pixabay.com/photo/2020/08/11/21/39/clouds-5481190_1280.jpg",
+      "url_slug": "grid",
+      "posts": 3,
+      "updated_at": "2020년 7월 28일"
+    },
+    {
+      "id": 43837721387827,
+      "user_id": 121321321312,
+      "name": "벨로그에 그리드뷰 되살리기",
+      "thumbnail": "https://cdn.pixabay.com/photo/2020/04/27/17/42/sand-5100918_1280.jpg",
+      "url_slug": "grid",
+      "posts": 3,
+      "updated_at": "2020년 7월 28일"
+    },
+    {
+      "id": 438371123387827,
+      "user_id": 121321321312,
+      "name": "벨로그에 그리드뷰 되살리기",
+      "thumbnail": "https://cdn.pixabay.com/photo/2020/04/27/17/42/sand-5100918_1280.jpg",
+      "url_slug": "grid",
+      "posts": 3,
+      "updated_at": "2020년 7월 28일"
+    }
+  ]
+}

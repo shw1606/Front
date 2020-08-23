@@ -1,10 +1,20 @@
 import React from 'react';
-import UserProfile from "../UserProfile";
+import * as S from './style';
+import dummy from 'saga/UserSeriesDummy.json'
+import UserSeriesListItem from "./UserSeriesListItem";
 
 const UserSeries = () => {
+  const seriesList = dummy.data;
+
   return (
     <>
-      <div> UserSeries </div>
+      {seriesList
+        ? <S.UserSeriesGridLayout>
+          {seriesList.map(series =>
+            <UserSeriesListItem series={series} key={series.id}/>)}
+          </S.UserSeriesGridLayout>
+        : <S.SeriesNotFound> 시리즈가 없습니다. </S.SeriesNotFound>
+      }
     </>
   );
 };

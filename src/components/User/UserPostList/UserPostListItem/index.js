@@ -12,7 +12,7 @@ const UserPostListItem = ({ post, username }) => {
       {thumbnail &&
       <S.PostImageWrapper>
         <Link to={link}>
-          <img src={thumbnail} alt={`${title}/thumbnail`} />
+          <img src={thumbnail} alt={`${title}_thumbnail`} />
         </Link>
       </S.PostImageWrapper>
       }
