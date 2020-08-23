@@ -15,19 +15,22 @@ function loadUserProfileAPI(id) {
 function* loadUserProfile(action) {
   try {
     const result = yield call(loadUserProfileAPI, action.id);
+    yield console.log("API 호출");
     yield put({
       type: LOAD_USER_PROFILE_SUCCESS,
       data: result.data
     });
+    yield console.log("성공");
   } catch (error) {
     yield put({
       type: LOAD_USER_PROFILE_FAILURE,
       data: error
     })
+    yield console.log("실패");
   }
 }
 
 
 export default function* watchLoadUser() {
-  yield takeLatest(LOAD_USER_PROFILE_REQUEST, loadUserProfile);
+
 }

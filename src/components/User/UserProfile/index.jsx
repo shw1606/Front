@@ -4,13 +4,15 @@ import { LOAD_USER_PROFILE_REQUEST } from "store/actions/userAction";
 import dummy from 'saga/userDummy.json';
 import * as S from './style';
 
-const UserHeader = ({ id }) => {
+const UserProfile = ({ id }) => {
   const dispatch = useDispatch();
   const userProfile = dummy.data;
+
   /*
   const userProfile = useSelector((state) => state.userReducer.userProfile);
 
   useEffect(() => {
+    console.log("dispatch");
     dispatch({
       type: LOAD_USER_PROFILE_REQUEST,
       id
@@ -33,4 +35,4 @@ const UserHeader = ({ id }) => {
   );
 };
 
-export default UserHeader;
+export default UserProfile;
