@@ -45,7 +45,6 @@ const App = () => {
           <Route path="/@:author/:title" component={PostDetail} />
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
-          <Route path="/fallback" component={UserPostListFallBack} />
         </Switch>
       </GlobalLayout>
     </Provider>

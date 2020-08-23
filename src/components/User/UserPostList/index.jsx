@@ -1,27 +1,48 @@
 import React, { Fragment, lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import * as S from './style';
-import dummy from 'saga/userPostListDummy.json';
-import UserPostListItem from "./UserPostListItem";
 
+// component
+import UserPostListFallBack from "../UserPostListFallBack";
+
+// action
+import { LOAD_USER_POSTS_REQUEST } from "store/actions/userAction";
+
+// custom hooks
 import {useInfiniteScroll} from "hooks";
 
-
+// lazy component
+const UserPostListItem = lazy(() => import("./UserPostListItem"));
 
 function UserPostList({ username }) {
-  const posts = dummy.data;
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.userReducer.posts);
+
+  const showPostFallback = useSelector((state) => state.userReducer.showPostFallback);
+  const hasMorePosts = useSelector((state) => state.userReducer.hasMorePosts);
+
+  useEffect(() => {
+    dispatch({ type: LOAD_USER_POSTS_REQUEST })
+  }, []);
+
+  useInfiniteScroll(posts, hasMorePosts, 0.75, LOAD_USER_POSTS_REQUEST);
 
   return (
-    <S.UserPostListWrapper>
-      {posts
-        ? <Fragment>
-          {posts.map(post =>
-            <UserPostListItem post={post} username={username}/>
-          )}
-          </Fragment>
-        : <S.UserPostNotFound> 포스트가 없습니다. </S.UserPostNotFound>
-      }
-    </S.UserPostListWrapper>
+    <>
+      <Suspense fallback="">
+        <S.UserPostListWrapper>
+          {posts
+            ? <Fragment>
+              {posts.map(post =>
+                <UserPostListItem post={post} username={username}/>
+              )}
+            </Fragment>
+            : <S.UserPostNotFound> 포스트가 없습니다. </S.UserPostNotFound>
+          }
+        </S.UserPostListWrapper>
+      </Suspense>
+      {showPostFallback || <UserPostListFallBack/>}
+    </>
   );
 }
 
