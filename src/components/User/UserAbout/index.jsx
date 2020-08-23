@@ -1,12 +1,18 @@
 import React from 'react';
+import * as S from './style';
 import dummy from 'saga/postDetailDummy.json';
 import MarkdownViewer from "../../Common/MarkdownViewer";
 
 const UserAbout = () => {
-  const about = dummy.data.context;
+  const about = null;
 
   return (
-    <MarkdownViewer content={about} />
+    <>
+      {about
+        ? <MarkdownViewer content={about}/>
+        : <S.UserAboutNotFound> 소개가 작성되지 않았습니다. </S.UserAboutNotFound>
+      }
+    </>
   );
 };
 

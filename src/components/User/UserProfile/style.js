@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const UserInfoWrapper = styled.div`
-    padding-bottom: 1.5em;
+    padding-bottom: 2.5em;
     border-bottom: 1px solid #e9ecef;
     display: flex;
     @media (max-width: 768px) {
