@@ -1,10 +1,12 @@
 import React from 'react';
+import dummy from 'saga/postDetailDummy.json';
+import MarkdownViewer from "../../Common/MarkdownViewer";
 
 const UserAbout = () => {
+  const about = dummy.data.context;
+
   return (
-    <>
-      <div> UserAbout </div>
-    </>
+    <MarkdownViewer content={about} />
   );
 };
 
