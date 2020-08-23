@@ -22,8 +22,6 @@ import StyleReset from "components/styleReset";
 // global Layout
 import GlobalLayout from "components/Common/GlobalLayout";
 
-import UserSeriesFallBack from "./components/User/UserSeriesFallBack";
-
 /*
 > Provider : react-redux에서 제공하는 컴포넌트
 > StyleReset : 모든 페이지에 공통적으로 적용되는 style reset
@@ -44,7 +42,6 @@ const App = () => {
           <Route path="/@:author/:title" component={PostDetail} />
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
-          <Route path="/fallback" component={UserSeriesFallBack} />
         </Switch>
       </GlobalLayout>
     </Provider>

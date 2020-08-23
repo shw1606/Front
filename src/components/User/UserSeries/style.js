@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const UserSeriesGridLayout = styled.main`
+export const UserSeriesLayout = styled.main`
   margin-top: 2.5rem;
   width: 100%;
   display: flex;

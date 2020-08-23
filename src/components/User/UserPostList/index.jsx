@@ -9,17 +9,17 @@ import UserPostListFallBack from "../UserPostListFallBack";
 import { LOAD_USER_POSTS_REQUEST } from "store/actions/userAction";
 
 // custom hooks
-import {useInfiniteScroll} from "hooks";
+import { useInfiniteScroll } from "hooks";
 
 // lazy component
 const UserPostListItem = lazy(() => import("./UserPostListItem"));
 
 function UserPostList({ username }) {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.userReducer.posts);
+  const posts = useSelector(state => state.userReducer.posts);
 
-  const showPostFallback = useSelector((state) => state.userReducer.showPostFallback);
-  const hasMorePosts = useSelector((state) => state.userReducer.hasMorePosts);
+  const showPostFallback = useSelector(state => state.userReducer.showPostFallback);
+  const hasMorePosts = useSelector(state => state.userReducer.hasMorePosts);
 
   useEffect(() => {
     dispatch({ type: LOAD_USER_POSTS_REQUEST })

@@ -12,11 +12,20 @@ import {
   LOAD_USER_POSTS_SUCCESS,
   LOAD_USER_POSTS_FAILURE
 } from "store/actions/userAction";
+//유저가 작성한 시리즈 목록 load action
+import {
+  LOAD_USER_SERIES_LIST_REQUEST,
+  LOAD_USER_SERIES_LIST_SUCCESS,
+  LOAD_USER_SERIES_LIST_FAILURE
+} from "store/actions/userAction";
 
 const initialState = {
   posts: [],
   hasMorePosts: [],
   showPostFallback: true,
+  seriesList: [],
+  hasMoreSeries: [],
+  showSeriesFallback: true,
   userProfile: null
 };
 
@@ -45,6 +54,20 @@ const UserReducer = (state = initialState, action) => {
       }
       case LOAD_USER_POSTS_FAILURE: {
         draft.showPostFallback = false;
+        break;
+      }
+      case LOAD_USER_SERIES_LIST_REQUEST: {
+        draft.showSeriesFallback = false;
+        break;
+      }
+      case LOAD_USER_SERIES_LIST_SUCCESS: {
+        draft.hasMoreSeries = action.data.length === 20;
+        draft.seriesList.push(...action.data);
+        draft.showSeriesFallback = true;
+        break;
+      }
+      case LOAD_USER_SERIES_LIST_FAILURE: {
+        draft.showSeriesFallback = false;
         break;
       }
       default: {
