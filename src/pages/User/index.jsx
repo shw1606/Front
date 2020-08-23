@@ -9,17 +9,22 @@ import UserAbout from "../../components/User/UserAbout";
 import UserPostList from "../../components/User/UserPostList";
 
 const User = () => {
-  const { tab } = useParams();
-  const username = "test123";
+  const { username, tab } = useParams();
 
   return (
     <S.UserContainer>
-      <UserProfile id="test123"/>
+      <UserProfile username={username}/>
       <UserTabs type={tab} username={username} />
       <Switch>
-        <Route path={`/profile/@${username}`} exact component={UserPostList} />
-        <Route path={`/profile/@${username}/series`} component={UserSeries} />
-        <Route path={`/profile/@${username}/about`} component={UserAbout} />
+        <Route exact path={`/profile/@${username}`}>
+          <UserPostList username={username}/>
+        </Route>
+        <Route path={`/profile/@${username}/series`}>
+          <UserSeries username={username}/>
+        </Route>
+        <Route path={`/profile/@${username}/about`} component={UserAbout}>
+          <UserAbout username={username}/>
+        </Route>
       </Switch>
     </S.UserContainer>
 

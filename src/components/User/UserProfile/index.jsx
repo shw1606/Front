@@ -8,7 +8,6 @@ const UserProfile = ({ id }) => {
   const userProfile = useSelector((state) => state.userReducer.userProfile);
 
   useEffect(() => {
-    console.log("dispatch");
     dispatch({
       type: LOAD_USER_PROFILE_REQUEST,
       id

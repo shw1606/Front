@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const UserSeriesListItem = ({ series, username }) => {
   const { name, thumbnail, url_slug, posts, updated_at } = series;
-  const link = `/${username}/${url_slug}`;
+  const link = `/${username}/series/${url_slug}`;
 
   return (
     <S.SeriesCardWrapper>

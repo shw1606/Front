@@ -42,8 +42,8 @@ const App = () => {
           <Route path="/tags" exact component={Tags} />
           <Route path="/tags/:tag" exact component={Tags} />
           <Route path="/@:author/:title" component={PostDetail} />
-          <Route path="/profile/@:author" exact component={User} />
-          <Route path="/profile/@:author/:tab" component={User} />
+          <Route path="/profile/@:username" exact component={User} />
+          <Route path="/profile/@:username/:tab" component={User} />
         </Switch>
       </GlobalLayout>
     </Provider>

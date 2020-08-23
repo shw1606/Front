@@ -5,7 +5,7 @@ import * as S from './style';
 
 const UserPostListItem = ({ post, username }) => {
   const { title, content, thumbnail, updated_at, heart, tags } = post;
-  const link = `/${username}/${title}`;
+  const link = `/@${username}/${title}`;
 
   return (
     <S.UserPostCard>

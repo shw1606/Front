@@ -3,7 +3,7 @@ import * as S from './style';
 import dummy from 'saga/UserSeriesDummy.json'
 import UserSeriesListItem from "./UserSeriesListItem";
 
-const UserSeries = () => {
+const UserSeries = ({ username }) => {
   const seriesList = dummy.data;
 
   return (
@@ -11,7 +11,7 @@ const UserSeries = () => {
       {seriesList
         ? <S.UserSeriesGridLayout>
           {seriesList.map(series =>
-            <UserSeriesListItem series={series} key={series.id}/>)}
+            <UserSeriesListItem series={series} username={username} key={series.id}/>)}
           </S.UserSeriesGridLayout>
         : <S.SeriesNotFound> 시리즈가 없습니다. </S.SeriesNotFound>
       }

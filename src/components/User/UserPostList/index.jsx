@@ -3,7 +3,7 @@ import * as S from './style';
 import dummy from 'saga/userPostListDummy.json';
 import UserPostListItem from "./UserPostListItem";
 
-function UserPostList() {
+function UserPostList({ username }) {
   const posts = dummy.data;
 
   return (
@@ -11,7 +11,7 @@ function UserPostList() {
       {posts
         ? <Fragment>
           {posts.map(post =>
-            <UserPostListItem post={post}/>
+            <UserPostListItem post={post} username={username}/>
           )}
           </Fragment>
         : <S.UserPostNotFound> 포스트가 없습니다. </S.UserPostNotFound>
