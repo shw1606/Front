@@ -4,6 +4,7 @@ import * as S from './style';
 
 // component
 import UserPostListFallBack from "../UserPostListFallBack";
+import UserTags from "../UserTags";
 
 // action
 import { LOAD_USER_POSTS_REQUEST } from "store/actions/userAction";
@@ -22,13 +23,14 @@ function UserPostList({ username }) {
   const hasMorePosts = useSelector(state => state.userReducer.hasMorePosts);
 
   useEffect(() => {
-    dispatch({ type: LOAD_USER_POSTS_REQUEST })
+    dispatch({ type: LOAD_USER_POSTS_REQUEST, user_id: 1234321, tag_id: 1 })
   }, []);
 
   useInfiniteScroll(posts, hasMorePosts, 0.75, LOAD_USER_POSTS_REQUEST);
 
   return (
     <>
+      <UserTags/>
       <Suspense fallback="">
         <S.UserPostListWrapper>
           {posts

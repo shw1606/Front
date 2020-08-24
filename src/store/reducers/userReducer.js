@@ -24,16 +24,23 @@ import {
   LOAD_USER_INTRODUCTION_SUCCESS,
   LOAD_USER_INTRODUCTION_FAILURE
 } from "store/actions/userAction";
+//유저가 작성한 글 목록에 포함된 태그 load action
+import {
+  LOAD_USER_TAGS_REQUEST,
+  LOAD_USER_TAGS_SUCCESS,
+  LOAD_USER_TAGS_FAILURE
+} from "store/actions/userAction";
 
 const initialState = {
   posts: [],
-  hasMorePosts: [],
-  showPostFallback: true,
+  hasMorePosts: true,
+  showPostFallback: false,
   seriesList: [],
-  hasMoreSeries: [],
-  showSeriesFallback: true,
+  hasMoreSeries: true,
+  showSeriesFallback: false,
   userProfile: null,
-  userInstruction: null
+  userInstruction: null,
+  tags: []
 };
 
 const UserReducer = (state = initialState, action) => {
@@ -85,6 +92,16 @@ const UserReducer = (state = initialState, action) => {
         break;
       }
       case LOAD_USER_INTRODUCTION_FAILURE: {
+        break;
+      }
+      case LOAD_USER_TAGS_REQUEST: {
+        break;
+      }
+      case LOAD_USER_TAGS_SUCCESS: {
+        draft.tags = action.data;
+        break;
+      }
+      case LOAD_USER_TAGS_FAILURE: {
         break;
       }
       default: {
