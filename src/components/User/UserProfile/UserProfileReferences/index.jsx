@@ -15,29 +15,19 @@ const UserProfileReferences = ({ userProfile }) => {
   return (
     <S.UserProfileReferencesWrapper>
       {profile_github &&
-        <Link to={profile_github}>
-          <AiFillGithub/>
-        </Link>
+        <a href={profile_github} target="_blank"> <AiFillGithub/> </a>
       }
       {profile_twitter &&
-        <Link to={profile_twitter}>
-          <AiOutlineTwitter/>
-        </Link>
+        <a href={profile_twitter} target="_blank"> <AiOutlineTwitter/> </a>
       }
       {profile_facebook &&
-        <Link to={profile_facebook}>
-          <FaFacebookSquare/>
-        </Link>
+        <a href={profile_facebook} target="_blank"> <FaFacebookSquare/> </a>
       }
       {profile_homepage &&
-        <Link to={profile_homepage}>
-          <IoMdHome/>
-        </Link>
+        <a href={profile_homepage} target="_blank"> <IoMdHome/> </a>
       }
       {profile_email &&
-        <Link to={profile_email}>
-          <GrMail/>
-        </Link>
+        <a href={`mailto:${profile_email}`}> <GrMail/> </a>
       }
     </S.UserProfileReferencesWrapper>
   );

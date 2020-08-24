@@ -8,11 +8,11 @@
     "velog_name": "test의 벨로그",
     "short_bio": "프론트엔드 개발 공부중입니다.",
     "thumbnail": "https://cdn.pixabay.com/photo/2020/07/26/20/52/woman-5440728_1280.jpg",
-    "profile_twitter": "twitter.com",
-    "profile_github": "github.com",
+    "profile_twitter": "https://twitter.com/velopert",
+    "profile_github": "https://github.com/JangJua",
     "profile_email": "test@test.com",
-    "profile_facebook": "facebook.com",
-    "profile_homepage": "home.com",
+    "profile_facebook": "https://www.facebook.com/",
+    "profile_homepage": "https://velopert.com/",
     "about": "블로그 소개입니다"
   }
 }
