@@ -4,6 +4,9 @@ import {Link} from "react-router-dom";
 export const TabsWrapper = styled.div`
   margin-top: 7rem;
   text-align: center;
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+  }
 `;
 
 export const UserTab = styled(Link)`
@@ -15,4 +18,9 @@ export const UserTab = styled(Link)`
   height: 3rem;
   font-size: 1.6rem;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    width: calc(100% / 3);
+    height: 30px;
+  }
 `;

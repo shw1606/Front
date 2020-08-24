@@ -12,6 +12,11 @@ export const UserPostCard = styled.div`
     color: #212529;
     }
   }
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 15px;
+    }
+  }
 `;
 
 export const PostImageWrapper = styled.div`
@@ -40,12 +45,19 @@ export const PostImageWrapper = styled.div`
 export const PostContent = styled.div`
   font-size: 1.3rem;
   color: #495057;
+  line-height: 1.6em;
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 export const TagsWrapper = styled.div`
-  margin-top: 3rem;
+  margin-top: 3em;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    margin-top: 2em;
+  }
 `;
 
 export const Tag = styled(Link)`
@@ -59,11 +71,14 @@ export const Tag = styled(Link)`
   &:hover {
     background-color: #f8f9fa;
   }
+  @media (max-width: 768px) {
+    font-size: 11px;
+  }
 `;
 
 export const PostSubInfo = styled.div`
   display: flex;
-  margin-top: 0.3em;
+  margin-top: 0.5em;
   margin-bottom: 3rem;
   span {
     margin-right: 1em;
@@ -73,5 +88,10 @@ export const PostSubInfo = styled.div`
     height: 1rem;
     margin-right: 0.5em;
     color: black;
+  }
+  @media (max-width: 768px) {
+    margin-top: 0.7em;
+    margin-bottom: 2em;
+    font-size: 11px;
   }
 `;
