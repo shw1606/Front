@@ -95,6 +95,7 @@ const UserReducer = (state = initialState, action) => {
         break;
       }
       case LOAD_USER_TAGS_REQUEST: {
+        draft.posts = [];
         break;
       }
       case LOAD_USER_TAGS_SUCCESS: {

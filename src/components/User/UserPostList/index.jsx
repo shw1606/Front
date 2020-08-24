@@ -1,5 +1,6 @@
 import React, { Fragment, lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import * as S from './style';
 
 // component
@@ -22,9 +23,14 @@ function UserPostList({ username }) {
   const showPostFallback = useSelector(state => state.userReducer.showPostFallback);
   const hasMorePosts = useSelector(state => state.userReducer.hasMorePosts);
 
+  const query = new URLSearchParams(useLocation().search);
+  const currentTag = query.get("tag");
+
+  // 사용자가 선택한 태그에 따라 글 목록을 가져옴
   useEffect(() => {
-    dispatch({ type: LOAD_USER_POSTS_REQUEST, user_id: 1234321, tag_id: 1 })
-  }, []);
+    dispatch({ type: LOAD_USER_POSTS_REQUEST, user_id: 1234321, tag: currentTag });
+  }, [currentTag]);
+
 
   useInfiniteScroll(posts, hasMorePosts, 0.75, LOAD_USER_POSTS_REQUEST);
 
