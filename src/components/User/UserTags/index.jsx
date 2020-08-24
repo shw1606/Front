@@ -10,7 +10,6 @@ const UserTags = ({ username }) => {
 
   const query = new URLSearchParams(useLocation().search);
   const currentTag = query.get("tag");
-  const location = useLocation();
 
   useEffect(() => {
     dispatch({
