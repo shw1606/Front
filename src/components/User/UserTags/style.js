@@ -14,8 +14,11 @@ export const Tag = styled.li`
   margin-right: 1rem;
   padding: 0.3em 1rem;
   flex-shrink: 0;
-  color: #343a40;
+  cursor: pointer;
   background-color: #f1f3f5;
+  a {
+    color: #343a40;
+  }
 `;
 
 export const TagsAll = styled.li`
@@ -25,6 +28,9 @@ export const TagsAll = styled.li`
   margin-right: 1rem;
   padding: 0.3em 1rem;
   flex-shrink: 0;
-  color: #fff;
+  cursor: pointer;
   background-color: #12b886;
+  a {
+    color: #fff;
+  }
 `;

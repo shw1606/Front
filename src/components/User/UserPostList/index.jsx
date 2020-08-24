@@ -30,7 +30,7 @@ function UserPostList({ username }) {
 
   return (
     <>
-      <UserTags/>
+      <UserTags username={username}/>
       <Suspense fallback="">
         <S.UserPostListWrapper>
           {posts
