@@ -18,6 +18,12 @@ import {
   LOAD_USER_SERIES_LIST_SUCCESS,
   LOAD_USER_SERIES_LIST_FAILURE
 } from "store/actions/userAction";
+//유저의 소개 load action
+import {
+  LOAD_USER_INTRODUCTION_REQUEST,
+  LOAD_USER_INTRODUCTION_SUCCESS,
+  LOAD_USER_INTRODUCTION_FAILURE
+} from "store/actions/userAction";
 
 const initialState = {
   posts: [],
@@ -26,7 +32,8 @@ const initialState = {
   seriesList: [],
   hasMoreSeries: [],
   showSeriesFallback: true,
-  userProfile: null
+  userProfile: null,
+  userInstruction: null
 };
 
 const UserReducer = (state = initialState, action) => {
@@ -68,6 +75,16 @@ const UserReducer = (state = initialState, action) => {
       }
       case LOAD_USER_SERIES_LIST_FAILURE: {
         draft.showSeriesFallback = false;
+        break;
+      }
+      case LOAD_USER_INTRODUCTION_REQUEST: {
+        break;
+      }
+      case LOAD_USER_INTRODUCTION_SUCCESS: {
+        draft.userInstruction = action.data;
+        break;
+      }
+      case LOAD_USER_INTRODUCTION_FAILURE: {
         break;
       }
       default: {
