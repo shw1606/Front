@@ -5,7 +5,7 @@ import UserButton from "./UserButton";
 import SearchButton from "./SearchButton";
 
 const Header = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
     return (
         <S.HeaderLayout>

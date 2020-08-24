@@ -26,7 +26,7 @@ function DropdownMenu({ username }) {
       </DropdownBtn>
       {dropdownVisible && (
         <DropdownContent ref={contentRef}>
-          <StyledLink to="/"> 내 벨로그 </StyledLink>
+          <StyledLink to={`/profile/@${username}`}> 내 벨로그 </StyledLink>
           <StyledLink to="/"> 임시 글 </StyledLink>
           <StyledLink to="/"> 읽기 목록 </StyledLink>
           <StyledLink to="/"> 설정 </StyledLink>
