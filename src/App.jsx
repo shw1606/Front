@@ -9,6 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import Home from "pages/Home";
 import Search from "pages/Search";
 import Tags from "pages/Tags";
+import Register from "pages/Register";
 import PostDetail from "pages/PostDetail";
 
 // root redux & root saga
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/tags" exact component={Tags} />
           <Route path="/tags/:tag" exact component={Tags} />
           <Route path="/@:author/:title" exact component={PostDetail} />
+          <Route path="/register" component={Register} />
         </Switch>
       </GlobalLayout>
     </Provider>
