@@ -1,23 +1,28 @@
-import React from "react";
+import React, { useMemo } from "react";
 import * as S from "./style";
 import LoginButton from "./LoginButton";
 import UserButton from "./UserButton";
 import SearchButton from "./SearchButton";
+import { withRouter } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ location }) => {
   const isLoggedIn = true;
+  const url = useMemo(() => location.pathname.includes("register"), [
+    location.pathname,
+  ]);
 
-    return (
+  return (
+    <>
+      {url ? null : (
         <S.HeaderLayout>
-            <S.HeaderLogo to="/"> clonelog </S.HeaderLogo>
-            <S.Menu>
-                <SearchButton/>
-                {isLoggedIn
-                    ? <UserButton/>
-                    : <LoginButton/>
-                }
-            </S.Menu>
+          <S.HeaderLogo to="/"> clonelog </S.HeaderLogo>
+          <S.Menu>
+            <SearchButton />
+            {isLoggedIn ? <UserButton /> : <LoginButton />}
+          </S.Menu>
         </S.HeaderLayout>
-    );
+      )}
+    </>
+  );
 };
-export default Header;
+export default withRouter(Header);

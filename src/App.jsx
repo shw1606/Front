@@ -9,6 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import Home from "pages/Home";
 import Search from "pages/Search";
 import Tags from "pages/Tags";
+import Register from "pages/Register";
 import PostDetail from "pages/PostDetail";
 import User from "./pages/User";
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/@:author/:title" component={PostDetail} />
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
+          <Route path="/register" component={Register} />
         </Switch>
       </GlobalLayout>
     </Provider>

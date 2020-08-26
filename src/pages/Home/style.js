@@ -10,7 +10,6 @@ export const MainContainer = styled.div`
   height: 100%;
   margin-top: 2rem;
   main {
-    width: 100%;
     flex: 1 1 0%;
   }
   aside {
