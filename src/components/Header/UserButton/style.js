@@ -28,11 +28,14 @@ export const WriteBtn = styled.button`
 
 export const DropdownBtn = styled.div`
     display: flex;
-    width: px;
 `;
 
 export const ArrowDown = styled(TiArrowSortedDown)`
-    margin: 0.5em 0 0 3px;
+    position: relative;
+    margin-left: 5px;
+    top: 9px;
+    width: 18px; 
+    height: 18px;
     color: #d4d4d4;
     &:hover {
         color: #212529;
@@ -50,7 +53,7 @@ export const DropdownMenuWrapper = styled.div`
     float: right;
     position: relative;
     border: none;
-    margin: 17px 0 0 1em;
+    margin: 17px 0 0 12px;
     padding: 0;
     cursor: pointer;
 `;
@@ -58,7 +61,7 @@ export const DropdownMenuWrapper = styled.div`
 export const DropdownContent = styled.div`
     position: absolute;
     background-color: white;
-    width: 150px;
+    width: 170px;
     margin-top: 0.3em;
     right: 0; 
     border-radius: 2%;
@@ -68,8 +71,8 @@ export const DropdownContent = styled.div`
 
 export const StyledLink = styled(NavLink)`
     color: black;
-    padding: 1em 0.5em 1em 0.5em;
-    font-size: 2vh;
+    padding: 10px;
+    font-size: 15px;
     text-decoration: none;
     display: block;
     &:hover {

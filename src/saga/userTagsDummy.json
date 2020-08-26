@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "tag_id": 1,
+      "name": "TIL"
+    },
+    {
+      "tag_id": 2,
+      "name": "JavaScript"
+    },
+    {
+      "tag_id": 3,
+      "name": "알고리즘"
+    },
+    {
+      "tag_id": 4,
+      "name": "React"
+    },
+    {
+      "tag_id": 5,
+      "name": "python"
+    },
+    {
+      "tag_id": 6,
+      "name": "WeCode"
+    },
+    {
+      "tag_id": 7,
+      "name": "CSS"
+    },
+    {
+      "tag_id": 8,
+      "name": "html"
+    },
+    {
+      "tag_id": 9,
+      "name": "django"
+    },
+    {
+      "tag_id": 10,
+      "name": "html"
+    },
+    {
+      "tag_id": 11,
+      "name": "jwt"
+    },
+    {
+      "tag_id": 12,
+      "name": "OS"
+    },
+    {
+      "tag_id": 13,
+      "name": "네트워크"
+    },
+    {
+      "tag_id": 10,
+      "name": "C#####"
+    }
+  ]
+}

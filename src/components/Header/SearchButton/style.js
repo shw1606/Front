@@ -13,7 +13,7 @@ export const SearchButtonWrapper = styled.div`
 `;
 
 export const SearchIcon = styled(FiSearch)`
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     color: black;
 `;

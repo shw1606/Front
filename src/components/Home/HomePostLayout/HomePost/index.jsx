@@ -11,7 +11,7 @@ const HomePost = ({ data }) => {
       <S.HomePostStyle>
         <S.PostImage to={`/@${data.author}/${data.title}`}>
           <div>
-            <img src={data.thumnail} />
+            <img src={data.thumbnail} />
           </div>
         </S.PostImage>
         <S.MainInfo>
