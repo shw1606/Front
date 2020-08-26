@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export const HomePostStyle = styled.li`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  width: 16rem;
+  width: 20rem;
   margin: 1rem;
   border-radius: 4px;
   background: white;
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
   @media (max-width: 944px) {
@@ -16,6 +16,7 @@ export const HomePostStyle = styled.li`
   }
   @media (max-width: 767px) {
     width: 100%;
+    margin: 0px;
   }
 `;
 
