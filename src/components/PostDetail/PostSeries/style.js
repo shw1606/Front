@@ -16,6 +16,8 @@ export const PostSeriesContainer = styled.div`
   padding: 2rem 1.5rem;
   background: rgb(248, 249, 250);
   border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const PostSeriesh2 = styled.h2`
@@ -39,16 +41,6 @@ export const SeriesList = styled.ol`
   font-size: 1rem;
   color: rgb(73, 80, 87);
   counter-reset: item 0;
-  /* a {
-    text-decoration: none;
-  }
-  li::before {
-    content: counter(item) ". ";
-    counter-increment: item 1;
-    color: rgb(173, 181, 189);
-    font-style: italic;
-    margin-right: 0.25rem;
-  } */
 `;
 
 export const SeriesItemli = styled.li`

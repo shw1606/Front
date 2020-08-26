@@ -74,25 +74,60 @@ const PostSeries = () => {
             </div>
             <S.StyledIndexWrapper>
               <div className="series-number">
-                {id.current + 1}/{seriesList.posts.length}
+                {seriesList.posts.findIndex(
+                  (post) => post.title === postTitle
+                ) + 1}
+                /{seriesList.posts.length}
               </div>
               <S.StyledButtonWrapper>
-                <S.StyledButton disabled={id.current === 0}>
-                  {id.current === 0 ? (
+                <S.StyledButton
+                  disabled={
+                    seriesList.posts.findIndex(
+                      (post) => post.title === postTitle
+                    ) === 0
+                  }
+                >
+                  {seriesList.posts.findIndex(
+                    (post) => post.title === postTitle
+                  ) === 0 ? (
                     <S.StyledLeftArrow />
                   ) : (
-                    <S.ArrowButtonLink to={seriesList.posts[id.current].url}>
+                    <S.ArrowButtonLink
+                      to={
+                        seriesList.posts[
+                          seriesList.posts.findIndex(
+                            (post) => post.title === postTitle
+                          ) - 1
+                        ].url
+                      }
+                    >
                       <S.StyledLeftArrow />
                     </S.ArrowButtonLink>
                   )}
                 </S.StyledButton>
                 <S.StyledButton
-                  disabled={id.current === seriesList.posts.length - 1}
+                  disabled={
+                    seriesList.posts.findIndex(
+                      (post) => post.title === postTitle
+                    ) ===
+                    seriesList.posts.length - 1
+                  }
                 >
-                  {id.current === seriesList.posts.length - 1 ? (
+                  {seriesList.posts.findIndex(
+                    (post) => post.title === postTitle
+                  ) ===
+                  seriesList.posts.length - 1 ? (
                     <S.StyledRightArrow />
                   ) : (
-                    <S.ArrowButtonLink to={seriesList.posts[id.current].url}>
+                    <S.ArrowButtonLink
+                      to={
+                        seriesList.posts[
+                          seriesList.posts.findIndex(
+                            (post) => post.title === postTitle
+                          ) + 1
+                        ].url
+                      }
+                    >
                       <S.StyledRightArrow />
                     </S.ArrowButtonLink>
                   )}
