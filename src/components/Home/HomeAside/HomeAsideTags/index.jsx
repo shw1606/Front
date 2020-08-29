@@ -18,7 +18,7 @@ const HomeAsideTags = () => {
     <S.StyledTagsWrapper>
       <S.StyledTagsTitle>인기 태그</S.StyledTagsTitle>
       <S.StyledTagLIst>
-        {popularTags.map((Tag) => (
+        {popularTags.slice(0, 10).map((Tag) => (
           <TagItem Tag={Tag} key={Tag.id} />
         ))}
         <S.StyledMore>

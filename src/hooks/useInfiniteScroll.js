@@ -33,7 +33,7 @@ export default function useInfiniteScroll(posts, hasMorePosts, ratio, action) {
   }, [action, dispatch, hasMorePosts, posts, ratio]);
 
   useEffect(() => {
-    // 최초 게시글이 load 되기 전까지 scroll 이벤트 동작을 비할성화
+    // 최초 게시글이 load 되기 전까지 scroll 이벤트 동작을 비활성화
     if (!posts.length) return;
     window.addEventListener("scroll", loadPosts);
     return () => {
