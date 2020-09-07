@@ -1,5 +1,4 @@
-import React from 'react';
-import * as S from './style';
+import React, {Fragment} from 'react';
 import PostListTabs from "components/PostList/PostListTabs";
 import LikedPostList from "components/PostList/LikedPostList";
 import ReadPostList from "components/PostList/ReadPostList";
@@ -10,7 +9,7 @@ const PostList = () => {
   const { tab } = useParams();
 
   return (
-    <S.PostListLayout>
+    <Fragment>
       <PostListTabs type={tab} />
       <Switch>
         <Route path="/lists/liked">
@@ -20,7 +19,7 @@ const PostList = () => {
           <ReadPostList username={currentUsername} />
         </Route>
       </Switch>
-    </S.PostListLayout>
+    </Fragment>
   );
 };
 
