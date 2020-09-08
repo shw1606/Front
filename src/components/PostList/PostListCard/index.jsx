@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import * as S from './style';
 import {BsFillHeartFill} from "react-icons/all";
@@ -41,4 +41,4 @@ const PostListCard = ({ data }) => {
     );
 };
 
-export default PostListCard;
+export default memo(PostListCard);

@@ -13,7 +13,7 @@ const initialState = {
   showLikedPostsFallback: false
 };
 
-const UserReducer = (state = initialState, action) => {
+const postListReducer = (state = initialState, action) => {
   return immer(state, (draft) => {
     switch (action.type) {
       case LOAD_LIKED_POSTS_REQUEST: {
@@ -37,4 +37,4 @@ const UserReducer = (state = initialState, action) => {
   });
 };
 
-export default UserReducer;
+export default postListReducer;
