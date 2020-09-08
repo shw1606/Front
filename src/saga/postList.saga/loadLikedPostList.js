@@ -15,7 +15,7 @@ function loadLikedPostsAPI(username) {
 function* loadLikedPosts(action) {
   try {
     yield delay(1000);
-    const result = yield call(loadLikedPostsAPI, action.id);
+    const result = yield call(loadLikedPostsAPI, action.username);
     yield put({
       type: LOAD_LIKED_POSTS_SUCCESS,
       data: result.data
@@ -29,6 +29,6 @@ function* loadLikedPosts(action) {
 }
 
 
-export default function* watchLoadUser() {
+export default function* watchLoadLikedPosts() {
   yield takeLatest(LOAD_LIKED_POSTS_REQUEST, loadLikedPosts);
 }

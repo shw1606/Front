@@ -6,11 +6,20 @@ import {
   LOAD_LIKED_POSTS_SUCCESS,
   LOAD_LIKED_POSTS_FAILURE,
 } from "store/actions/postListAction";
+//최근 읽은 포스트 load action
+import {
+  LOAD_READ_POSTS_REQUEST,
+  LOAD_READ_POSTS_SUCCESS,
+  LOAD_READ_POSTS_FAILURE
+} from "store/actions/postListAction"
 
 const initialState = {
   likedPosts: [],
   hasMoreLikedPosts: true,
-  showLikedPostsFallback: false
+  showLikedPostsFallback: false,
+  readPosts: [],
+  hasMoreReadPosts: true,
+  showReadPostsFallback: false
 };
 
 const postListReducer = (state = initialState, action) => {
@@ -28,6 +37,20 @@ const postListReducer = (state = initialState, action) => {
       }
       case LOAD_LIKED_POSTS_FAILURE: {
         draft.showLikedPostsFallback = false;
+        break;
+      }
+      case LOAD_READ_POSTS_REQUEST: {
+        draft.showReadPostsFallback = false;
+        break;
+      }
+      case LOAD_READ_POSTS_SUCCESS: {
+        draft.hasMoreReadPosts = action.data.length === 20;
+        draft.readPosts.push(...action.data);
+        draft.showReadPostsFallback = true;
+        break;
+      }
+      case LOAD_READ_POSTS_FAILURE: {
+        draft.showReadPostsFallback = false;
         break;
       }
       default: {
