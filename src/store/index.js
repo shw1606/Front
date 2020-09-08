@@ -7,6 +7,7 @@ import postDetailReducer from "store/reducers/postDetailReducer";
 import userReducer from "store/reducers/userReducer";
 import register from "store/reducers/registerReducer";
 import modal from "store/reducers/modalReducer";
+import postList from "store/reducers/postListReducer";
 
 export default combineReducers({
   common,
@@ -15,4 +16,5 @@ export default combineReducers({
   userReducer,
   register,
   modal,
+  postList
 });
