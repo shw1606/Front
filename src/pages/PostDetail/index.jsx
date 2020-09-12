@@ -9,13 +9,13 @@ import PostHeader from "components/PostDetail/PostHeader";
 import PostSeries from "components/PostDetail/PostSeries";
 import PostSeriesNavigator from "components/PostDetail/PostSeriesNavigator";
 import PostUserInfo from "components/PostDetail/PostUserInfo";
+import PostTocContainer from "components/PostDetail/PostToc/PostTocContainer";
 
 // action
 import { LOAD_POST_DETAIL_REQUEST } from "store/actions/postDetailAction";
 
 // style
 import * as S from "./style";
-import RightContentsContainer from "../../components/PostDetail/RightContentsContainer";
 
 const PostDetail = ({ match }) => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const PostDetail = ({ match }) => {
       {postInfo ? (
         <Fragment>
           <LeftButtonsContainer />
-          <RightContentsContainer/>
+          <PostTocContainer/>
           <S.Container>
             <PostHeader />
             <PostSeries />

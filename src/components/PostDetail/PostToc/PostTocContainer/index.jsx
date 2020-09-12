@@ -1,14 +1,14 @@
 import React from 'react';
 import * as S from './style';
 
-const RightContentsContainer = () => {
+const PostTocContainer = () => {
   return (
-    <S.RightContentsLayout>
+    <S.TocWrapper>
       <h2> 목차 1</h2>
       <h3> 목차 2</h3>
       <h2> 목차 1</h2>
-    </S.RightContentsLayout>
+    </S.TocWrapper>
   );
 };
 
-export default RightContentsContainer;
+export default PostTocContainer;

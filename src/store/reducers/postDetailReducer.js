@@ -16,9 +16,15 @@ import {
   LIKE_POST_SUCCESS,
   LIKE_POST_FAILURE,
 } from "store/actions/postDetailAction";
+import {
+  SET_TOC_REQUEST,
+  SET_TOC_SUCCESS,
+  SET_TOC_FAILURE
+} from "store/actions/postDetailAction";
 
 const initialState = {
   postInfo: null,
+  toc: null
 };
 
 const PostReducer = (state = initialState, action) => {
@@ -116,6 +122,15 @@ const PostReducer = (state = initialState, action) => {
         break;
       }
       case LIKE_POST_FAILURE: {
+        break;
+      }
+      case SET_TOC_REQUEST: {
+        break;
+      }
+      case SET_TOC_SUCCESS: {
+        draft.toc = action.data;
+      }
+      case SET_TOC_FAILURE: {
         break;
       }
       default: {
