@@ -5,7 +5,7 @@ export const TabsWrapper = styled.div`
   margin-top: 2rem;
 `;
 
-export const PostTab = styled(Link)`
+export const Tab = styled(Link)`
   display: inline-block;
   color: ${props => props.active === 1 ? '#343a40' : '#868e96'};
   border-bottom: ${props => props.active === 1 ? '2.5px solid #343a40' : 'none'};

@@ -12,7 +12,7 @@ import Tags from "pages/Tags";
 import Register from "pages/Register";
 import PostDetail from "pages/PostDetail";
 import User from "./pages/User";
-import PostList from "./pages/PostList";
+import ReadingList from "./pages/ReadingList";
 
 // root redux & root saga
 import RootRedux from "store/index";
@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
           <Route path="/register" component={Register} />
-          <Route path="/lists/:tab" component={PostList} />
+          <Route path="/lists/:tab" component={ReadingList} />
         </Switch>
       </GlobalLayout>
     </Provider>

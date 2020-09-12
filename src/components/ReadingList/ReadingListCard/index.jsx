@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import * as S from './style';
 import {BsFillHeartFill} from "react-icons/all";
 
-const PostListCard = ({ data }) => {
+const ReadingListCard = ({ data }) => {
   return (
       <S.PostCardStyle>
         <S.PostImage to={`/@${data.author}/${data.title}`}>
@@ -41,4 +41,4 @@ const PostListCard = ({ data }) => {
     );
 };
 
-export default memo(PostListCard);
+export default memo(ReadingListCard);

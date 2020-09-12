@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react';
-import PostListTabs from "components/PostList/PostListTabs";
-import LikedPostList from "components/PostList/LikedPostList";
-import ReadPostList from "components/PostList/ReadPostList";
+import PostListTabs from "components/ReadingList/ReadingListTabs";
+import LikedPostList from "components/ReadingList/LikedReadingList";
+import ReadPostList from "components/ReadingList/ReadReadingList";
 import { Switch, Route, useParams } from "react-router-dom";
 
-const PostList = () => {
+const ReadingList = () => {
   const currentUsername = "test";
   const { tab } = useParams();
 
@@ -23,4 +23,4 @@ const PostList = () => {
   );
 };
 
-export default PostList;
+export default ReadingList;

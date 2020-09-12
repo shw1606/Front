@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // componenets
@@ -15,6 +15,7 @@ import { LOAD_POST_DETAIL_REQUEST } from "store/actions/postDetailAction";
 
 // style
 import * as S from "./style";
+import RightContentsContainer from "../../components/PostDetail/RightContentsContainer";
 
 const PostDetail = ({ match }) => {
   const dispatch = useDispatch();
@@ -31,15 +32,18 @@ const PostDetail = ({ match }) => {
   return (
     <>
       {postInfo ? (
-        <S.Container>
+        <Fragment>
           <LeftButtonsContainer />
-          <PostHeader />
-          <PostSeries />
-          <PostContent />
-          <PostUserInfo />
-          <PostSeriesNavigator />
-          <CommentContainer />
-        </S.Container>
+          <RightContentsContainer/>
+          <S.Container>
+            <PostHeader />
+            <PostSeries />
+            <PostContent />
+            <PostUserInfo />
+            <PostSeriesNavigator />
+            <CommentContainer />
+          </S.Container>
+        </Fragment>
       ) : null}
     </>
   );

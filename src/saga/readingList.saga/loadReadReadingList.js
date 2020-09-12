@@ -4,7 +4,7 @@ import {
   LOAD_READ_POSTS_REQUEST,
   LOAD_READ_POSTS_SUCCESS,
   LOAD_READ_POSTS_FAILURE
-} from "store/actions/postListAction";
+} from "store/actions/readingListAction";
 
 import dummy from "../aditional2";
 

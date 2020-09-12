@@ -6,7 +6,7 @@ import postDetail from "./postDetail.saga";
 import register from "./register.saga";
 import user from "./user.saga";
 import modal from "./modal.saga";
-import postList from "./postList.saga";
+import readingList from "./readingList.saga";
 
 export default function* () {
   yield all([
@@ -16,6 +16,6 @@ export default function* () {
     call(register),
     call(user),
     call(modal),
-    call(postList)
+    call(readingList)
   ]);
 }

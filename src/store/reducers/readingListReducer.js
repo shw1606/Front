@@ -5,13 +5,13 @@ import {
   LOAD_LIKED_POSTS_REQUEST,
   LOAD_LIKED_POSTS_SUCCESS,
   LOAD_LIKED_POSTS_FAILURE,
-} from "store/actions/postListAction";
+} from "store/actions/readingListAction";
 //최근 읽은 포스트 load action
 import {
   LOAD_READ_POSTS_REQUEST,
   LOAD_READ_POSTS_SUCCESS,
   LOAD_READ_POSTS_FAILURE
-} from "store/actions/postListAction"
+} from "store/actions/readingListAction"
 
 const initialState = {
   likedPosts: [],
@@ -22,7 +22,7 @@ const initialState = {
   showReadPostsFallback: false
 };
 
-const postListReducer = (state = initialState, action) => {
+const readingListReducer = (state = initialState, action) => {
   return immer(state, (draft) => {
     switch (action.type) {
       case LOAD_LIKED_POSTS_REQUEST: {
@@ -60,4 +60,4 @@ const postListReducer = (state = initialState, action) => {
   });
 };
 
-export default postListReducer;
+export default readingListReducer;

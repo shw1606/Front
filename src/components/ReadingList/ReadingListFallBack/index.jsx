@@ -6,10 +6,10 @@ import FallBackItem from "./FallBackItem";
 // style
 import * as S from "./style";
 
-const PostListFallBack = () => {
+const ReadingListFallBack = () => {
   return (
     <>
-      <S.PostListLayout>
+      <S.ReadingListLayout>
           {Array(8)
             .fill()
             .map(() => (
@@ -17,9 +17,9 @@ const PostListFallBack = () => {
                 key={Math.floor(Math.random() * 1000) + "Fallback"}
               />
             ))}
-      </S.PostListLayout>
+      </S.ReadingListLayout>
     </>
   );
 };
 
-export default PostListFallBack;
+export default ReadingListFallBack;

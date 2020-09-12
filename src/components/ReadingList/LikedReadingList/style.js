@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostListLayout = styled.div`
+export const ReadingListLayout = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 270px);
   justify-content: start;
