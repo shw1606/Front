@@ -11,7 +11,7 @@ function* setToc(action) {
   try {
     yield put({
       type: SET_TOC_SUCCESS,
-      data: action.data
+      data: action.toc
     })
   } catch (error) {
     yield put({

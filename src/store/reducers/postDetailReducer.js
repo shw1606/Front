@@ -129,6 +129,7 @@ const PostReducer = (state = initialState, action) => {
       }
       case SET_TOC_SUCCESS: {
         draft.toc = action.data;
+        break;
       }
       case SET_TOC_FAILURE: {
         break;
