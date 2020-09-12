@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
-import PostListTabs from "components/ReadingList/ReadingListTabs";
-import LikedPostList from "components/ReadingList/LikedReadingList";
-import ReadPostList from "components/ReadingList/ReadReadingList";
+import ReadingListTabs from "components/ReadingList/ReadingListTabs";
+import LikedReadingList from "components/ReadingList/LikedReadingList";
+import ReadReadingList from "components/ReadingList/ReadReadingList";
 import { Switch, Route, useParams } from "react-router-dom";
 
 const ReadingList = () => {
@@ -10,13 +10,13 @@ const ReadingList = () => {
 
   return (
     <Fragment>
-      <PostListTabs type={tab} />
+      <ReadingListTabs type={tab} />
       <Switch>
         <Route path="/lists/liked">
-          <LikedPostList username={currentUsername} />
+          <LikedReadingList username={currentUsername} />
         </Route>
         <Route path="/lists/read">
-          <ReadPostList username={currentUsername} />
+          <ReadReadingList username={currentUsername} />
         </Route>
       </Switch>
     </Fragment>
