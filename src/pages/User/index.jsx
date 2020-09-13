@@ -4,9 +4,9 @@ import UserProfile from "components/User/UserProfile";
 import { Switch, Route, useParams } from "react-router-dom";
 
 import UserTabs from "components/User/UserTabs";
-import UserSeries from "../../components/User/UserSeries";
-import UserAbout from "../../components/User/UserAbout";
-import UserPostList from "../../components/User/UserPostList";
+import UserSeries from "components/User/UserSeries";
+import UserAbout from "components/User/UserAbout";
+import UserPostList from "components/User/UserPostList";
 
 const User = () => {
   const { username, tab } = useParams();
@@ -22,7 +22,7 @@ const User = () => {
         <Route path={`/profile/@${username}/series`}>
           <UserSeries username={username}/>
         </Route>
-        <Route path={`/profile/@${username}/about`} component={UserAbout}>
+        <Route path={`/profile/@${username}/about`}>
           <UserAbout username={username}/>
         </Route>
       </Switch>

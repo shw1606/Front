@@ -72,7 +72,7 @@ export const DropdownContent = styled.div`
 export const StyledLink = styled(NavLink)`
     color: black;
     padding: 10px;
-    font-size: 15px;
+    font-size: 12px;
     text-decoration: none;
     display: block;
     &:hover {
