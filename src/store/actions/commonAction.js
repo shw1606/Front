@@ -1,5 +1,6 @@
 // 알림창 출력 요청
 export const LOCAL_RQEUEST_ALERT = "LOCAL_RQEUEST_ALERT";
+export const printAlert = (data) => ({ type: LOCAL_RQEUEST_ALERT, data });
 
 // 알림창 출력 clear
 export const LOCAL_REQUEST_CLEAR_ALERT = "LOCAL_REQUEST_CLEAR_ALERT";
