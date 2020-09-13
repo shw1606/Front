@@ -7,6 +7,9 @@ export const UserButtonWrapper = styled.div`
 `;
 
 export const WriteBtn = styled(NavLink)`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px 0 0 0;
   width: 82px;
   height: 24px;
