@@ -24,15 +24,25 @@ import {
   POPULAR_TAGS_LOAD_SUCCESS,
   POPULAR_TAGS_LOAD_FAILURE,
 } from "store/actions/postAction";
+// 이름순 태그 load action
+import {
+  ALPHABET_TAGS_LOAD_REQUEST,
+  ALPHABET_TAGS_LOAD_SUCCESS,
+  ALPHABET_TAGS_LOAD_FAILURE,
+} from "store/actions/postAction";
 
 const initialState = {
   posts: [],
   notices: [],
   popularTags: [],
+  alphabetTags: [],
+  hasMorePopularTags: true,
+  hasMoreAlphabetTags: true,
   recentPosts: [],
   hasMorePosts: true,
   hasMoreRecentPosts: true,
   showPostFallback: false,
+  showTagsFallback: false,
 };
 
 const PostReducer = (state = initialState, action) => {
@@ -80,16 +90,31 @@ const PostReducer = (state = initialState, action) => {
         break;
       }
       case POPULAR_TAGS_LOAD_REQUEST: {
-        draft.showPostFallback = false;
+        draft.showTagsFallback = false;
         break;
       }
       case POPULAR_TAGS_LOAD_SUCCESS: {
+        draft.hasMorePopularTags = action.data.length === 120;
         draft.popularTags.push(...action.data);
-        draft.showPostFallback = true;
+        draft.showTagsFallback = true;
         break;
       }
       case POPULAR_TAGS_LOAD_FAILURE: {
-        draft.showPostFallback = false;
+        draft.showTagsFallback = false;
+        break;
+      }
+      case ALPHABET_TAGS_LOAD_REQUEST: {
+        draft.showTagsFallback = false;
+        break;
+      }
+      case ALPHABET_TAGS_LOAD_SUCCESS: {
+        draft.hasMoreAlphabetTags = action.data.length === 120;
+        draft.alphabetTags.push(...action.data);
+        draft.showTagsFallback = true;
+        break;
+      }
+      case ALPHABET_TAGS_LOAD_FAILURE: {
+        draft.showTagsFallback = false;
         break;
       }
       default: {
