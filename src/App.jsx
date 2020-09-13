@@ -13,6 +13,8 @@ import Register from "pages/Register";
 import PostDetail from "pages/PostDetail";
 import User from "./pages/User";
 import ReadingList from "./pages/ReadingList";
+import Saves from "./pages/Saves";
+import Write from "./pages/Write";
 
 // root redux & root saga
 import RootRedux from "store/index";
@@ -46,6 +48,8 @@ const App = () => {
           <Route path="/profile/@:username/:tab" component={User} />
           <Route path="/register" component={Register} />
           <Route path="/lists/:tab" component={ReadingList} />
+          <Route path="/saves" component={Saves} />
+          <Route path="/write" component={Write} />
         </Switch>
       </GlobalLayout>
     </Provider>

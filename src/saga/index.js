@@ -1,4 +1,5 @@
 import { all, call } from "redux-saga/effects";
+import axios from "axios";
 
 import common from "./common.saga";
 import home from "./home.saga";
@@ -7,6 +8,11 @@ import register from "./register.saga";
 import user from "./user.saga";
 import modal from "./modal.saga";
 import readingList from "./readingList.saga";
+import write from "./write.saga";
+import save from "./save.saga";
+
+axios.defaults.baseURL = "localhost:3000/velog.io";
+axios.defaults.withCredentials = true;
 
 export default function* () {
   yield all([
@@ -16,6 +22,8 @@ export default function* () {
     call(register),
     call(user),
     call(modal),
-    call(readingList)
+    call(readingList),
+    call(write),
+    call(save),
   ]);
 }

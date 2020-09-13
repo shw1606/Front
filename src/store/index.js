@@ -8,6 +8,8 @@ import userReducer from "store/reducers/userReducer";
 import register from "store/reducers/registerReducer";
 import modal from "store/reducers/modalReducer";
 import readingList from "store/reducers/readingListReducer";
+import write from "store/reducers/writeReducer";
+import save from "store/reducers/saveReducer";
 
 export default combineReducers({
   common,
@@ -16,5 +18,7 @@ export default combineReducers({
   userReducer,
   register,
   modal,
-  readingList
+  readingList,
+  write,
+  save,
 });

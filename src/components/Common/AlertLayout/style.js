@@ -7,4 +7,5 @@ export const Layout = styled.div`
   position: fixed;
   top: 1em;
   right: 1em;
+  z-index: 999;
 `;

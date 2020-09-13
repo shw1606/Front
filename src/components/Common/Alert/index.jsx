@@ -10,16 +10,16 @@ import {
 // style
 import * as S from "./style";
 
-const Alert = ({ description, id, backgroundColor }) => {
+const Alert = ({ data }) => {
   const dispatch = useDispatch();
 
   // 닫기 버튼 클릭
   const clickCloseBtn = useCallback(() => {
     dispatch({
       type: LOCAL_CLEAR_ALERT,
-      data: id,
+      data: data.id,
     });
-  }, [dispatch, id]);
+  }, [data.id, dispatch]);
 
   // 알림창 자동 삭제
   useEffect(() => {
@@ -36,8 +36,8 @@ const Alert = ({ description, id, backgroundColor }) => {
   return (
     <>
       <S.Layout>
-        <S.Conatainer backgroundColor={backgroundColor}>
-          <S.AlertText>{description}</S.AlertText>
+        <S.Conatainer backgroundColor={data.color}>
+          <S.AlertText>{data.message}</S.AlertText>
           <S.CloseBtn onClick={clickCloseBtn}>X</S.CloseBtn>
           <S.ProgressBar></S.ProgressBar>
         </S.Conatainer>
