@@ -12,6 +12,8 @@ import Tags from "pages/Tags";
 import Register from "pages/Register";
 import PostDetail from "pages/PostDetail";
 import User from "./pages/User";
+import Saves from "./pages/Saves";
+import Write from "./pages/Write";
 
 // root redux & root saga
 import RootRedux from "store/index";
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="/profile/@:username" exact component={User} />
           <Route path="/profile/@:username/:tab" component={User} />
           <Route path="/register" component={Register} />
+          <Route path="/saves" component={Saves} />
+          <Route path="/write" component={Write} />
         </Switch>
       </GlobalLayout>
     </Provider>
