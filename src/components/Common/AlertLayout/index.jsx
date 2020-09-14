@@ -15,15 +15,7 @@ const AlertLayout = () => {
       <S.Layout>
         {alertList.length
           ? alertList.map((value) => {
-              const { id, description, backgroundColor } = value;
-              return (
-                <Alert
-                  key={id}
-                  id={id}
-                  description={description}
-                  backgroundColor={backgroundColor}
-                />
-              );
+              return <Alert key={value.id} data={value} />;
             })
           : null}
       </S.Layout>
