@@ -74,7 +74,7 @@ const PostTocContainer = () => {
     };
   }, [onScroll]);
 
-  if (!toc) return null;
+  if (!toc || !headingTops) return null;
 
   return (
     <S.TocWrapper>
@@ -82,7 +82,7 @@ const PostTocContainer = () => {
         <S.TocItem key={item.id}
                    active={activeId === item.id}
                    level={item.level}>
-          <Link to={`#${item.id}`}>{item.text}</Link>
+          <a href={`#${item.id}`}>{item.text}</a>
         </S.TocItem>
       )}
     </S.TocWrapper>
