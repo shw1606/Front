@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { escapeForUrl } from "../../PostDetail/PostToc/utils";
 import breaks from 'remark-breaks';
 
 const MarkdownViewer = ({ content }) => {
+  useEffect(() => {
+    const h1 = document.querySelectorAll('h1');
+    const h2 = document.querySelectorAll('h2');
+    const h3 = document.querySelectorAll('h3');
+
+    const idList = [];
+
+    const setId = (element) => {
+      const id = escapeForUrl(element.innerHTML);
+      const exists = idList.filter(existingId => existingId.indexOf(id) !== -1);
+      const uniqueId = `${id}${exists.length === 0 ? '' : `-${exists.length}`}`;
+      element.id = uniqueId;
+      idList.push(uniqueId);
+    };
+
+    [h1, h2, h3].forEach(elements => elements.forEach(setId));
+  },[]);
+
   return (
     <ReactMarkdown source={content}
                    skipHtml={false}
