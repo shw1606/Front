@@ -23,5 +23,5 @@ export const TocItem = styled.div`
     margin-top: 4px;
   }
   margin-left: ${props => props.level * 1.2}em ;
-  color: ${props => props.active === 1 ?  '#212529' : '#868e96'};
+  color: ${props => props.active === true ?  '#212529' : '#868e96'};
 `;

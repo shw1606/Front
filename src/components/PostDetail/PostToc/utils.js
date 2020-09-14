@@ -1,5 +1,3 @@
-import {forwardRef} from "react";
-
 export function escapeForUrl (text) {
   return text
     .replace(
