@@ -9,7 +9,6 @@ export function escapeForUrl (text) {
     .replace(/--+/g, '-');
 }
 
-
 export function parseHeadings(html) {
   const div = document.createElement('div');
   div.innerHTML = html;
@@ -53,10 +52,3 @@ export function getScrollTop() {
   return scrollTop;
 }
 
-export function getScrollBottom() {
-  if (!document.body) return 0;
-  const { scrollHeight } = document.body;
-  const { innerHeight } = window;
-  const scrollTop = getScrollTop();
-  return scrollHeight - innerHeight - scrollTop;
-}
