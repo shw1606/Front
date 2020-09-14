@@ -12,7 +12,7 @@ const PostTocContainer = () => {
   const updateTocPositions = useCallback(() => {
     if (!toc) return;
     const scrollTop = getScrollTop();
-    console.log(toc);
+
     const headingTops = toc.map(({ id }) => {
       const el = document.getElementById(id);
 
@@ -54,7 +54,7 @@ const PostTocContainer = () => {
 
   const onScroll = useCallback(() => {
     const scrollTop = getScrollTop();
-    console.log(activeId, scrollTop, headingTops);
+
     if (!headingTops) return;
     const currentHeading = [...headingTops].reverse().find(headingTop => {
       return scrollTop >= headingTop.top - 8;
