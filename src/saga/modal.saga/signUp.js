@@ -8,14 +8,14 @@ import {
   SUBMIT_SIGN_UP_FAILURE,
 } from "store/actions/modalAction";
 
-function signUpApi() {
-  // return axios.get();
+function signUpApi(data) {
+  // return axios.post("/register-mail", data);
 }
 
 function* signUp(action) {
   try {
     yield delay(1000);
-    const result = yield call(signUpApi);
+    const result = yield call(signUpApi, action.data);
     yield put({
       type: SUBMIT_SIGN_UP_SUCCESS,
       data: result.data,

@@ -7,9 +7,8 @@ import { withRouter } from "react-router-dom";
 
 const Header = ({ location }) => {
   const isLoggedIn = true;
-  const url = useMemo(() => location.pathname.includes("register"), [
-    location.pathname,
-  ]);
+  const includeKeyword = ["register", "write"];
+  const url = includeKeyword.some((word) => location.pathname.includes(word));
 
   return (
     <>
