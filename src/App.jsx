@@ -10,6 +10,7 @@ import Home from "pages/Home";
 import Search from "pages/Search";
 import Tags from "pages/Tags";
 import PostDetail from "pages/PostDetail";
+import Setting from "pages/Setting";
 
 // root redux & root saga
 import RootRedux from "store/index";
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/tags" exact component={Tags} />
           <Route path="/tags/:tag" exact component={Tags} />
           <Route path="/@:author/:title" exact component={PostDetail} />
+          <Route path="/setting" exact component={Setting} />
         </Switch>
       </GlobalLayout>
     </Provider>
