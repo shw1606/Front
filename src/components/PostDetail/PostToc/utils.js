@@ -1,6 +1,15 @@
-import escapeForUrl from "./escapeForUrl";
+export function escapeForUrl (text) {
+  return text
+    .replace(
+      /[^0-9a-zA-Zㄱ-힣.\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf -]/g,
+      '',
+    )
+    .trim()
+    .replace(/ /g, '-')
+    .replace(/--+/g, '-');
+}
 
-export default function parseHeadings(html) {
+export function parseHeadings(html) {
   const div = document.createElement('div');
   div.innerHTML = html;
 
@@ -10,10 +19,11 @@ export default function parseHeadings(html) {
 
   const idList = [];
 
-  headings.forEach(heading => {
-    const id = escapeForUrl(heading.textContent);
+  headings.forEach(element => {
+    const id = escapeForUrl(element.textContent);
     const exist = idList.filter(existingId => existingId.indexOf(id) !== -1);
     const uniqueId = `${id}${exist.length === 0 ? '': `-${exist.length}`}`;
+    element.id = uniqueId;
     idList.push(uniqueId);
   });
 
@@ -33,3 +43,12 @@ export default function parseHeadings(html) {
 
   return headingsInfo;
 }
+
+export function getScrollTop() {
+  if (!document.body) return 0;
+  const scrollTop = document.documentElement
+    ? document.documentElement.scrollTop || document.body.scrollTop
+    : document.body.scrollTop;
+  return scrollTop;
+}
+

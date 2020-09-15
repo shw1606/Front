@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-
 export const PostTitle = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   color: #343a40;
+  @media (max-width: 1024px) {
+    font-size: 1.2em;
+  }
 `;
 
 export const PostInfo = styled.div`

@@ -33,16 +33,18 @@ const PostDetail = ({ match }) => {
     <>
       {postInfo ? (
         <Fragment>
-          <LeftButtonsContainer />
-          <PostTocContainer/>
-          <S.Container>
-            <PostHeader />
-            <PostSeries />
-            <PostContent />
-            <PostUserInfo />
-            <PostSeriesNavigator />
-            <CommentContainer />
-          </S.Container>
+          <S.Wrapper>
+            <LeftButtonsContainer />
+            <PostTocContainer/>
+            <S.Container>
+              <PostHeader />
+              <PostSeries />
+              <PostContent />
+              <PostUserInfo />
+              <PostSeriesNavigator />
+              <CommentContainer />
+            </S.Container>
+          </S.Wrapper>
         </Fragment>
       ) : null}
     </>

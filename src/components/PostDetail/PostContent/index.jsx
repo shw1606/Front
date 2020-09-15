@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import MarkdownViewer from "../../Common/MarkdownViewer";
-import parseHeadings from "../PostToc/parseHeadings";
+import { parseHeadings, setHeadingId } from "../PostToc/utils";
 import { SET_TOC_REQUEST } from "store/actions/postDetailAction";
 
 const PostContent = () => {
@@ -12,7 +12,8 @@ const PostContent = () => {
     if(!content) return;
     const toc = parseHeadings(content);
     dispatch({ type: SET_TOC_REQUEST, toc });
-  },[]);
+
+  },[dispatch, content]);
 
   return (
     <MarkdownViewer content={content} />
