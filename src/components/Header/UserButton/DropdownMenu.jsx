@@ -29,7 +29,7 @@ function DropdownMenu({ username }) {
           <StyledLink to={`/profile/@${username}`}> 내 벨로그 </StyledLink>
           <StyledLink to="/saves"> 임시 글 </StyledLink>
           <StyledLink to="/lists/liked"> 읽기 목록 </StyledLink>
-          <StyledLink to="/"> 설정 </StyledLink>
+          <StyledLink to="/setting"> 설정 </StyledLink>
           <StyledLink to="/"> 로그아웃 </StyledLink>
         </DropdownContent>
       )}

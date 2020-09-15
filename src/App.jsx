@@ -15,7 +15,7 @@ import User from "./pages/User";
 import ReadingList from "./pages/ReadingList";
 import Saves from "./pages/Saves";
 import Write from "./pages/Write";
-
+import Setting from "pages/Setting";
 // root redux & root saga
 import RootRedux from "store/index";
 import RootSaga from "saga/index";
@@ -50,6 +50,7 @@ const App = () => {
           <Route path="/lists/:tab" component={ReadingList} />
           <Route path="/saves" component={Saves} />
           <Route path="/write" component={Write} />
+          <Route path="/setting" exact component={Setting} />
         </Switch>
       </GlobalLayout>
     </Provider>
