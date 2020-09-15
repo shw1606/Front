@@ -11,7 +11,7 @@ const HomePost = ({ data }) => {
       <S.HomePostStyle>
         <S.PostImage to={`/@${data.author}/${data.title}`}>
           <div>
-            <img src={data.thumbnail} />
+            <img src={data.thumbnail} alt="게시글 메인 사진" />
           </div>
         </S.PostImage>
         <S.MainInfo>
@@ -30,7 +30,7 @@ const HomePost = ({ data }) => {
         </S.MainInfo>
         <S.SubInfo>
           <Link to={`/@${data.author}/${data.title}`}>
-            <img src={data.avatar} />
+            <img src={data.avatar} alt="유저 프로필 사진" />
             <span>
               by <b>{data.author}</b>
             </span>
