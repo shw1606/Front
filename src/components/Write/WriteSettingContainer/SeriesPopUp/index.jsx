@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import OutsideClickHandler from "react-outside-click-handler";
 
 // component
-import SeriesUrlSlug from "../SeriesUrlSlug";
 
 // action
 import { submitSeriesInput, loadSeriesList } from "store/actions/writeAction";
 import { printAlert } from "store/actions/commonAction";
+import SeriesUrlSlug from "../SeriesUrlSlug";
 
 // style
 import * as S from "./style";
@@ -64,17 +64,15 @@ const SeiresPopUp = ({ listClick, clickedList }) => {
             </S.SeriesForm>
           </OutsideClickHandler>
           <S.SeriesList>
-            {seriesList.map((value) => {
-              return (
-                <S.SeriesItem
-                  key={value}
-                  onClick={() => listClick(value)}
-                  focus={clickedList === value}
-                >
-                  {value}
-                </S.SeriesItem>
-              );
-            })}
+            {seriesList.map((value) => (
+              <S.SeriesItem
+                key={value}
+                onClick={() => listClick(value)}
+                focus={clickedList === value}
+              >
+                {value}
+              </S.SeriesItem>
+            ))}
           </S.SeriesList>
         </S.SeriesPopupContainer>
       </S.Layout>

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import ReadingListTabs from "components/ReadingList/ReadingListTabs";
 import LikedReadingList from "components/ReadingList/LikedReadingList";
 import ReadReadingList from "components/ReadingList/ReadReadingList";
@@ -9,7 +9,7 @@ const ReadingList = () => {
   const { tab } = useParams();
 
   return (
-    <Fragment>
+    <>
       <ReadingListTabs type={tab} />
       <Switch>
         <Route path="/lists/liked">
@@ -19,7 +19,7 @@ const ReadingList = () => {
           <ReadReadingList username={currentUsername} />
         </Route>
       </Switch>
-    </Fragment>
+    </>
   );
 };
 

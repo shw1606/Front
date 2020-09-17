@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {FiSearch} from "react-icons/all";
+import { FiSearch } from "react-icons/all";
 
 export const SearchButtonWrapper = styled.div`
     margin: 20px 0.5em 0 0;

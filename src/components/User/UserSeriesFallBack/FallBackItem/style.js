@@ -55,4 +55,3 @@ export const UpdatedAt = styled.div`
   width: 50%;
   background: #f2f2f2;
 `;
-

@@ -1,21 +1,19 @@
 import React, { memo } from "react";
 import * as S from "./style";
 
-const FallBackItem = () => {
-  return (
-    <S.Container>
-      <S.Image />
-      <S.Description>
-        <div className="title"></div>
-        <div className="payload"></div>
-        <div className="date"></div>
-      </S.Description>
-      <S.Author>
-        <div className="profile"></div>
-        <div className="name"></div>
-      </S.Author>
-    </S.Container>
-  );
-};
+const FallBackItem = () => (
+  <S.Container>
+    <S.Image />
+    <S.Description>
+      <div className="title" />
+      <div className="payload" />
+      <div className="date" />
+    </S.Description>
+    <S.Author>
+      <div className="profile" />
+      <div className="name" />
+    </S.Author>
+  </S.Container>
+);
 
 export default memo(FallBackItem);

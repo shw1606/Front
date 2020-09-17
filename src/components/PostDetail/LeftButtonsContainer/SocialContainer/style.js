@@ -21,7 +21,7 @@ export const SocialAnimation = styled.div`
   &.open {
     opacity: 1;
     transform: ${(props) =>
-      `translate(${props.animation[0]}px, ${props.animation[1]}px)`};
+    `translate(${props.animation[0]}px, ${props.animation[1]}px)`};
   }
 `;
 

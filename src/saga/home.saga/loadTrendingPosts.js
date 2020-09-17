@@ -1,7 +1,7 @@
 import { call, delay, put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
-//actions
+// actions
 import {
   TRENDING_POSTS_LOAD_REQUEST,
   TRENDING_POSTS_LOAD_SUCCESS,

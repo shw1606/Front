@@ -14,9 +14,7 @@ const AlertLayout = () => {
     <>
       <S.Layout>
         {alertList.length
-          ? alertList.map((value) => {
-              return <Alert key={value.id} data={value} />;
-            })
+          ? alertList.map((value) => <Alert key={value.id} data={value} />)
           : null}
       </S.Layout>
     </>

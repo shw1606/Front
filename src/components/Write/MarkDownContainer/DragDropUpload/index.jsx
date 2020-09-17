@@ -11,7 +11,7 @@ const DragDropUpload = () => {
   const dispatch = useDispatch();
   const [dragging, setDragging] = useState(false);
   const down = useRef(false);
-  let dragIndex = useRef(0);
+  const dragIndex = useRef(0);
 
   useEffect(() => {
     const onDrop = (e) => {

@@ -16,8 +16,8 @@ export const Tag = styled.li`
   padding: 0.3em 1rem;
   flex-shrink: 0;
   cursor: pointer;
-  background-color: ${props => props.active === true ? '#12b886' : '#f1f3f5'};
+  background-color: ${(props) => (props.active === true ? '#12b886' : '#f1f3f5')};
   a {
-    color: ${props => props.active === true ? '#fff' : '#343a40'};
+    color: ${(props) => (props.active === true ? '#fff' : '#343a40')};
   }
 `;

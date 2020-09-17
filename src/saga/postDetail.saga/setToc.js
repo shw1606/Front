@@ -12,15 +12,15 @@ function* setToc(action) {
     yield put({
       type: SET_TOC_SUCCESS,
       data: action.toc
-    })
+    });
   } catch (error) {
     yield put({
       type: SET_TOC_FAILURE,
       data: error
-    })
+    });
   }
 }
 
-export default function* watchSetToc () {
+export default function* watchSetToc() {
   yield takeLatest(SET_TOC_REQUEST, setToc);
 }

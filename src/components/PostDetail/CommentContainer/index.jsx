@@ -14,17 +14,18 @@ const CommentContainer = () => {
     <>
       {postInfo && (
         <S.Layout>
-          <h4>{postInfo.comments.length}개의 댓글</h4>
+          <h4>
+            {postInfo.comments.length}
+            개의 댓글
+          </h4>
           <CommentInput cancelBtn={false} />
           <S.CommentList>
-            {postInfo.comments.map((value) => {
-              return (
-                <CommentCard
-                  key={value.comment_context + value._id}
-                  data={value}
-                />
-              );
-            })}
+            {postInfo.comments.map((value) => (
+              <CommentCard
+                key={value.comment_context + value._id}
+                data={value}
+              />
+            ))}
           </S.CommentList>
         </S.Layout>
       )}

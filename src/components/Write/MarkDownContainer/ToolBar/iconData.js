@@ -1,16 +1,8 @@
-import { BsTypeH1 } from "react-icons/bs";
-import { BsTypeH2 } from "react-icons/bs";
-import { BsTypeH3 } from "react-icons/bs";
+import { BsTypeH1, BsTypeH2, BsTypeH3, BsTypeBold, BsTypeItalic, BsLink, BsImageFill, BsCode } from "react-icons/bs";
 
-import { BsTypeBold } from "react-icons/bs";
-import { BsTypeItalic } from "react-icons/bs";
 import { AiOutlineFontSize } from "react-icons/ai";
 
 import { FaQuoteRight } from "react-icons/fa";
-import { BsLink } from "react-icons/bs";
-import { BsImageFill } from "react-icons/bs";
-
-import { BsCode } from "react-icons/bs";
 
 export const LeftIcons = [
   {

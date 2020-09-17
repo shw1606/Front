@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as S from "./style";
 import { Link } from "react-router-dom";
 import { LOAD_POST_DETAIL_REQUEST } from "store/actions/postDetailAction";
+import * as S from "./style";
 import SeriesItem from "./SeriesItem";
 
 const PostSeries = () => {
@@ -51,16 +51,14 @@ const PostSeries = () => {
           <S.StyledIoIosBookmark />
           {!hidden && (
             <S.SeriesList>
-              {seriesList.posts.map((series, id) => {
-                return (
-                  <SeriesItem
-                    url={series.url.substring(21)}
-                    title={series.title}
-                    key={id}
-                    active={series.title === postTitle}
-                  />
-                );
-              })}
+              {seriesList.posts.map((series, id) => (
+                <SeriesItem
+                  url={series.url.substring(21)}
+                  title={series.title}
+                  key={id}
+                  active={series.title === postTitle}
+                />
+              ))}
             </S.SeriesList>
           )}
           <S.StyledPostSeriesBottom>
@@ -77,7 +75,8 @@ const PostSeries = () => {
                 {seriesList.posts.findIndex(
                   (post) => post.title === postTitle
                 ) + 1}
-                /{seriesList.posts.length}
+                /
+                {seriesList.posts.length}
               </div>
               <S.StyledButtonWrapper>
                 <S.StyledButton
@@ -91,19 +90,19 @@ const PostSeries = () => {
                     (post) => post.title === postTitle
                   ) === 0 ? (
                     <S.StyledLeftArrow />
-                  ) : (
-                    <S.ArrowButtonLink
-                      to={
+                    ) : (
+                      <S.ArrowButtonLink
+                        to={
                         seriesList.posts[
                           seriesList.posts.findIndex(
                             (post) => post.title === postTitle
                           ) - 1
                         ].url
                       }
-                    >
-                      <S.StyledLeftArrow />
-                    </S.ArrowButtonLink>
-                  )}
+                      >
+                        <S.StyledLeftArrow />
+                      </S.ArrowButtonLink>
+                    )}
                 </S.StyledButton>
                 <S.StyledButton
                   disabled={
@@ -118,19 +117,19 @@ const PostSeries = () => {
                   ) ===
                   seriesList.posts.length - 1 ? (
                     <S.StyledRightArrow />
-                  ) : (
-                    <S.ArrowButtonLink
-                      to={
+                    ) : (
+                      <S.ArrowButtonLink
+                        to={
                         seriesList.posts[
                           seriesList.posts.findIndex(
                             (post) => post.title === postTitle
                           ) + 1
                         ].url
                       }
-                    >
-                      <S.StyledRightArrow />
-                    </S.ArrowButtonLink>
-                  )}
+                      >
+                        <S.StyledRightArrow />
+                      </S.ArrowButtonLink>
+                    )}
                 </S.StyledButton>
               </S.StyledButtonWrapper>
             </S.StyledIndexWrapper>

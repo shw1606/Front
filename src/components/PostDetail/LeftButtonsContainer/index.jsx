@@ -3,16 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsFillHeartFill as Heart } from "react-icons/bs";
 
 // style
-import * as S from "./style";
 
 // components
-import SocialContainer from "./SocialContainer";
 import Modal from "components/Modal";
 import Login from "components/Login";
 
 // action
 import { LIKE_POST_REQUEST } from "store/actions/postDetailAction";
 import { UNLIKE_POST_REQUEST } from "store/actions/postDetailAction";
+import SocialContainer from "./SocialContainer";
+import * as S from "./style";
 
 const LeftButtonsContainer = () => {
   const dispatch = useDispatch();

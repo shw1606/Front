@@ -45,83 +45,81 @@ const initialState = {
   showTagsFallback: false,
 };
 
-const PostReducer = (state = initialState, action) => {
-  return immer(state, (draft) => {
-    switch (action.type) {
-      case TRENDING_POSTS_LOAD_REQUEST: {
-        draft.showPostFallback = false;
-        break;
-      }
-      case TRENDING_POSTS_LOAD_SUCCESS: {
-        draft.hasMorePosts = action.data.length === 20;
-        draft.posts.push(...action.data);
-        draft.showPostFallback = true;
-        break;
-      }
-      case TRENDING_POSTS_LOAD_FAILURE: {
-        draft.showPostFallback = false;
-        break;
-      }
-      case RECENT_POSTS_LOAD_REQUEST: {
-        draft.showPostFallback = false;
-        break;
-      }
-      case RECENT_POSTS_LOAD_SUCCESS: {
-        draft.hasMoreRecentPosts = action.data.length === 20;
-        draft.recentPosts.push(...action.data);
-        draft.showPostFallback = true;
-        break;
-      }
-      case RECENT_POSTS_LOAD_FAILURE: {
-        draft.showPostFallback = false;
-        break;
-      }
-      case NOTICE_LOAD_REQUEST: {
-        draft.showPostFallback = false;
-        break;
-      }
-      case NOTICE_LOAD_SUCCESS: {
-        draft.notices.push(...action.data);
-        draft.showPostFallback = true;
-        break;
-      }
-      case NOTICE_LOAD_FAILURE: {
-        draft.showPostFallback = false;
-        break;
-      }
-      case POPULAR_TAGS_LOAD_REQUEST: {
-        draft.showTagsFallback = false;
-        break;
-      }
-      case POPULAR_TAGS_LOAD_SUCCESS: {
-        draft.hasMorePopularTags = action.data.length === 120;
-        draft.popularTags.push(...action.data);
-        draft.showTagsFallback = true;
-        break;
-      }
-      case POPULAR_TAGS_LOAD_FAILURE: {
-        draft.showTagsFallback = false;
-        break;
-      }
-      case ALPHABET_TAGS_LOAD_REQUEST: {
-        draft.showTagsFallback = false;
-        break;
-      }
-      case ALPHABET_TAGS_LOAD_SUCCESS: {
-        draft.hasMoreAlphabetTags = action.data.length === 120;
-        draft.alphabetTags.push(...action.data);
-        draft.showTagsFallback = true;
-        break;
-      }
-      case ALPHABET_TAGS_LOAD_FAILURE: {
-        draft.showTagsFallback = false;
-        break;
-      }
-      default: {
-        break;
-      }
+const PostReducer = (state = initialState, action) => immer(state, (draft) => {
+  switch (action.type) {
+    case TRENDING_POSTS_LOAD_REQUEST: {
+      draft.showPostFallback = false;
+      break;
     }
-  });
-};
+    case TRENDING_POSTS_LOAD_SUCCESS: {
+      draft.hasMorePosts = action.data.length === 20;
+      draft.posts.push(...action.data);
+      draft.showPostFallback = true;
+      break;
+    }
+    case TRENDING_POSTS_LOAD_FAILURE: {
+      draft.showPostFallback = false;
+      break;
+    }
+    case RECENT_POSTS_LOAD_REQUEST: {
+      draft.showPostFallback = false;
+      break;
+    }
+    case RECENT_POSTS_LOAD_SUCCESS: {
+      draft.hasMoreRecentPosts = action.data.length === 20;
+      draft.recentPosts.push(...action.data);
+      draft.showPostFallback = true;
+      break;
+    }
+    case RECENT_POSTS_LOAD_FAILURE: {
+      draft.showPostFallback = false;
+      break;
+    }
+    case NOTICE_LOAD_REQUEST: {
+      draft.showPostFallback = false;
+      break;
+    }
+    case NOTICE_LOAD_SUCCESS: {
+      draft.notices.push(...action.data);
+      draft.showPostFallback = true;
+      break;
+    }
+    case NOTICE_LOAD_FAILURE: {
+      draft.showPostFallback = false;
+      break;
+    }
+    case POPULAR_TAGS_LOAD_REQUEST: {
+      draft.showTagsFallback = false;
+      break;
+    }
+    case POPULAR_TAGS_LOAD_SUCCESS: {
+      draft.hasMorePopularTags = action.data.length === 120;
+      draft.popularTags.push(...action.data);
+      draft.showTagsFallback = true;
+      break;
+    }
+    case POPULAR_TAGS_LOAD_FAILURE: {
+      draft.showTagsFallback = false;
+      break;
+    }
+    case ALPHABET_TAGS_LOAD_REQUEST: {
+      draft.showTagsFallback = false;
+      break;
+    }
+    case ALPHABET_TAGS_LOAD_SUCCESS: {
+      draft.hasMoreAlphabetTags = action.data.length === 120;
+      draft.alphabetTags.push(...action.data);
+      draft.showTagsFallback = true;
+      break;
+    }
+    case ALPHABET_TAGS_LOAD_FAILURE: {
+      draft.showTagsFallback = false;
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+});
 
 export default PostReducer;

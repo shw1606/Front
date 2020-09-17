@@ -21,9 +21,7 @@ const SavePostLayout = () => {
   return (
     <>
       <S.Layout>
-        {saveList.map((value) => {
-          return <SavePost key={value.id} data={value} />;
-        })}
+        {saveList.map((value) => <SavePost key={value.id} data={value} />)}
       </S.Layout>
     </>
   );

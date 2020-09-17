@@ -6,7 +6,10 @@ const TagItem = ({ Tag }) => {
   const { name } = Tag;
   return (
     <S.StyledTagItem>
-      <Link to={`/tags/${name}`}># {name}</Link>
+      <Link to={`/tags/${name}`}>
+        #
+        {name}
+      </Link>
     </S.StyledTagItem>
   );
 };

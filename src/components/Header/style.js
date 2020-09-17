@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const HeaderLayout = styled.div`
     display: flex;
@@ -20,4 +20,3 @@ export const HeaderLogo = styled(Link)`
 export const Menu = styled.div`
     display: flex;
 `;
-

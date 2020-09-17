@@ -31,17 +31,17 @@ function calcTimeDiff(time) {
 
   if (diff("years") > 0) {
     return `${diff("years")}년 전`;
-  } else if (diff("months") > 0) {
+  } if (diff("months") > 0) {
     return `${diff("months")}달 전`;
-  } else if (diff("weeks") > 0) {
+  } if (diff("weeks") > 0) {
     return `${diff("weeks")}주 전`;
-  } else if (diff("days") > 0) {
+  } if (diff("days") > 0) {
     return `${diff("days")}일 전`;
-  } else if (diff("hours") > 0) {
+  } if (diff("hours") > 0) {
     return `${diff("hours")}시간 전`;
-  } else if (diff("minutes") > 0) {
+  } if (diff("minutes") > 0) {
     return `${diff("minutes")}분 전`;
-  } else if (diff("seconds")) {
+  } if (diff("seconds")) {
     return "방금 전";
   }
 }
