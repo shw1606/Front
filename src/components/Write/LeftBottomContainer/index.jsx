@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
 import { withRouter } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
@@ -25,6 +26,7 @@ const LeftBottomContainer = ({ history }) => {
   const clickSaveButton = useCallback(() => {
     if (title && markdown) {
       dispatch(printAlert("save"));
+      history.replace(`/write?id=${2}`);
     } else {
       dispatch(printAlert("saveError"));
     }
@@ -53,6 +55,16 @@ const LeftBottomContainer = ({ history }) => {
       </S.Layout>
     </>
   );
+};
+
+LeftBottomContainer.defaultProps = {
+  history: {},
+};
+
+LeftBottomContainer.propTypes = {
+  history: PropTypes.objectOf(
+    PropTypes.oneOfType(PropTypes.func, PropTypes.object, PropTypes.string)
+  ),
 };
 
 export default withRouter(LeftBottomContainer);

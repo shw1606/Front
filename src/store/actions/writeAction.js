@@ -12,6 +12,18 @@ export const changeTitle = (data) => ({
   data,
 });
 
+// 태그 추가
+export const ADD_TAG = "ADD_TAG";
+export const addTag = (data) => ({ type: ADD_TAG, data });
+
+// 태그 삭제
+export const REMOVE_TAG = "REMOVE_TAGs";
+export const removeTag = (data) => ({ type: REMOVE_TAG, data });
+
+// 클릭한 태그 삭제
+export const REMOVE_CLICKED_TAG = "REMOVE_CLICKED_TAG";
+export const removeClickedTag = (data) => ({ type: REMOVE_CLICKED_TAG, data });
+
 // 마크다운 이미지 업로드
 export const UPLOAD_MARKDOWN_IMAGE_REQUEST = "UPLOAD_MARKDOWN_IMAGE_REQUEST";
 export const UPLOAD_MARKDOWN_IMAGE_SUCCESS = "UPLOAD_MARKDOWN_IMAGE_SUCCESS";
