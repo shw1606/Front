@@ -28,6 +28,7 @@ module.exports = {
     "comma-dangle": 0,
     "object-curly-newline": 0,
     "import/no-duplicates": 0,
+    "no-param-reassign": ["error", { props: false }], // 인자값 재할당 off
     quotes: 0,
   },
 };
