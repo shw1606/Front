@@ -47,14 +47,18 @@ const Login = () => {
     <S.LoginModalLayout>
       <S.LoginTitle>{loginStatus ? "로그인" : "회원가입"}</S.LoginTitle>
       <S.EmailLoginTitle>
-        이메일로 {loginStatus ? "로그인" : "회원가입"}
+        이메일로
+        {' '}
+        {loginStatus ? "로그인" : "회원가입"}
       </S.EmailLoginTitle>
       <S.EmailLoginFormWrapper>
         {sentEmail ? (
           <S.SentInputContainer>
             <BsCheck />
             <span>
-              {isUser ? "로그인" : "회원가입"} 링크가 이메일로 전송되었습니다.
+              {isUser ? "로그인" : "회원가입"}
+              {' '}
+              링크가 이메일로 전송되었습니다.
             </span>
           </S.SentInputContainer>
         ) : (
@@ -71,7 +75,9 @@ const Login = () => {
         )}
       </S.EmailLoginFormWrapper>
       <S.SocialLoginTitle>
-        소셜 계정으로 {loginStatus ? "회원가입" : "로그인"}
+        소셜 계정으로
+        {' '}
+        {loginStatus ? "회원가입" : "로그인"}
       </S.SocialLoginTitle>
       <S.SocialLoginWrapper>
         <S.GithubLoginButton />

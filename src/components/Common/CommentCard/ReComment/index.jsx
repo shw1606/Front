@@ -2,8 +2,8 @@ import React, { useCallback, useRef, useState } from "react";
 import { BsPlusSquareFill } from "react-icons/bs";
 
 // components
-import CommentCard from "../index";
 import CommentInput from "components/Common/CommentInput";
+import CommentCard from "../index";
 
 // style
 import * as S from "./style";
@@ -51,17 +51,15 @@ const ReComment = ({ data }) => {
         )}
         <S.ReCommentWrapper ref={recommentRef}>
           {data.re_comments.length ? (
-            data.re_comments.map((value) => {
-              return (
-                <CommentCard
-                  key={value.comment_context + value._id}
-                  data={value}
-                />
-              );
-            })
+            data.re_comments.map((value) => (
+              <CommentCard
+                key={value.comment_context + value._id}
+                data={value}
+              />
+            ))
           ) : (
             <CommentInput
-              cancelBtn={true}
+              cancelBtn
               propsCancelBtn={propsClickOpenButton}
               // userId={1}
               postId={data.post_id}
@@ -77,7 +75,7 @@ const ReComment = ({ data }) => {
               </S.ReplyButton>
             ) : (
               <CommentInput
-                cancelBtn={true}
+                cancelBtn
                 propsCancelBtn={propsClickRecommentBtn}
                 // userId={1}
                 postId={data.post_id}

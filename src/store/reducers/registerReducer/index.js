@@ -24,39 +24,37 @@ const initialState = {
   errorMessage: "",
 };
 
-const RegisterReducer = (state = initialState, action) => {
-  return immer(state, (draft) => {
-    switch (action.type) {
-      // 아이디 텍스트 변경
-      case LOCAL_CHANGE_ID: {
-        changeId(draft, action.data);
-        break;
-      }
-      // 한 줄 소개 텍스트 변경
-      case LOCAL_CHANGE_INTRODUCE: {
-        changeIntroduce(draft, action.data);
-        break;
-      }
-      // 등록 정보 전송 요청
-      case SUBMIT_REGISTER_INFO_REQUEST: {
-        submitRgisterInfo.request(draft, action.data);
-        break;
-      }
-      // 등록 정보 전송 성공
-      case SUBMIT_REGISTER_INFO_SUCCESS: {
-        submitRgisterInfo.success(draft, action.data);
-        break;
-      }
-      // 등록 정보 전송 실패
-      case SUBMIT_REGISTER_INFO_FAILURE: {
-        submitRgisterInfo.failure(draft, action.data);
-        break;
-      }
-      default: {
-        break;
-      }
+const RegisterReducer = (state = initialState, action) => immer(state, (draft) => {
+  switch (action.type) {
+    // 아이디 텍스트 변경
+    case LOCAL_CHANGE_ID: {
+      changeId(draft, action.data);
+      break;
     }
-  });
-};
+    // 한 줄 소개 텍스트 변경
+    case LOCAL_CHANGE_INTRODUCE: {
+      changeIntroduce(draft, action.data);
+      break;
+    }
+    // 등록 정보 전송 요청
+    case SUBMIT_REGISTER_INFO_REQUEST: {
+      submitRgisterInfo.request(draft, action.data);
+      break;
+    }
+    // 등록 정보 전송 성공
+    case SUBMIT_REGISTER_INFO_SUCCESS: {
+      submitRgisterInfo.success(draft, action.data);
+      break;
+    }
+    // 등록 정보 전송 실패
+    case SUBMIT_REGISTER_INFO_FAILURE: {
+      submitRgisterInfo.failure(draft, action.data);
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+});
 
 export default RegisterReducer;

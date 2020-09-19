@@ -6,12 +6,10 @@ import { withRouter } from "react-router-dom";
 import Recent from "./recent";
 import Trending from "./trending";
 
-const HomePostLayout = ({ location }) => {
-  return (
-    <>
-      <main>{location.pathname === "/" ? <Trending /> : <Recent />}</main>
-    </>
-  );
-};
+const HomePostLayout = ({ location }) => (
+  <>
+    <main>{location.pathname === "/" ? <Trending /> : <Recent />}</main>
+  </>
+);
 
 export default withRouter(HomePostLayout);

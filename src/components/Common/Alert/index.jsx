@@ -39,7 +39,7 @@ const Alert = ({ data }) => {
         <S.Conatainer backgroundColor={data.color}>
           <S.AlertText>{data.message}</S.AlertText>
           <S.CloseBtn onClick={clickCloseBtn}>X</S.CloseBtn>
-          <S.ProgressBar></S.ProgressBar>
+          <S.ProgressBar />
         </S.Conatainer>
       </S.Layout>
     </>

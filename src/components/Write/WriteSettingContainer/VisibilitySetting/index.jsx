@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { FaGlobeAsia } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
+import { FaGlobeAsia, FaLock } from "react-icons/fa";
 
 // style
 import * as S from "./style";

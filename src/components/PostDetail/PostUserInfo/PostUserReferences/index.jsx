@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import * as S from "./style";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -8,6 +7,7 @@ import {
   GrMail,
 } from "react-icons/all";
 import { Link } from "react-router-dom";
+import * as S from "./style";
 
 const PostUserReferences = () => {
   const [mailHoverBool, setMailHoverBool] = useState(false);

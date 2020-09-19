@@ -25,7 +25,7 @@ const RestSetting = () => {
   };
   const [exampleData, setExampleData] = useState(sampleData);
   const onVelogTitleChange = useCallback((e) => {
-    let prev = exampleData;
+    const prev = exampleData;
     prev.velogTitle = e.target.value;
     setExampleData(prev);
     console.log("setEnapf");
@@ -104,11 +104,11 @@ const RestSetting = () => {
                   <UnderlineButton onClick={onAddClick}>
                     정보 추가
                   </UnderlineButton>
-                ) : (
-                  <>
-                    <SocialInfoList socialInfo={sampleData.socialInfo} />
-                  </>
-                )
+                  ) : (
+                    <>
+                      <SocialInfoList socialInfo={sampleData.socialInfo} />
+                    </>
+                  )
               ) : (
                 <SocialInfo
                   onSubmit={onSubmit}
@@ -162,7 +162,7 @@ const RestSetting = () => {
                           transform: "translate(1.375rem)",
                           boxShadow: "rgba(0, 0, 0, 0.1) -2px 0px 4px",
                         }}
-                      ></div>
+                      />
                     </S.ToggleDiv>
                   ) : (
                     <S.ToggleDiv color="gray" onClick={onCommentToggleClick}>
@@ -172,7 +172,7 @@ const RestSetting = () => {
                           transform: "translate(0rem)",
                           boxShadow: "rgba(0, 0, 0, 0.05) 2px 0px 4px",
                         }}
-                      ></div>
+                      />
                     </S.ToggleDiv>
                   )}
                 </li>
@@ -186,7 +186,7 @@ const RestSetting = () => {
                           transform: "translate(1.375rem)",
                           boxShadow: "rgba(0, 0, 0, 0.1) -2px 0px 4px",
                         }}
-                      ></div>
+                      />
                     </S.ToggleDiv>
                   ) : (
                     <S.ToggleDiv color="gray" onClick={onUpdateToggleClick}>
@@ -196,7 +196,7 @@ const RestSetting = () => {
                           transform: "translate(0rem)",
                           boxShadow: "rgba(0, 0, 0, 0.05) 2px 0px 4px",
                         }}
-                      ></div>
+                      />
                     </S.ToggleDiv>
                   )}
                 </li>

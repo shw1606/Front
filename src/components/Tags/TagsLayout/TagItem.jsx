@@ -9,7 +9,11 @@ const TagItem = ({ Tag }) => {
         <S.TagItemLink to={`/tags/${name}`}>{name}</S.TagItemLink>
         <p>{description}</p>
       </div>
-      <div className="count">총 {count}개의 포스트</div>
+      <div className="count">
+        총
+        {count}
+        개의 포스트
+      </div>
     </S.TagItemWrapper>
   );
 };

@@ -1,19 +1,18 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import * as S from './style';
 
 const Tags = () => {
   const post = useSelector((state) => state.postDetailReducer.postInfo);
 
-  return(
+  return (
     <S.TagsWrapper>
       {post.tags &&
-          post.tags.map(tag => (
-              <S.Tag key={tag.toString()}>
-                <S.StyledLink to={`/tags/${tag}`}>{tag}</S.StyledLink>
-              </S.Tag>
-          ))
-      }
+          post.tags.map((tag) => (
+            <S.Tag key={tag.toString()}>
+              <S.StyledLink to={`/tags/${tag}`}>{tag}</S.StyledLink>
+            </S.Tag>
+          ))}
     </S.TagsWrapper>
   );
 };

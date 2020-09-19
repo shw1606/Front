@@ -67,6 +67,6 @@ export const RightButton = styled.button`
   cursor: pointer;
   outline: none;
   background: ${(state) =>
-    state.color === "save" ? "rgb(233, 236, 239)" : "rgb(18, 184, 134)"};
+    (state.color === "save" ? "rgb(233, 236, 239)" : "rgb(18, 184, 134)")};
   border-radius: 4px;
 `;

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import TagItem from "./TagItem";
-import * as S from "./style";
 import { Link } from "react-router-dom";
 import { POPULAR_TAGS_LOAD_REQUEST } from "store/actions/postAction";
+import TagItem from "./TagItem";
+import * as S from "./style";
 
 const HomeAsideTags = () => {
   const dispatch = useDispatch();

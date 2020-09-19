@@ -32,7 +32,7 @@ export const Button = styled.button`
   font-size: 1.125rem;
   background: white;
   color: ${(props) =>
-    props.setting ? "rgb(32, 201, 151)" : "rgb(134, 142, 150)"};
+    (props.setting ? "rgb(32, 201, 151)" : "rgb(134, 142, 150)")};
   border: 1px solid
     ${(props) => (props.setting ? "rgb(32, 201, 151)" : "transparent")};
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 4px 0px;

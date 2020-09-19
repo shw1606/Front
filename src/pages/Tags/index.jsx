@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import qs from "qs";
-import * as S from "./style";
 import Trending from "components/Tags/TagsLayout/Trending";
 import Alphabetical from "components/Tags/TagsLayout/Alphabetical";
+import * as S from "./style";
 
 const Tags = ({ match, location }) => {
   const query = qs.parse(location.search, {

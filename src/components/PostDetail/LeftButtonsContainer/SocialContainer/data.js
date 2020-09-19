@@ -1,6 +1,4 @@
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaPaperclip } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaPaperclip } from "react-icons/fa";
 
 // action
 import { LOCAL_RQEUEST_ALERT } from "store/actions/commonAction";

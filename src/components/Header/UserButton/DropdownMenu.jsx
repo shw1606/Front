@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useOutsideClick } from "hooks";
 import {
   DropdownContent,
   DropdownBtn,
@@ -7,7 +8,6 @@ import {
   ArrowDown,
   StyledLink,
 } from "./style";
-import { useOutsideClick } from "hooks";
 
 function DropdownMenu({ username }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -22,7 +22,9 @@ function DropdownMenu({ username }) {
   return (
     <DropdownMenuWrapper>
       <DropdownBtn onClick={toggleDropdown}>
-        <UserProfile /> <ArrowDown />
+        <UserProfile />
+        {' '}
+        <ArrowDown />
       </DropdownBtn>
       {dropdownVisible && (
         <DropdownContent ref={contentRef}>

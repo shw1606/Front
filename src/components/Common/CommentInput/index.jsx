@@ -29,7 +29,7 @@ const CommentInput = ({
   const resizeTextarea = useCallback((event) => {
     textareaRef.current.style.height = "1px";
     textareaRef.current.style.height =
-      12 + textareaRef.current.scrollHeight + "px";
+      `${12 + textareaRef.current.scrollHeight}px`;
     setText(event.target.value);
   }, []);
 

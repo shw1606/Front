@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import TagItem from "./TagItem";
-import * as S from "./style";
 import { useDispatch, useSelector } from "react-redux";
 import { ALPHABET_TAGS_LOAD_REQUEST } from "store/actions/postAction";
 import { useInfiniteScroll } from "hooks";
+import * as S from "./style";
+import TagItem from "./TagItem";
 import TagsFallBackLayout from "../TagsFallBackLayout";
 
 const Alphabetical = () => {

@@ -28,7 +28,6 @@ function* loadReadPosts(action) {
   }
 }
 
-
 export default function* watchLoadReadPosts() {
   yield takeLatest(LOAD_READ_POSTS_REQUEST, loadReadPosts);
 }

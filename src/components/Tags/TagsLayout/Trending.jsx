@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import TagItem from "./TagItem";
 import { useDispatch, useSelector } from "react-redux";
 import { POPULAR_TAGS_LOAD_REQUEST } from "store/actions/postAction";
-import * as S from "./style";
 import { useInfiniteScroll } from "hooks";
+import * as S from "./style";
+import TagItem from "./TagItem";
 import TagsFallBackLayout from "../TagsFallBackLayout";
 
 const Trending = () => {
