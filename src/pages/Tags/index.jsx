@@ -14,7 +14,7 @@ const Tags = ({ match, location }) => {
   const trendingSelected = sorting === "trending" || !sorting;
 
   return (
-    <main style={{ "margin-top": "3rem" }}>
+    <main style={{ marginTop: "3rem" }}>
       <S.StyledTagPageDiv>
         <div className="tag_wrapper">
           <S.StyledLinkForTab
