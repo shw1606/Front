@@ -10,6 +10,8 @@ import modal from "./modal.saga";
 import readingList from "./readingList.saga";
 import write from "./write.saga";
 import save from "./save.saga";
+import search from "./search.saga";
+import setting from "./setting.saga";
 
 axios.defaults.baseURL = "localhost:3000/velog.io";
 axios.defaults.withCredentials = true;
@@ -25,5 +27,7 @@ export default function* () {
     call(readingList),
     call(write),
     call(save),
+    call(search),
+    call(setting),
   ]);
 }

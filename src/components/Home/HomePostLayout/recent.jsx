@@ -3,13 +3,13 @@ import React, { lazy, Suspense, useCallback, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // component
-import HomePostFallBackLayout from "../HomePostFallBackLayout";
 
 // custom hhoks
 import { useInfiniteScroll } from "hooks";
 
 // action
 import { RECENT_POSTS_LOAD_REQUEST } from "store/actions/postAction";
+import HomePostFallBackLayout from "../HomePostFallBackLayout";
 
 // style
 import * as S from "./style";
