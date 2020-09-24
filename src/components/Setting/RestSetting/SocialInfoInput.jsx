@@ -1,5 +1,4 @@
-import React from "react";
-import * as S from "./style";
+import React, { useState, useCallback } from "react";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -7,7 +6,8 @@ import {
   IoMdHome,
   GrMail,
 } from "react-icons/all";
-import { useState, useCallback } from "react";
+import * as S from "./style";
+
 import SquareButton from "../../Common/SquareButton";
 
 const SocialInfo = ({ onSubmit, socialInfo }) => {
@@ -39,7 +39,6 @@ const SocialInfo = ({ onSubmit, socialInfo }) => {
         setHomePage(e.target.value);
         break;
       default:
-        return;
     }
   }, []);
 

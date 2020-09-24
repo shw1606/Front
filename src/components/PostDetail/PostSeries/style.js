@@ -1,13 +1,11 @@
 import styled, { css } from "styled-components";
-import { IoIosBookmark } from "react-icons/all";
-import { Link } from "react-router-dom";
-
-import {
+import { IoIosBookmark,
   MdArrowDropUp,
   MdArrowDropDown,
   RiArrowRightSLine,
   RiArrowLeftSLine,
 } from "react-icons/all";
+import { Link } from "react-router-dom";
 
 export const PostSeriesContainer = styled.div`
   margin-top: 2rem;

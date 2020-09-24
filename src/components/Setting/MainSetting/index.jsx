@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import * as S from "./style";
 import SquareButton from "../../Common/SquareButton";
 import UnderlineButton from "../../Common/UnderlineButton";
-import { useCallback } from "react";
 
 const MainSetting = () => {
   const [profileSaved, setProfileSaved] = useState(true);
@@ -18,7 +17,7 @@ const MainSetting = () => {
     setShortBio(e.target.value);
   });
   const onProfileSubmit = useCallback((e) => {
-    //서버 데이터 갱신
+    // 서버 데이터 갱신
     setProfileSaved(true);
   });
   return (
@@ -44,7 +43,7 @@ const MainSetting = () => {
               placeholder="이름"
               value={name}
               onChange={onNameChange}
-            ></input>
+            />
             <input
               type="text"
               className="shortBio"
@@ -52,7 +51,7 @@ const MainSetting = () => {
               placeholder="한 줄 소개"
               value={shortBio}
               onChange={onBioChange}
-            ></input>
+            />
             <div className="button-wrapper">
               <SquareButton type="submit">저장</SquareButton>
             </div>

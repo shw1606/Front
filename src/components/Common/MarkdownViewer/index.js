@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { escapeForUrl } from "../../PostDetail/PostToc/utils";
 import breaks from 'remark-breaks';
+import { escapeForUrl } from "../../PostDetail/PostToc/utils";
 
 const MarkdownViewer = ({ content }) => {
   useEffect(() => {
@@ -14,14 +14,14 @@ const MarkdownViewer = ({ content }) => {
 
     const setId = (element) => {
       const id = escapeForUrl(element.innerHTML);
-      const exists = idList.filter(existingId => existingId.indexOf(id) !== -1);
+      const exists = idList.filter((existingId) => existingId.indexOf(id) !== -1);
       const uniqueId = `${id}${exists.length === 0 ? '' : `-${exists.length}`}`;
       element.id = uniqueId;
       idList.push(uniqueId);
     };
 
-    [h1, h2, h3].forEach(elements => elements.forEach(setId));
-  },[]);
+    [h1, h2, h3].forEach((elements) => elements.forEach(setId));
+  }, []);
 
   return (
     <ReactMarkdown
@@ -147,7 +147,7 @@ const MarkdownViewer = ({ content }) => {
   }
 
   function TableCellBlock(props) {
-    let style = {
+    const style = {
       color: "#343a40",
       textAlign: props.align ? props.align : "center",
       border: "0.7px solid #343a40",

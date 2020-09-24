@@ -32,10 +32,10 @@ const PostDetail = ({ match }) => {
   return (
     <>
       {postInfo ? (
-        <Fragment>
+        <>
           <S.Wrapper>
             <LeftButtonsContainer />
-            <PostTocContainer/>
+            <PostTocContainer />
             <S.Container>
               <PostHeader />
               <PostSeries />
@@ -45,7 +45,7 @@ const PostDetail = ({ match }) => {
               <CommentContainer />
             </S.Container>
           </S.Wrapper>
-        </Fragment>
+        </>
       ) : null}
     </>
   );

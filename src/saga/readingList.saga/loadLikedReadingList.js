@@ -28,7 +28,6 @@ function* loadLikedPosts(action) {
   }
 }
 
-
 export default function* watchLoadLikedPosts() {
   yield takeLatest(LOAD_LIKED_POSTS_REQUEST, loadLikedPosts);
 }

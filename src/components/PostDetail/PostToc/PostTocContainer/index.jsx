@@ -1,10 +1,10 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import * as S from './style';
 import { useSelector } from "react-redux";
+import * as S from './style';
 import { getScrollTop } from "../utils";
 
 const PostTocContainer = () => {
-  const toc = useSelector(state => state.postDetailReducer.toc);
+  const toc = useSelector((state) => state.postDetailReducer.toc);
   const [activeId, setActiveId] = useState(null);
   const [headingTops, setHeadingTops] = useState(null);
 
@@ -36,7 +36,7 @@ const PostTocContainer = () => {
     let timeoutId = null;
 
     function checkScrollHeight() {
-      const scrollHeight = document.body.scrollHeight;
+      const { scrollHeight } = document.body;
       if (prevScrollHeight !== scrollHeight) {
         updateTocPositions();
       }
@@ -58,9 +58,7 @@ const PostTocContainer = () => {
 
     if (!headingTops) return;
 
-    const currentHeading = [...headingTops].reverse().find(headingTop => {
-      return scrollTop >= headingTop.top - 8;
-    });
+    const currentHeading = [...headingTops].reverse().find((headingTop) => scrollTop >= headingTop.top - 8);
 
     if (!currentHeading) {
       setActiveId(null);
@@ -81,13 +79,15 @@ const PostTocContainer = () => {
 
   return (
     <S.TocWrapper>
-      {toc.map(item =>
-        <S.TocItem key={item.id}
-                   active={activeId === item.id}
-                   level={item.level}>
+      {toc.map((item) => (
+        <S.TocItem
+          key={item.id}
+          active={activeId === item.id}
+          level={item.level}
+        >
           <a href={`#${item.id}`}>{item.text}</a>
         </S.TocItem>
-      )}
+      ))}
     </S.TocWrapper>
   );
 };

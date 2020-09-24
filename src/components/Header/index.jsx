@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
+import { withRouter } from "react-router-dom";
 import * as S from "./style";
 import LoginButton from "./LoginButton";
 import UserButton from "./UserButton";
 import SearchButton from "./SearchButton";
-import { withRouter } from "react-router-dom";
 
 const Header = ({ location }) => {
   const isLoggedIn = true;

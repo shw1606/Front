@@ -17,18 +17,26 @@ const UserProfile = ({ id }) => {
 
   return (
     <>
-      {userProfile &&
-        <Fragment>
+      {userProfile && (
+        <>
           <S.UserInfoWrapper>
-            <img src={userProfile.thumbnail} alt="user_thumbnail"/>
+            <img src={userProfile.thumbnail} alt="user_thumbnail" />
             <S.TextWrapper>
-              <h1> {userProfile.velog_name} </h1>
-              <div> {userProfile.short_bio} </div>
+              <h1>
+                {' '}
+                {userProfile.velog_name}
+                {' '}
+              </h1>
+              <div>
+                {' '}
+                {userProfile.short_bio}
+                {' '}
+              </div>
             </S.TextWrapper>
           </S.UserInfoWrapper>
-          <UserProfileReferences userProfile={userProfile}/>
-        </Fragment>
-      }
+          <UserProfileReferences userProfile={userProfile} />
+        </>
+      )}
     </>
   );
 };

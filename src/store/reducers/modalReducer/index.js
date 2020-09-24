@@ -22,44 +22,42 @@ const initialState = {
   isUser: false,
 };
 
-const RegisterReducer = (state = initialState, action) => {
-  return immer(state, (draft) => {
-    switch (action.type) {
-      // 로그인 요청
-      case SUBMIT_SIGN_IN_REQUEST: {
-        submitSignIn.request(draft, action.data);
-        break;
-      }
-      // 로그인 성공
-      case SUBMIT_SIGN_IN_SUCCESS: {
-        submitSignIn.request(draft, action.data);
-        break;
-      }
-      // 로그인 실패
-      case SUBMIT_SIGN_IN_FAILURE: {
-        submitSignIn.request(draft, action.data);
-        break;
-      }
-      // 회원가입 요청
-      case SUBMIT_SIGN_UP_REQUEST: {
-        submitSignUp.request(draft, action.data);
-        break;
-      }
-      // 회원가입 성공
-      case SUBMIT_SIGN_UP_SUCCESS: {
-        submitSignUp.success(draft, action.data);
-        break;
-      }
-      // 회원가입 실패
-      case SUBMIT_SIGN_UP_FAILURE: {
-        submitSignUp.failure(draft, action.data);
-        break;
-      }
-      default: {
-        break;
-      }
+const RegisterReducer = (state = initialState, action) => immer(state, (draft) => {
+  switch (action.type) {
+    // 로그인 요청
+    case SUBMIT_SIGN_IN_REQUEST: {
+      submitSignIn.request(draft, action.data);
+      break;
     }
-  });
-};
+    // 로그인 성공
+    case SUBMIT_SIGN_IN_SUCCESS: {
+      submitSignIn.request(draft, action.data);
+      break;
+    }
+    // 로그인 실패
+    case SUBMIT_SIGN_IN_FAILURE: {
+      submitSignIn.request(draft, action.data);
+      break;
+    }
+    // 회원가입 요청
+    case SUBMIT_SIGN_UP_REQUEST: {
+      submitSignUp.request(draft, action.data);
+      break;
+    }
+    // 회원가입 성공
+    case SUBMIT_SIGN_UP_SUCCESS: {
+      submitSignUp.success(draft, action.data);
+      break;
+    }
+    // 회원가입 실패
+    case SUBMIT_SIGN_UP_FAILURE: {
+      submitSignUp.failure(draft, action.data);
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+});
 
 export default RegisterReducer;

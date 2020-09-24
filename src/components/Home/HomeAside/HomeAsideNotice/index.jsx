@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import NoticeItem from "./NoticeItem";
-import * as S from "./style";
 import { useSelector, useDispatch } from "react-redux";
 import { NOTICE_LOAD_REQUEST } from "store/actions/postAction";
+import NoticeItem from "./NoticeItem";
+import * as S from "./style";
 
 const HomeAsideNotice = () => {
   const dispatch = useDispatch();

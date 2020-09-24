@@ -1,4 +1,4 @@
-export function escapeForUrl (text) {
+export function escapeForUrl(text) {
   return text
     .replace(
       /[^0-9a-zA-Zㄱ-힣.\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf -]/g,
@@ -15,14 +15,14 @@ export function parseHeadings(html) {
 
   const elements = Array.from(div.children);
 
-  const headings = elements.filter(el => el.tagName.match(/H([1-3])/));
+  const headings = elements.filter((el) => el.tagName.match(/H([1-3])/));
 
   const idList = [];
 
-  headings.forEach(element => {
+  headings.forEach((element) => {
     const id = escapeForUrl(element.textContent);
-    const exist = idList.filter(existingId => existingId.indexOf(id) !== -1);
-    const uniqueId = `${id}${exist.length === 0 ? '': `-${exist.length}`}`;
+    const exist = idList.filter((existingId) => existingId.indexOf(id) !== -1);
+    const uniqueId = `${id}${exist.length === 0 ? '' : `-${exist.length}`}`;
     element.id = uniqueId;
     idList.push(uniqueId);
   });
@@ -34,10 +34,10 @@ export function parseHeadings(html) {
   }));
 
   const minLevel = Math.min(
-    ...Array.from(headingsInfo.map(info => info.level))
+    ...Array.from(headingsInfo.map((info) => info.level))
   );
 
-  headingsInfo.forEach(info => {
+  headingsInfo.forEach((info) => {
     info.level -= minLevel;
   });
 
@@ -51,4 +51,3 @@ export function getScrollTop() {
     : document.body.scrollTop;
   return scrollTop;
 }
-

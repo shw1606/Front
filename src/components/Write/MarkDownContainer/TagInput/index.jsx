@@ -39,13 +39,12 @@ const TagInput = () => {
         }
         setTagList((prev) => [...prev, text.trim()]);
         setTagInput("");
-        return;
       }
     },
     [tagList]
   );
 
-  //input에 포커스가 있는 경우
+  // input에 포커스가 있는 경우
   const focusInput = useCallback(() => {
     setFocus(true);
   }, []);
@@ -58,13 +57,11 @@ const TagInput = () => {
   return (
     <>
       <S.Layout>
-        {tagList.map((tag) => {
-          return (
-            <S.Tag key={tag} onClick={() => removeClickedTag(tag)}>
-              {tag}
-            </S.Tag>
-          );
-        })}
+        {tagList.map((tag) => (
+          <S.Tag key={tag} onClick={() => removeClickedTag(tag)}>
+            {tag}
+          </S.Tag>
+        ))}
         <S.TagInput
           className="tagInput"
           placeholder="태그를 입력하세요"

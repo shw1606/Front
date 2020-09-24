@@ -32,9 +32,7 @@ const Form = () => {
   return (
     <>
       <S.Form onSubmit={submitInfo}>
-        {InputData.map((value) => {
-          return <Input key={value.label} value={value} />;
-        })}
+        {InputData.map((value) => <Input key={value.label} value={value} />)}
         <ErrorMessage />
         <S.FormButtons>
           <button className="cancel">

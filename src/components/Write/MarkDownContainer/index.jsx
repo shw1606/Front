@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+// action
+import { uploadMarkdownImageRequest } from "store/actions/writeAction";
+
+// hooks
+import { useUpload } from "hooks";
+
 // component
 import AddLink from "./AddLink";
 import MainHeader from "./MainHeader";
 import ToolBar from "./ToolBar";
 import MarkDownWrite from "./MarkDownWrite";
 import DragDropUpload from "./DragDropUpload";
-
-// action
-import { uploadMarkdownImageRequest } from "store/actions/writeAction";
-
-// hooks
-import { useUpload } from "hooks";
 
 // style
 import * as S from "./style";
@@ -31,12 +31,10 @@ const MainContainer = () => {
 
   // Link 컴포넌트에서 [확인] 버튼 클릭
   const handleConfirmAddLink = useCallback((link) => {
-    setAddLink((prev) => {
-      return {
-        ...prev,
-        visible: false,
-      };
-    });
+    setAddLink((prev) => ({
+      ...prev,
+      visible: false,
+    }));
     if (!window.codeMirror) return;
     const doc = window.codeMirror.getDoc();
     const cursor = doc.getCursor("end");
@@ -65,17 +63,15 @@ const MainContainer = () => {
 
   // Link 컴포넌트 닫기
   const handleCancelAddLink = useCallback(() => {
-    setAddLink((prev) => {
-      return {
-        ...prev,
-        visible: false,
-      };
-    });
+    setAddLink((prev) => ({
+      ...prev,
+      visible: false,
+    }));
   }, []);
 
   // Link 컴포넌트 출력
   const handleOpenAddLink = useCallback(() => {
-    const codeMirror = window.codeMirror;
+    const { codeMirror } = window;
     if (!codeMirror) return;
 
     const doc = codeMirror.getDoc();
@@ -96,7 +92,7 @@ const MainContainer = () => {
   // 툴바 버튼 클릭
   const clickToolBar = useCallback(
     (mode) => {
-      const codeMirror = window.codeMirror;
+      const { codeMirror } = window;
       if (!codeMirror) return;
 
       const doc = codeMirror.getDoc();
@@ -129,9 +125,7 @@ const MainContainer = () => {
       };
 
       // 기존에 있는 #을 전부 제거
-      const removeHeading = (text) => {
-        return text.replace(/#{1,6} /, "");
-      };
+      const removeHeading = (text) => text.replace(/#{1,6} /, "");
 
       const handlers = {
         heading1: () => {
@@ -438,7 +432,7 @@ const MainContainer = () => {
             );
             return;
           }
-          doc.replaceSelection("```\n" + selected + "\n```");
+          doc.replaceSelection(`\`\`\`\n${selected}\n\`\`\``);
         },
       };
       const handler = handlers[mode];
@@ -455,7 +449,7 @@ const MainContainer = () => {
   }, [dispatch, image]);
 
   useEffect(() => {
-    const codeMirror = window.codeMirror;
+    const { codeMirror } = window;
     if (!markdownImage || !codeMirror) return;
     codeMirror.getDoc().replaceSelection(`![](${encodeURI(markdownImage)})`);
   }, [markdownImage, image]);

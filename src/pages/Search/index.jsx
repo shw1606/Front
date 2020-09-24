@@ -1,12 +1,10 @@
 import React from "react";
 import SearchBar from "../../components/Search/SearchBar";
 
-const Search = () => {
-  return (
-    <>
-      <SearchBar />
-    </>
-  );
-};
+const Search = () => (
+  <>
+    <SearchBar />
+  </>
+);
 
 export default Search;

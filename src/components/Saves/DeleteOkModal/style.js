@@ -44,13 +44,13 @@ export const ModalContainer = styled.div`
   padding: 2rem 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 12px 0px;
   ${(props) =>
-    props.visible
+    (props.visible
       ? css`
           animation: ${fadeIn} 0.4s forwards ease-in-out;
         `
       : css`
           animation: ${fadeOut} 0.2s forwards ease-in-out;
-        `}
+        `)}
 `;
 
 export const Title = styled.h3`

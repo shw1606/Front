@@ -1,7 +1,7 @@
-import { call, delay, put, takeLatest} from 'redux-saga/effects';
+import { call, delay, put, takeLatest } from 'redux-saga/effects';
 
 import {
-  LOAD_USER_SERIES_LIST_REQUEST ,
+  LOAD_USER_SERIES_LIST_REQUEST,
   LOAD_USER_SERIES_LIST_SUCCESS,
   LOAD_USER_SERIES_LIST_FAILURE
 } from "store/actions/userAction";
@@ -19,12 +19,12 @@ function* loadUserSeriesList(action) {
     yield put({
       type: LOAD_USER_SERIES_LIST_SUCCESS,
       data: result.data
-    })
+    });
   } catch (error) {
     yield put({
       type: LOAD_USER_SERIES_LIST_FAILURE,
       data: error
-    })
+    });
   }
 }
 

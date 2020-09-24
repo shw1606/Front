@@ -27,7 +27,6 @@ function* loadUserProfile(action) {
   }
 }
 
-
 export default function* watchLoadUser() {
   yield takeLatest(LOAD_USER_PROFILE_REQUEST, loadUserProfile);
 }
