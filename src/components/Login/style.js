@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FaFacebook, FcGoogle, GoMarkGithub } from "react-icons/all";
-import { Link } from "react-router-dom";
 
 export const LoginModalLayout = styled.div`
   margin: 0;

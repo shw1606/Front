@@ -1,4 +1,4 @@
-import { delay, call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 
 import {
   LOAD_USER_TAGS_REQUEST,

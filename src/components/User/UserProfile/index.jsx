@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { LOAD_USER_PROFILE_REQUEST } from "store/actions/userAction";
 import * as S from './style';
@@ -13,7 +13,7 @@ const UserProfile = ({ id }) => {
       type: LOAD_USER_PROFILE_REQUEST,
       id
     });
-  }, [id]);
+  }, [id, dispatch]);
 
   return (
     <>

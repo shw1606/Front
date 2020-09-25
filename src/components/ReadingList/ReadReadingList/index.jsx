@@ -15,7 +15,7 @@ const ReadReadingList = ({ username }) => {
 
   useEffect(() => {
     dispatch({ type: LOAD_READ_POSTS_REQUEST, username });
-  }, []);
+  }, [dispatch, username]);
 
   useInfiniteScroll(posts, hasMorePosts, 0.75, LOAD_READ_POSTS_REQUEST);
 

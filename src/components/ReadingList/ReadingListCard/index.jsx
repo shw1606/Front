@@ -7,7 +7,7 @@ const ReadingListCard = ({ data }) => (
   <S.PostCardStyle>
     <S.PostImage to={`/@${data.author}/${data.title}`}>
       <div>
-        <img src={data.thumbnail} />
+        <img src={data.thumbnail} alt={`${data.title} thumbnail`} />
       </div>
     </S.PostImage>
     <S.MainInfo>
@@ -26,7 +26,7 @@ const ReadingListCard = ({ data }) => (
     </S.MainInfo>
     <S.SubInfo>
       <Link to={`/@${data.author}/${data.title}`}>
-        <img src={data.avatar} />
+        <img src={data.avatar} alt={`${data.author} avatar`} />
         <span>
           by
           {' '}

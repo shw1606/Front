@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import * as S from "./style";
 import LoginButton from "./LoginButton";

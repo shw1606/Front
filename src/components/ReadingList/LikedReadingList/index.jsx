@@ -15,7 +15,7 @@ const LikedReadingList = ({ username }) => {
 
   useEffect(() => {
     dispatch({ type: LOAD_LIKED_POSTS_REQUEST, username });
-  }, []);
+  }, [username, dispatch]);
 
   useInfiniteScroll(posts, hasMorePosts, 0.75, LOAD_LIKED_POSTS_REQUEST);
 

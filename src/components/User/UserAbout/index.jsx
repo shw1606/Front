@@ -4,13 +4,13 @@ import { LOAD_USER_INTRODUCTION_REQUEST } from "store/actions/userAction";
 import MarkdownViewer from "components/Common/MarkdownViewer";
 import * as S from './style';
 
-const UserAbout = () => {
+const UserAbout = ({ username }) => {
   const dispatch = useDispatch();
   const about = useSelector((state) => state.userReducer.userInstruction);
 
   useEffect(() => {
     dispatch({ type: LOAD_USER_INTRODUCTION_REQUEST });
-  }, []);
+  }, [username, dispatch]);
 
   return (
     <>

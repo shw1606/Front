@@ -36,7 +36,11 @@ const UserPostListItem = ({ post, username }) => {
         ))}
       </S.TagsWrapper>
       <S.PostSubInfo>
-        <span> 2020년 8월 2일 </span>
+        <span>
+          {' '}
+          {updated_at}
+          {' '}
+        </span>
         <span>
           <BsFillHeartFill />
           {heart}

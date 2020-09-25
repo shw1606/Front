@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -15,35 +14,35 @@ const UserProfileReferences = ({ userProfile }) => {
   return (
     <S.UserProfileReferencesWrapper>
       {profile_github && (
-        <a href={profile_github} target="_blank">
+        <a href={profile_github} target="_blank" rel="noopener noreferrer">
           {' '}
           <AiFillGithub />
           {' '}
         </a>
       )}
       {profile_twitter && (
-        <a href={profile_twitter} target="_blank">
+        <a href={profile_twitter} target="_blank" rel="noopener noreferrer">
           {' '}
           <AiOutlineTwitter />
           {' '}
         </a>
       )}
       {profile_facebook && (
-        <a href={profile_facebook} target="_blank">
+        <a href={profile_facebook} target="_blank" rel="noopener noreferrer">
           {' '}
           <FaFacebookSquare />
           {' '}
         </a>
       )}
       {profile_homepage && (
-        <a href={profile_homepage} target="_blank">
+        <a href={profile_homepage} target="_blank" rel="noopener noreferrer">
           {' '}
           <IoMdHome />
           {' '}
         </a>
       )}
       {profile_email && (
-        <a href={`mailto:${profile_email}`}>
+        <a href={`mailto:${profile_email}`} rel="noopener noreferrer">
           {' '}
           <GrMail />
           {' '}

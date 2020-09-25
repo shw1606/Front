@@ -15,7 +15,7 @@ const UserTags = ({ username }) => {
     dispatch({
       type: LOAD_USER_TAGS_REQUEST,
     });
-  }, [username, currentTag]);
+  }, [dispatch, username, currentTag]);
 
   return (
     <>
