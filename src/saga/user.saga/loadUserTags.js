@@ -6,9 +6,9 @@ import {
   LOAD_USER_TAGS_FAILURE
 } from "store/actions/userAction";
 
-import dummy from "../userTagsDummy";
+import dummy from "../userTagsDummy.json";
 
-function loadUserTagsAPI(id) {
+function loadUserTagsAPI() {
   return dummy;
 }
 

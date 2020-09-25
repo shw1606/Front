@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import * as S from './style';
 
-const UserSeriesListItem = ({ series, username }) => {
-  const { name, thumbnail, url_slug, posts, updated_at } = series;
-  const link = `/${username}/series/${url_slug}`;
+const UserSeriesListItem = ({ name, thumbnail, urlSlug, posts, updatedAt, username }) => {
+  const link = `/${username}/series/${urlSlug}`;
 
   return (
     <S.SeriesCardWrapper>
@@ -29,11 +29,23 @@ const UserSeriesListItem = ({ series, username }) => {
         <S.SeriesUpdatedAt>
           {' '}
           마지막 업데이트
-          {updated_at}
+          {updatedAt}
         </S.SeriesUpdatedAt>
       </S.SeriesSubInfo>
     </S.SeriesCardWrapper>
   );
 };
 
+UserSeriesListItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string,
+  urlSlug: PropTypes.string.isRequired,
+  posts: PropTypes.number.isRequired,
+  updatedAt: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired
+};
+
+UserSeriesListItem.defaultProps = {
+  thumbnail: "defaultImgSrc"
+};
 export default UserSeriesListItem;

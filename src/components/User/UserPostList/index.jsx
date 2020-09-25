@@ -1,4 +1,5 @@
-import React, { Fragment, lazy, Suspense, useEffect } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { LOAD_USER_POSTS_REQUEST } from "store/actions/userAction";
@@ -41,8 +42,18 @@ function UserPostList({ username }) {
           {posts
             ? (
               <>
-                {posts.map((post) =>
-                  <UserPostListItem post={post} username={username} />)}
+                {posts.map((post) => (
+                  <UserPostListItem
+                    key={post.id}
+                    username={username}
+                    title={post.title}
+                    content={post.content}
+                    thumbnail={post.thumbnail}
+                    updatedAt={post.updated_at}
+                    heart={post.heart}
+                    tags={post.tags}
+                  />
+                ))}
               </>
             )
             : <S.UserPostNotFound> 포스트가 없습니다. </S.UserPostNotFound>}
@@ -52,5 +63,9 @@ function UserPostList({ username }) {
     </>
   );
 }
+
+UserPostList.propTypes = {
+  username: PropTypes.string.isRequired
+};
 
 export default UserPostList;

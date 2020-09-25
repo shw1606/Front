@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect } from "react";
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import { LOAD_READ_POSTS_REQUEST } from "store/actions/readingListAction";
 import { useInfiniteScroll } from "hooks";
@@ -23,13 +24,26 @@ const ReadReadingList = ({ username }) => {
     <>
       <Suspense fallback="">
         <S.ReadingListLayout>
-          {posts && posts.map((post) =>
-            <ReadingListCard data={post} key={post.id} />)}
+          {posts && posts.map((post) => (
+            <ReadingListCard
+              key={post.id}
+              author={post.author}
+              title={post.title}
+              thumbnail={post.thumbnail}
+              content={post.content}
+              avatar={post.avatar}
+              heart={post.heart}
+            />
+          ))}
         </S.ReadingListLayout>
       </Suspense>
       {showPostFallback || <ReadingListFallBack />}
     </>
   );
+};
+
+ReadReadingList.propTypes = {
+  username: PropTypes.string.isRequired
 };
 
 export default ReadReadingList;

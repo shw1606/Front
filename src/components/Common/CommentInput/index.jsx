@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { SUBMIT_COMMENT_REQUEST } from "store/actions/postDetailAction";
 
 // components
-import Modal from "components/Modal";
+import Modal from "components/Common/Modal";
 import Login from "components/Login";
 
 // style

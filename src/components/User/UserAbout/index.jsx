@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import { LOAD_USER_INTRODUCTION_REQUEST } from "store/actions/userAction";
 import MarkdownViewer from "components/Common/MarkdownViewer";
@@ -19,6 +20,10 @@ const UserAbout = ({ username }) => {
         : <S.UserAboutNotFound> 소개가 작성되지 않았습니다. </S.UserAboutNotFound>}
     </>
   );
+};
+
+UserAbout.propTypes = {
+  username: PropTypes.string.isRequired
 };
 
 export default UserAbout;

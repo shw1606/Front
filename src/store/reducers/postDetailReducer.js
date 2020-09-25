@@ -108,7 +108,6 @@ const PostReducer = (state = initialState, action) => immer(state, (draft) => {
       break;
     }
     case LIKE_POST_SUCCESS: {
-      console.log(draft.postInfo);
       break;
     }
     case LIKE_POST_FAILURE: {

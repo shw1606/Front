@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { withRouter } from "react-router-dom";
 import * as S from "./style";
 import LoginButton from "./LoginButton";
@@ -24,4 +25,9 @@ const Header = ({ location }) => {
     </>
   );
 };
+
+Header.propTypes = {
+  location: PropTypes.objectOf(PropTypes.any).isRequired
+};
+
 export default withRouter(Header);

@@ -6,9 +6,9 @@ import {
   LOAD_LIKED_POSTS_FAILURE
 } from "store/actions/readingListAction";
 
-import dummy from "../aditional2";
+import dummy from "../aditional2.json";
 
-function loadLikedPostsAPI(username) {
+function loadLikedPostsAPI() {
   return dummy;
 }
 

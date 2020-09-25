@@ -6,9 +6,9 @@ import {
   LOAD_READ_POSTS_FAILURE
 } from "store/actions/readingListAction";
 
-import dummy from "../aditional2";
+import dummy from "../aditional2.json";
 
-function loadReadPostsAPI(username) {
+function loadReadPostsAPI() {
   return dummy;
 }
 

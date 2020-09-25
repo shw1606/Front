@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import PropTypes from 'prop-types';
 import { useOutsideClick } from "hooks";
 import {
   DropdownContent,
@@ -38,5 +39,9 @@ function DropdownMenu({ username }) {
     </DropdownMenuWrapper>
   );
 }
+
+DropdownMenu.propTypes = {
+  username: PropTypes.string.isRequired
+};
 
 export default DropdownMenu;

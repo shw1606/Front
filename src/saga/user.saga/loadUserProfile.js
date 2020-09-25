@@ -8,7 +8,7 @@ import {
 
 import dummy from "../userDummy.json";
 
-function loadUserProfileAPI(id) {
+function loadUserProfileAPI() {
   return dummy;
 }
 

@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import { LOAD_USER_SERIES_LIST_REQUEST } from "store/actions/userAction";
 import { useInfiniteScroll } from "hooks";
@@ -33,8 +34,17 @@ const UserSeries = ({ username }) => {
         {seriesList
           ? (
             <S.UserSeriesLayout>
-              {seriesList.map((series) =>
-                <UserSeriesListItem series={series} username={username} key={series.id} />)}
+              {seriesList.map((series) => (
+                <UserSeriesListItem
+                  username={username}
+                  key={series.id}
+                  name={series.name}
+                  thumbnail={series.thumbnail}
+                  urlSlug={series.url_slug}
+                  posts={series.posts}
+                  updatedAt={series.updated_at}
+                />
+              ))}
             </S.UserSeriesLayout>
           )
           : <S.SeriesNotFound> 시리즈가 없습니다. </S.SeriesNotFound>}
@@ -42,6 +52,10 @@ const UserSeries = ({ username }) => {
       {showSeriesFallback || <UserSeriesFallBack />}
     </>
   );
+};
+
+UserSeries.propTypes = {
+  username: PropTypes.string.isRequired
 };
 
 export default UserSeries;
