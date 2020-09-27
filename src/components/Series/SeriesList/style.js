@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AlignButton = styled.button`
+export const SortButton = styled.button`
   background-color: #f1f3f5;
   float: right;
   border: none;

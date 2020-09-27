@@ -55,6 +55,10 @@ export const SeriesDetail = styled.div`
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
   p {
     font-size: 12px;
     color: #495057;
@@ -63,5 +67,8 @@ export const SeriesDetail = styled.div`
     font-size: 10.5px;
     color: #adb5bd;
     margin-top: auto;
+    @media (max-width: 768px) {
+      margin-top: 1rem;
+    }
   }
 `;

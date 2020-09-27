@@ -26,7 +26,7 @@ const Series = () => {
       {seriesInfo && (
       <>
         <SeriesHeader name={seriesInfo.name} />
-        <SeriesList posts={seriesInfo.seriesPosts} />
+        <SeriesList username={username} posts={seriesInfo.seriesPosts} />
       </>
       )}
     </S.SeriesLayout>

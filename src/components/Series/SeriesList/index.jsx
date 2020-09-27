@@ -6,22 +6,24 @@ import SeriesPost from "../SeriesPost";
 // style
 import * as S from './style';
 
-const SeriesList = ({ posts }) => {
-  const [order, setOrder] = useState(true);
+const SeriesList = ({ username, posts }) => {
+  const [sort, toggleSort] = useState(true);
+  const [sortedPosts, setSortedPosts] = useState(posts);
 
   const handleClick = useCallback(() => {
-    setOrder(!order);
-  }, [order]);
+    toggleSort(!sort);
+    setSortedPosts([...sortedPosts].reverse());
+  }, [sort, sortedPosts]);
 
   return (
     <>
-      <S.AlignButton onClick={handleClick}>
+      <S.SortButton onClick={handleClick}>
         <RiArrowUpSLine />
         <span>
-          {order === true ? '오름차순' : '내림차순'}
+          {sort === true ? '오름차순' : '내림차순'}
         </span>
-      </S.AlignButton>
-      {posts && posts.map((post) => (
+      </S.SortButton>
+      {sortedPosts && sortedPosts.map((post) => (
         <SeriesPost
           key={post.post_id}
           index={post.index}
@@ -29,6 +31,7 @@ const SeriesList = ({ posts }) => {
           description={post.description}
           thumbnail={post.thumbnail}
           updatedAt={post.updated_at}
+          username={username}
         />
       ))}
     </>
@@ -36,6 +39,7 @@ const SeriesList = ({ posts }) => {
 };
 
 SeriesList.propTypes = {
+  username: PropTypes.string.isRequired,
   posts: PropTypes.arrayOf(PropTypes.shape({
     post_id: PropTypes.number,
     index: PropTypes.number,
