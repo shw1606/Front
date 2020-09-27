@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "message": "ok",
+  "data": {
+    "id": 1213213213123,
+    "user_id": 121321321312,
+    "name": "벨로그에 그리드뷰 되살리기",
+    "thumbnail": "https://cdn.pixabay.com/photo/2020/08/11/21/39/clouds-5481190_1280.jpg",
+    "url_slug": "grid",
+    "posts": 3,
+    "updated_at": "2020년 7월 28일",
+    "seriesPosts": [
+      {
+        "post_id": 21378912784,
+        "index": 1,
+        "title": "벨로그 홈에 그리드 뷰 되살리기 1편: 문제 확인과 벤치마킹",
+        "description": "이번에 벨로그 홈에 그리드 뷰를 되살릴 계획인데요, 이 과정을 포스트로 남기면 재밌을 것 같아서 이렇게 시리즈를 시작합니다! 이번 포스트를 통해 제가 어떤 생각을 하면서 UX를 기획하는지 엿볼 수 있을겁니다!",
+        "thumbnail": "https://media.vlpt.us/images/velopert/post/e6dc2b9c-24c9-4438-97bc-013bbb43afb9/grid%20view.png",
+        "updated_at": "2020년 7월 28일"
+      },
+      {
+        "post_id": 121349822,
+        "index": 2,
+        "title": "벨로그 홈에 그리드 뷰 되살리기 2편: UI 목업(Mock-up) 만들기",
+        "description": "벨로그 홈을 새로 디자인하기 위하여 UI 목업을 준비하면서 했던 고민들을 정리하여 포스트로 작성해보았습니다.",
+        "thumbnail": "https://media.vlpt.us/images/velopert/post/bc94942a-9ea3-434c-97cd-7ad59fc57e3d/Frame%203.png",
+        "updated_at": "2020년 7월 28일"
+      },
+      {
+        "post_id": 213221784,
+        "index": 3,
+        "title": "벨로그 홈에 그리드 뷰 되살리기 1편: 문제 확인과 벤치마킹",
+        "description": "이번에 벨로그 홈에 그리드 뷰를 되살릴 계획인데요, 이 과정을 포스트로 남기면 재밌을 것 같아서 이렇게 시리즈를 시작합니다! 이번 포스트를 통해 제가 어떤 생각을 하면서 UX를 기획하는지 엿볼 수 있을겁니다!",
+        "thumbnail": "https://media.vlpt.us/images/velopert/post/e6dc2b9c-24c9-4438-97bc-013bbb43afb9/grid%20view.png",
+        "updated_at": "2020년 7월 28일"
+      },
+      {
+        "post_id": 21371111784,
+        "index": 4,
+        "title": "벨로그 홈에 그리드 뷰 되살리기 1편: 문제 확인과 벤치마킹",
+        "description": "이번에 벨로그 홈에 그리드 뷰를 되살릴 계획인데요, 이 과정을 포스트로 남기면 재밌을 것 같아서 이렇게 시리즈를 시작합니다! 이번 포스트를 통해 제가 어떤 생각을 하면서 UX를 기획하는지 엿볼 수 있을겁니다!",
+        "thumbnail": "https://media.vlpt.us/images/velopert/post/e6dc2b9c-24c9-4438-97bc-013bbb43afb9/grid%20view.png",
+        "updated_at": "2020년 7월 28일"
+      }
+    ]
+  }
+}
