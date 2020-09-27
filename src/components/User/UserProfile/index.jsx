@@ -24,14 +24,10 @@ const UserProfile = ({ id }) => {
             <img src={userProfile.thumbnail} alt="user_thumbnail" />
             <S.TextWrapper>
               <h1>
-                {' '}
                 {userProfile.velog_name}
-                {' '}
               </h1>
               <div>
-                {' '}
                 {userProfile.short_bio}
-                {' '}
               </div>
             </S.TextWrapper>
           </S.UserInfoWrapper>

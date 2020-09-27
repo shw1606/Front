@@ -14,20 +14,15 @@ const UserSeriesListItem = ({ name, thumbnail, urlSlug, posts, updatedAt, userna
         </Link>
       </S.SeriesThumbnail>
       <h2>
-        {' '}
         {name}
-        {' '}
       </h2>
       <S.SeriesSubInfo>
         <div>
-          {' '}
           {posts}
           개의 포스트
-          {' '}
         </div>
         <div> · </div>
         <S.SeriesUpdatedAt>
-          {' '}
           마지막 업데이트
           {updatedAt}
         </S.SeriesUpdatedAt>

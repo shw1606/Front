@@ -18,15 +18,11 @@ const UserPostListItem = ({ username, title, content, thumbnail, updatedAt, hear
       )}
       <h2>
         <Link to={link}>
-          {' '}
           {title}
-          {' '}
         </Link>
       </h2>
       <S.PostContent>
-        {' '}
         {content}
-        {' '}
       </S.PostContent>
       <S.TagsWrapper>
         {tags && tags.map((tag) => (
@@ -37,9 +33,7 @@ const UserPostListItem = ({ username, title, content, thumbnail, updatedAt, hear
       </S.TagsWrapper>
       <S.PostSubInfo>
         <span>
-          {' '}
           {updatedAt}
-          {' '}
         </span>
         <span>
           <BsFillHeartFill />
