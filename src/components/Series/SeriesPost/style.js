@@ -65,4 +65,3 @@ export const SeriesDetail = styled.div`
     margin-top: auto;
   }
 `;
-

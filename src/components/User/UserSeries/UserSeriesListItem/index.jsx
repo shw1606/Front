@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as S from './style';
 
 const UserSeriesListItem = ({ name, thumbnail, urlSlug, posts, updatedAt, username }) => {
-  const link = `/${username}/series/${urlSlug}`;
+  const link = `/series/@${username}/${urlSlug}`;
 
   return (
     <S.SeriesCardWrapper>
@@ -14,7 +14,11 @@ const UserSeriesListItem = ({ name, thumbnail, urlSlug, posts, updatedAt, userna
         </Link>
       </S.SeriesThumbnail>
       <h2>
-        {name}
+        <Link to={link}>
+          {' '}
+          {name}
+          {' '}
+        </Link>
       </h2>
       <S.SeriesSubInfo>
         <div>

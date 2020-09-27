@@ -60,7 +60,7 @@ const App = () => (
           <Route path="/saves" component={Saves} />
           <Route path="/write" component={Write} />
           <Route path="/setting" exact component={Setting} />
-          <Route path="/series/@:username/:title" component={Series} />
+          <Route path="/series/@:username/:urlSlug" component={Series} />
         </Switch>
       </Suspense>
     </GlobalLayout>

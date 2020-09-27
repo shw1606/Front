@@ -5,7 +5,8 @@ export const SeriesCardWrapper = styled.div`
   @media (max-width: 944px) {
     width: 100%;
   }
-  h2 {
+  a {
+    color: #495057;
     margin-top: 0.5rem;
     font-size: 1.3rem;
   }
