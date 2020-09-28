@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "message": "ok",
+  "data": {
+    "postId": "5d8fda2d-06c5-48cc-8ad4-b80cc23f643a",
+    "title": "더미 데이터 제목입니다",
+    "tagList": ["이거는", "더미", "데이터입니다"],
+    "content": "더미 데이터 본문입니다!!!"
+  }
+}
