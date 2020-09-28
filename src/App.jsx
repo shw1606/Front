@@ -26,6 +26,7 @@ const Write = lazy(() => import("pages/Write"));
 const Saves = lazy(() => import("pages/Saves"));
 const ReadingList = lazy(() => import("pages/ReadingList"));
 const User = lazy(() => import("pages/User"));
+const Series = lazy(() => import("pages/Series"));
 
 // redux 및 redux-saga 세팅
 const store = () => {
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/saves" component={Saves} />
           <Route path="/write" component={Write} />
           <Route path="/setting" exact component={Setting} />
+          <Route path="/series/@:username/:urlSlug" component={Series} />
         </Switch>
       </Suspense>
     </GlobalLayout>

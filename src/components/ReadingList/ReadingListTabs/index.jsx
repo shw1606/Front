@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as S from "./style";
 
 const ReadingListTabs = ({ type }) => (
@@ -11,5 +12,9 @@ const ReadingListTabs = ({ type }) => (
     </S.Tab>
   </S.TabsWrapper>
 );
+
+ReadingListTabs.propTypes = {
+  type: PropTypes.string.isRequired
+};
 
 export default ReadingListTabs;

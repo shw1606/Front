@@ -1,4 +1,4 @@
-import { delay, call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 
 import {
   LOAD_USER_PROFILE_REQUEST,
@@ -8,7 +8,7 @@ import {
 
 import dummy from "../userDummy.json";
 
-function loadUserProfileAPI(id) {
+function loadUserProfileAPI() {
   return dummy;
 }
 

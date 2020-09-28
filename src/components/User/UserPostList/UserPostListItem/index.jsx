@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { BsFillHeartFill } from "react-icons/all";
 import * as S from './style';
 
-const UserPostListItem = ({ post, username }) => {
-  const { title, content, thumbnail, updated_at, heart, tags } = post;
+const UserPostListItem = ({ username, title, content, thumbnail, updatedAt, heart, tags }) => {
   const link = `/@${username}/${title}`;
 
   return (
@@ -18,15 +18,11 @@ const UserPostListItem = ({ post, username }) => {
       )}
       <h2>
         <Link to={link}>
-          {' '}
           {title}
-          {' '}
         </Link>
       </h2>
       <S.PostContent>
-        {' '}
         {content}
-        {' '}
       </S.PostContent>
       <S.TagsWrapper>
         {tags && tags.map((tag) => (
@@ -36,7 +32,9 @@ const UserPostListItem = ({ post, username }) => {
         ))}
       </S.TagsWrapper>
       <S.PostSubInfo>
-        <span> 2020년 8월 2일 </span>
+        <span>
+          {updatedAt}
+        </span>
         <span>
           <BsFillHeartFill />
           {heart}
@@ -44,6 +42,21 @@ const UserPostListItem = ({ post, username }) => {
       </S.PostSubInfo>
     </S.UserPostCard>
   );
+};
+
+UserPostListItem.propTypes = {
+  username: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string,
+  updatedAt: PropTypes.string.isRequired,
+  heart: PropTypes.number.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string)
+};
+
+UserPostListItem.defaultProps = {
+  thumbnail: null,
+  tags: []
 };
 
 export default UserPostListItem;

@@ -10,6 +10,7 @@ import modal from "store/reducers/modalReducer";
 import readingList from "store/reducers/readingListReducer";
 import write from "store/reducers/writeReducer";
 import save from "store/reducers/saveReducer";
+import series from "store/reducers/seriesReducer";
 
 export default combineReducers({
   common,
@@ -21,4 +22,5 @@ export default combineReducers({
   readingList,
   write,
   save,
+  series
 });

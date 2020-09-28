@@ -12,7 +12,7 @@ const PostTocContainer = () => {
     if (!toc) return;
     const scrollTop = getScrollTop();
 
-    const headingTops = toc.map(({ id }) => {
+    const currentHeadingTops = toc.map(({ id }) => {
       const el = document.getElementById(id);
       if (!el) {
         return {
@@ -27,7 +27,7 @@ const PostTocContainer = () => {
       };
     });
 
-    setHeadingTops(headingTops);
+    setHeadingTops(currentHeadingTops);
   }, [toc]);
 
   useEffect(() => {
@@ -58,7 +58,8 @@ const PostTocContainer = () => {
 
     if (!headingTops) return;
 
-    const currentHeading = [...headingTops].reverse().find((headingTop) => scrollTop >= headingTop.top - 8);
+    const currentHeading = [...headingTops].reverse().find((headingTop) =>
+      scrollTop >= headingTop.top - 8);
 
     if (!currentHeading) {
       setActiveId(null);

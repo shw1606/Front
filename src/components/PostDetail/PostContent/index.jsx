@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_TOC_REQUEST } from "store/actions/postDetailAction";
 import MarkdownViewer from "../../Common/MarkdownViewer";
-import { parseHeadings, setHeadingId } from "../PostToc/utils";
+import { parseHeadings } from "../PostToc/utils";
+import * as S from "./style";
 
 const PostContent = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,9 @@ const PostContent = () => {
   }, [dispatch, content]);
 
   return (
-    <MarkdownViewer content={content} />
+    <S.ContentLayout>
+      <MarkdownViewer content={content} />
+    </S.ContentLayout>
   );
 };
 
