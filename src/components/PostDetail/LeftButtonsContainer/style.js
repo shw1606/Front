@@ -11,7 +11,6 @@ export const ContainerWrapper = styled.div`
 
 export const Container = styled.div`
   position: absolute;
-  width: 4rem;
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;

@@ -1,14 +1,22 @@
 import React, { useCallback, useState } from "react";
+import { useDispatch } from "react-redux";
 import { FaGlobeAsia, FaLock } from "react-icons/fa";
+
+// action
+import { changePostAccess } from "store/actions/writeAction";
 
 // style
 import * as S from "./style";
 
 const VisibilitySetting = () => {
+  const dispatch = useDispatch();
   const [setting, setSetting] = useState(true);
 
   const clickButton = useCallback(() => {
-    setSetting((prev) => !prev);
+    setSetting((prev) => {
+      dispatch(changePostAccess(prev));
+      return !prev;
+    });
   }, []);
 
   return (

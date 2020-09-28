@@ -20,6 +20,10 @@ const property = {
     message: "포스트가 임시저장 되었습니다",
     color: color.green,
   },
+  emptyTitle: {
+    message: "제목이 비어 있습니다",
+    color: color.red,
+  },
 };
 
 export default function (draft, data) {

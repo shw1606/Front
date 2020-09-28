@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // componenets
@@ -17,26 +18,27 @@ import { LOAD_POST_DETAIL_REQUEST } from "store/actions/postDetailAction";
 // style
 import * as S from "./style";
 
-const PostDetail = ({ match }) => {
+const PostDetail = () => {
+  const params = useParams();
   const dispatch = useDispatch();
   const postInfo = useSelector((state) => state.postDetailReducer.postInfo);
 
   useEffect(() => {
-    const { author, title } = match.params;
+    const { author, title } = params;
     dispatch({
       type: LOAD_POST_DETAIL_REQUEST,
       data: { author, title },
     });
-  }, [dispatch, match]);
+  }, [dispatch]);
 
   return (
     <>
       {postInfo ? (
         <>
           <S.Wrapper>
-            <LeftButtonsContainer />
             <PostTocContainer />
             <S.Container>
+              <LeftButtonsContainer />
               <PostHeader />
               <PostSeries />
               <PostContent />
