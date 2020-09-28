@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import CodeMirror from "codemirror";
 
 import "codemirror/lib/codemirror.css";
@@ -18,6 +18,8 @@ const MainPane = () => {
   const dispatch = useDispatch();
   const textareaRef = useRef();
   const codeMirror = useRef();
+  const markdown = useSelector((store) => store.write.markdown);
+  const [handler, setBreak] = useState(true);
 
   useEffect(() => {
     if (!textareaRef.current) return;
@@ -32,11 +34,19 @@ const MainPane = () => {
   }, []);
 
   useEffect(() => {
-    if (!textareaRef.current) return;
+    if (!window.codeMirror) return;
+    if (markdown === "" || handler === false) return;
+    if (markdown !== "") codeMirror.current.setValue(markdown);
+    setBreak(false);
+  }, [handler, markdown]);
+
+  useEffect(() => {
+    if (!window.codeMirror) return;
+    // if (!window.codeMirror || handler === true) return;
     CodeMirror.on(window.codeMirror.getDoc(), "change", (cm) => {
       dispatch(changeMarkdown(cm.getValue()));
     });
-  }, [dispatch]);
+  }, [dispatch, handler]);
 
   return (
     <>

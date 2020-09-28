@@ -1,41 +1,75 @@
-import React, { useCallback } from "react";
+/* eslint-disable consistent-return */
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import PropTypes from "prop-types";
-
-import { withRouter } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 
 // action
 import { printAlert } from "store/actions/commonAction";
 import { printWriteSettingLayout } from "store/actions/writeAction";
+import { submitSavedPostRequest } from "store/actions/writeAction";
+import { exitWritePage } from "store/actions/writeAction";
 
 // style
 import * as S from "./style";
 
-const LeftBottomContainer = ({ history }) => {
+const LeftBottomContainer = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const title = useSelector((store) => store.write.title);
   const markdown = useSelector((store) => store.write.markdown);
+  const tagList = useSelector((store) => store.write.tagList);
+  const postId = useSelector((store) => store.write.postId);
 
   // 나가기 버튼 클릭
   const clickExitButton = useCallback(() => {
     history.goBack();
-  }, [history]);
+    dispatch(exitWritePage());
+  }, []);
 
   // 임시저장 버튼 클릭
   const clickSaveButton = useCallback(() => {
     if (title && markdown) {
       dispatch(printAlert("save"));
-      history.replace(`/write?id=${2}`);
+      dispatch(submitSavedPostRequest({ title, markdown, tagList }));
     } else {
       dispatch(printAlert("saveError"));
     }
-  }, [dispatch, markdown, title]);
+  }, [dispatch, markdown, title, tagList]);
 
   // 출간하기 버튼 클릭
   const clickSubmitButton = useCallback(() => {
     dispatch(printWriteSettingLayout(true));
   }, [dispatch]);
+
+  // url에 postId 추가
+  const [replaceUrl, setReplaceUrl] = useState(false);
+  useEffect(() => {
+    if (!postId) return;
+    history.replace(`?id=${postId}`);
+    setReplaceUrl(true);
+  }, [postId]);
+
+  // 10초 후 임시저장
+  const count = useRef(0);
+  useEffect(() => {
+    if (title === "" || markdown === "") return;
+    if (replaceUrl === false) return;
+    const data = { title, markdown, tagList };
+    let timeId = 0;
+    setTimeout(() => {
+      count.current += 1;
+      if (postId) {
+        const mergeData = { ...data, ...{ postId } };
+        timeId = dispatch(submitSavedPostRequest(mergeData, count.current));
+      } else {
+        timeId = dispatch(submitSavedPostRequest(data, count.current));
+      }
+    }, 0);
+    return () => {
+      clearTimeout(timeId);
+    };
+  }, [title, markdown, tagList, postId, replaceUrl]);
 
   return (
     <>
@@ -57,14 +91,4 @@ const LeftBottomContainer = ({ history }) => {
   );
 };
 
-LeftBottomContainer.defaultProps = {
-  history: {},
-};
-
-LeftBottomContainer.propTypes = {
-  history: PropTypes.objectOf(
-    PropTypes.oneOfType(PropTypes.func, PropTypes.object, PropTypes.string)
-  ),
-};
-
-export default withRouter(LeftBottomContainer);
+export default LeftBottomContainer;
