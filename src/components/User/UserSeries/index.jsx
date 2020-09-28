@@ -1,28 +1,28 @@
 import React, { Fragment, lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { LOAD_USER_SERIES_LIST_REQUEST } from "store/actions/userAction";
+import { useInfiniteScroll } from "hooks";
 import * as S from './style';
 
 // component
 import UserSeriesFallBack from "../UserSeriesFallBack";
 
-//action
-import { LOAD_USER_SERIES_LIST_REQUEST } from "store/actions/userAction";
+// action
 
-//custom hooks
-import { useInfiniteScroll } from "hooks";
+// custom hooks
 
-//lazy component
+// lazy component
 const UserSeriesListItem = lazy(() => import('./UserSeriesListItem'));
 
 const UserSeries = ({ username }) => {
   const dispatch = useDispatch();
-  const seriesList = useSelector(state => state.userReducer.seriesList);
+  const seriesList = useSelector((state) => state.userReducer.seriesList);
 
-  const showSeriesFallback = useSelector(state => state.userReducer.showSeriesFallback);
-  const hasMoreSeries = useSelector(state => state.userReducer.hasMoreSeries);
+  const showSeriesFallback = useSelector((state) => state.userReducer.showSeriesFallback);
+  const hasMoreSeries = useSelector((state) => state.userReducer.hasMoreSeries);
 
-  useEffect(() =>{
-    dispatch({ type: LOAD_USER_SERIES_LIST_REQUEST })
+  useEffect(() => {
+    dispatch({ type: LOAD_USER_SERIES_LIST_REQUEST });
   }, []);
 
   useInfiniteScroll(seriesList, hasMoreSeries, 0.75, LOAD_USER_SERIES_LIST_REQUEST);
@@ -31,14 +31,15 @@ const UserSeries = ({ username }) => {
     <>
       <Suspense fallback="">
         {seriesList
-          ? <S.UserSeriesLayout>
-            {seriesList.map(series =>
-              <UserSeriesListItem series={series} username={username} key={series.id}/>)}
+          ? (
+            <S.UserSeriesLayout>
+              {seriesList.map((series) =>
+                <UserSeriesListItem series={series} username={username} key={series.id} />)}
             </S.UserSeriesLayout>
-          : <S.SeriesNotFound> 시리즈가 없습니다. </S.SeriesNotFound>
-        }
+          )
+          : <S.SeriesNotFound> 시리즈가 없습니다. </S.SeriesNotFound>}
       </Suspense>
-      {showSeriesFallback || <UserSeriesFallBack/>}
+      {showSeriesFallback || <UserSeriesFallBack />}
     </>
   );
 };
