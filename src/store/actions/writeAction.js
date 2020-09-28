@@ -33,6 +33,25 @@ export const uploadMarkdownImageRequest = (data) => ({
   data,
 });
 
+// 임시 저장한 게시글 불러오기
+export const LOAD_SAVED_POST_REQUEST = "LOAD_SAVED_POST_REQUEST";
+export const LOAD_SAVED_POST_SUCCESS = "LOAD_SAVED_POST_SUCCESS";
+export const LOAD_SAVED_POST_FAILURE = "LOAD_SAVED_POST_REQUEST";
+export const loadSavedPostRequest = (data) => ({
+  type: LOAD_SAVED_POST_REQUEST,
+  data,
+});
+
+// 글 임시저장
+export const SUBMIT_SAVED_POST_REQUEST = "SUBMIT_SAVED_POST_REQUEST";
+export const SUBMIT_SAVED_POST_SUCCESS = "SUBMIT_SAVED_POST_SUCCESS";
+export const SUBMIT_SAVED_POST_FAILURE = "SUBMIT_SAVED_POST_FAILURE";
+export const submitSavedPostRequest = (data, status) => ({
+  type: SUBMIT_SAVED_POST_REQUEST,
+  data,
+  status,
+});
+
 // 글쓰기 세팅 화면 출력여부 설정
 export const PRINT_WRITE_SETTING_LAYOUT = "PRINT_WRITE_SETTING_LAYOUT";
 export const printWriteSettingLayout = (data) => ({
@@ -53,6 +72,14 @@ export const uploadThumbnailRequest = (data) => ({
 export const REMOVE_THUMBNAIL = "REMOVE_THUMBNAIL";
 export const removeThumbnail = () => ({ type: REMOVE_THUMBNAIL });
 
+// 게시글 공개설정
+export const CHANGE_POST_ACCESS = "CHANGE_POST_ACCESS";
+export const changePostAccess = (data) => ({ type: CHANGE_POST_ACCESS, data });
+
+// URL 설정
+export const CHANGE_POST_URL = "CHANGE_POST_URL";
+export const changePostUrl = (data) => ({ type: CHANGE_POST_URL, data });
+
 // 시리즈 리스트 불러오기
 export const LOAD_SERIES_LIST_REQUEST = "LOAD_SERIES_LIST_REQUEST";
 export const LOAD_SERIES_LIST_SUCCESS = "LOAD_SERIES_LIST_SUCCESS";
@@ -70,3 +97,16 @@ export const submitSeriesInput = (data) => ({
   type: SUBMIT_SERIES_INPUT_REQUEST,
   data,
 });
+
+// 게시글 최종 제출
+export const SUBMIT_WRITTEN_POST_REQUEST = "SUBMIT_WRITTEN_POST_REQUEST";
+export const SUBMIT_WRITTEN_POST_SUCCESS = "SUBMIT_WRITTEN_POST_SUCCESS";
+export const SUBMIT_WRITTEN_POST_FAILURE = "SUBMIT_WRITTEN_POST_FAILURE";
+export const submitWrittedPostRequest = (data) => ({
+  type: SUBMIT_WRITTEN_POST_REQUEST,
+  data,
+});
+
+// 게시글 작성 페이지 나가기
+export const EXIT_WRITE_PAGE = "EXIT_WRITE_PAGE";
+export const exitWritePage = () => ({ type: EXIT_WRITE_PAGE });
