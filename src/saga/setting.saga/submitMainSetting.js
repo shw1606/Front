@@ -16,7 +16,6 @@ function submitMainSettingAPI(data) {
 function* submitMainSetting(action) {
   try {
     const result = yield call(submitMainSettingAPI, action.data);
-    console.log(result);
     yield put({
       type: SUBMIT_MAIN_SETTING_SUCCESS,
       data: result,

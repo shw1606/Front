@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as S from "./style";
 import SocialInfo from "./SocialInfoInput";
@@ -17,8 +17,6 @@ const RestSetting = () => {
   const dispatch = useDispatch();
   const [titleSaved, setTitleSaved] = useState(true);
   const [socialInfoSaved, setSocialInfoSaved] = useState(true);
-  const fakeState = useRef(true);
-  const fakeState2 = useRef(false);
   const velogTitle = useSelector((state) => state.settingReducer.velogTitle);
   const { email, github, twitter, facebook, homePage } = useSelector(
     (state) => state.settingReducer.socialInfo
@@ -33,56 +31,58 @@ const RestSetting = () => {
 
   const onTitleModClick = useCallback(() => {
     setTitleSaved(false);
-  });
-  const onTitleSumbit = useCallback((e) => {
-    e.preventDefault();
-    dispatch(
-      submitTitleSettingRequest({
-        velogTitle: e.target.children[0].value,
-      })
-    );
-    setTitleSaved(true);
-  });
+  }, [titleSaved]);
+  const onTitleSumbit = useCallback(
+    (e) => {
+      e.preventDefault();
+      dispatch(
+        submitTitleSettingRequest({
+          velogTitle: e.target.children[0].value,
+        })
+      );
+      setTitleSaved(true);
+    },
+    [velogTitle, titleSaved]
+  );
   const onAddClick = useCallback(() => {
     setSocialInfoSaved(false);
-  }, []);
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
+  }, [socialInfoSaved]);
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      dispatch(
+        submitSocialSettingRequest({
+          socialInfo: {
+            email: e.target.children[0].children[0].children[1].value,
+            github: e.target.children[0].children[1].children[1].value,
+            twitter: e.target.children[0].children[2].children[1].value,
+            facebook:
+              e.target.children[0].children[3].children[1].children[1].value,
+            homePage: e.target.children[0].children[4].children[1].value,
+          },
+        })
+      );
+      setSocialInfoSaved(true);
+      // 서버에 데이터 갱신하는 것 추가 필요.
+    },
+    [email, github, twitter, facebook, homePage, socialInfoSaved]
+  );
+  const onCommentToggleClick = useCallback(() => {
     dispatch(
-      submitSocialSettingRequest({
-        socialInfo: {
-          email: e.target.children[0].children[0].children[1].value,
-          github: e.target.children[0].children[1].children[1].value,
-          twitter: e.target.children[0].children[2].children[1].value,
-          facebook:
-            e.target.children[0].children[3].children[1].children[1].value,
-          homePage: e.target.children[0].children[4].children[1].value,
-        },
+      submitNotifySettingRequest({
+        commentNotification: !commentNotification,
+        updateNotification,
       })
     );
-    setSocialInfoSaved(true);
-    // 서버에 데이터 갱신하는 것 추가 필요.
-  }, []);
-  const onCommentToggleClick = useCallback(() => {
-    // dispatch(
-    //   submitNotifySettingRequest({
-    //     commentNotification: !commentNotification,
-    //     updateNotification,
-    //   })
-    // );
-    console.log(fakeState);
-    fakeState.current = !fakeState.current;
-  }, []);
+  }, [commentNotification]);
   const onUpdateToggleClick = useCallback(() => {
-    // dispatch(
-    //   submitNotifySettingRequest({
-    //     commentNotification,
-    //     updateNotification: !updateNotification,
-    //   })
-    // );
-    console.log(fakeState2);
-    fakeState2.current = !fakeState2.current;
-  }, []);
+    dispatch(
+      submitNotifySettingRequest({
+        commentNotification,
+        updateNotification: !updateNotification,
+      })
+    );
+  }, [updateNotification]);
 
   useEffect(() => {
     dispatch(loadUserSettingRequest("exampleUser"));
@@ -190,7 +190,7 @@ const RestSetting = () => {
               <S.SocialInfoUl>
                 <li>
                   <span style={{ width: "14rem" }}>댓글 알림</span>
-                  {fakeState.current ? (
+                  {commentNotification ? (
                     <S.ToggleDiv color="teal" onClick={onCommentToggleClick}>
                       <div
                         className="circle"
@@ -214,7 +214,7 @@ const RestSetting = () => {
                 </li>
                 <li style={{ marginTop: "0.5rem" }}>
                   <span style={{ width: "14rem" }}>벨로그 업데이트 소식</span>
-                  {fakeState2.current ? (
+                  {updateNotification ? (
                     <S.ToggleDiv color="teal" onClick={onUpdateToggleClick}>
                       <div
                         className="circle"

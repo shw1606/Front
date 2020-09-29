@@ -16,7 +16,6 @@ function submitSocialSettingAPI(data) {
 function* submitSocialSetting(action) {
   try {
     const result = yield call(submitSocialSettingAPI, action.data);
-    console.log(result);
     yield put({
       type: SUBMIT_SOCIAL_SETTING_SUCCESS,
       data: result,

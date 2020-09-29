@@ -19,21 +19,24 @@ const MainSetting = () => {
   const [image, setImage] = useUpload();
   const onModButtonClick = useCallback(() => {
     setProfileSaved(false);
-  }, []);
+  }, [profileSaved]);
   const name = useSelector((state) => state.settingReducer.username);
   const shortBio = useSelector((state) => state.settingReducer.shortBio);
   const clickRemoveThumbnail = useCallback(() => {
     dispatch(removeThumbnail());
   }, [dispatch]);
-  const onProfileSubmit = useCallback((e) => {
-    dispatch(
-      submitMainSettingRequest({
-        username: e.target.children[0].value,
-        shortBio: e.target.children[1].value,
-      })
-    );
-    setProfileSaved(true);
-  }, []);
+  const onProfileSubmit = useCallback(
+    (e) => {
+      dispatch(
+        submitMainSettingRequest({
+          username: e.target.children[0].value,
+          shortBio: e.target.children[1].value,
+        })
+      );
+      setProfileSaved(true);
+    },
+    [name, shortBio, profileSaved]
+  );
   useEffect(() => {
     if (!image) return;
     dispatch(uploadThumbnailRequest(image));
