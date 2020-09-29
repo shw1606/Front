@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import moment from "moment";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 
 // component
@@ -29,21 +30,13 @@ function calcTimeDiff(time) {
   const calcTime = moment([year, month - 1, day, hour, min, sec]);
   const diff = (value) => now.diff(calcTime, value);
 
-  if (diff("years") > 0) {
-    return `${diff("years")}년 전`;
-  } if (diff("months") > 0) {
-    return `${diff("months")}달 전`;
-  } if (diff("weeks") > 0) {
-    return `${diff("weeks")}주 전`;
-  } if (diff("days") > 0) {
-    return `${diff("days")}일 전`;
-  } if (diff("hours") > 0) {
-    return `${diff("hours")}시간 전`;
-  } if (diff("minutes") > 0) {
-    return `${diff("minutes")}분 전`;
-  } if (diff("seconds")) {
-    return "방금 전";
-  }
+  if (diff("years") > 0) return `${diff("years")}년 전`;
+  if (diff("months") > 0) return `${diff("months")}달 전`;
+  if (diff("weeks") > 0) return `${diff("weeks")}주 전`;
+  if (diff("days") > 0) return `${diff("days")}일 전`;
+  if (diff("hours") > 0) return `${diff("hours")}시간 전`;
+  if (diff("minutes") > 0) return `${diff("minutes")}분 전`;
+  return "방금 전";
 }
 
 const SavePost = ({ data }) => {
@@ -67,10 +60,10 @@ const SavePost = ({ data }) => {
     <>
       <S.Layout>
         <S.Title>
-          <a>{data.title}</a>
+          <S.SLink to={`/write?id=${1111}`}>{data.title}</S.SLink>
         </S.Title>
         <S.Payload>
-          <a>{data.payload}</a>
+          <S.SLink to={`/write?id=${1111}`}>{data.payload}</S.SLink>
         </S.Payload>
         <S.BottomContainer>
           <div>{time}</div>
@@ -86,6 +79,16 @@ const SavePost = ({ data }) => {
       />
     </>
   );
+};
+
+SavePost.defaultProps = {
+  data: {},
+};
+
+SavePost.propTypes = {
+  data: PropTypes.objectOf(
+    PropTypes.oneOfType(PropTypes.number, PropTypes.string)
+  ),
 };
 
 export default SavePost;

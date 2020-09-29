@@ -28,6 +28,8 @@ module.exports = {
     "comma-dangle": 0,
     "object-curly-newline": 0,
     "import/no-duplicates": 0,
+    "no-param-reassign": 0,
+    "no-return-assign": 0,
     quotes: 0,
   },
 };

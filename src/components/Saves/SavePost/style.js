@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Layout = styled.div`
   padding-top: 1.5rem;
@@ -43,4 +44,9 @@ export const DeleteButton = styled.button`
   border-image: initial;
   background: none;
   padding: 0px;
+`;
+
+export const SLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;

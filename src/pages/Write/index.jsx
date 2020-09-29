@@ -1,5 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 // components
 import MarkDownContainer from "components/Write/MarkDownContainer";
@@ -7,13 +8,26 @@ import LeftBottomContainer from "components/Write/LeftBottomContainer";
 import MarkDownPreviewContainer from "components/Write/MarkDownPreviewContainer";
 import WriteSettingContainer from "components/Write/WriteSettingContainer";
 
+// action
+import { loadSavedPostRequest } from "store/actions/writeAction";
+
 // style
 import * as S from "./style";
 
 const Write = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
   const printWriteSetting = useSelector(
     (store) => store.write.printWriteSetting
   );
+
+  useEffect(() => {
+    const postId = location.search.split("=")[1];
+    if (postId) {
+      dispatch(loadSavedPostRequest(postId));
+    }
+  }, []);
+
   return (
     <>
       <S.Layout>

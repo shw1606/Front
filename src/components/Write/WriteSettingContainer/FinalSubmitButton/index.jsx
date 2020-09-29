@@ -1,8 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
 // action
-import { printWriteSettingLayout } from "store/actions/writeAction";
+import {
+  printWriteSettingLayout,
+  submitWrittedPostRequest,
+} from "store/actions/writeAction";
+import { printAlert } from "store/actions/commonAction";
 
 // style
 import * as S from "./style";
@@ -14,6 +20,14 @@ const FinalSubmitButton = ({
   clickedList,
 }) => {
   const dispatch = useDispatch();
+  const postId = useSelector((store) => store.write.postId); // 게시글 id
+  const title = useSelector((store) => store.write.title); // 제목
+  const tagList = useSelector((store) => store.write.tagList); // 태그 리스트
+  const markdown = useSelector((store) => store.write.markdown); // 게시글 본문
+  const thumbnail = useSelector((store) => store.write.thumbnail); // 게시글 썸네일
+  const access = useSelector((store) => store.write.access); // 게시글 공개 설정
+  const postUrl = useSelector((store) => store.write.postUrl); // 게시글 공개 설정
+
   const [test, setTest] = useState(false);
 
   // 취소 버튼 클릭
@@ -32,10 +46,32 @@ const FinalSubmitButton = ({
       clickSeiresPopUpBtn();
       clickList(clickedList);
       setTest(false);
+    } else if (title === "") {
+      dispatch(printAlert("emptyTitle"));
     } else {
-      console.log("submit");
+      const data = {
+        postId,
+        title,
+        tagList,
+        markdown,
+        thumbnail,
+        access,
+        postUrl,
+        clickedList,
+      };
+      dispatch(submitWrittedPostRequest(data));
     }
-  }, [clickedList, test, clickSeiresPopUpBtn, clickList]);
+  }, [
+    test,
+    postId,
+    title,
+    tagList,
+    markdown,
+    access,
+    thumbnail,
+    postUrl,
+    clickedList,
+  ]);
 
   useEffect(() => {
     if (clickedList) {
@@ -43,7 +79,7 @@ const FinalSubmitButton = ({
     } else {
       setTest(false);
     }
-  }, [clickList, clickedList]);
+  }, [clickedList]);
 
   return (
     <>
@@ -62,6 +98,20 @@ const FinalSubmitButton = ({
       </S.Layout>
     </>
   );
+};
+
+FinalSubmitButton.defaultProps = {
+  clickSeiresPopUpBtn: () => {},
+  clickList: () => {},
+  seriesPopup: false,
+  clickedList: "",
+};
+
+FinalSubmitButton.propTypes = {
+  clickSeiresPopUpBtn: PropTypes.func,
+  clickList: PropTypes.func,
+  seriesPopup: PropTypes.bool,
+  clickedList: PropTypes.string,
 };
 
 export default FinalSubmitButton;

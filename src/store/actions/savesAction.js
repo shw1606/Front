@@ -1,3 +1,7 @@
+// 임시 글 리스트에 임시 저장 된 게시글 추가
+export const ADD_SAVED_LIST_SUCCESS = "ADD_SAVED_LIST_SUCCESS";
+export const ADD_SAVED_LIST_FAILURE = "ADD_SAVED_LIST_FAILURE";
+
 // 임시 글 목록 불러오기
 export const LOAD_SAVES_LIST_REQUEST = "LOAD_SAVES_LIST_REQUEST";
 export const LOAD_SAVES_LIST_SUCCESS = "LOAD_SAVES_LIST_SUCCESS";

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReadingListTabs from "components/ReadingList/ReadingListTabs";
 import LikedReadingList from "components/ReadingList/LikedReadingList";
 import ReadReadingList from "components/ReadingList/ReadReadingList";

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from "components/Modal";
+import Modal from "components/Common/Modal";
 import Login from "components/Login";
 import * as S from "./style";
 
@@ -14,16 +14,11 @@ const LoginButton = () => {
   return (
     <>
       <S.LoginBtn onClick={openModal}> 로그인 </S.LoginBtn>
-      {
-                modalVisible && (
-                <Modal
-                  visible={modalVisible}
-                  onClose={closeModal}
-                >
-                  <Login />
-                </Modal>
-                )
-}
+      {modalVisible && (
+        <Modal visible={modalVisible} onClose={closeModal}>
+          <Login />
+        </Modal>
+      )}
     </>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from 'react-router-dom';
 import { LOAD_USER_TAGS_REQUEST } from "store/actions/userAction";
@@ -15,7 +16,7 @@ const UserTags = ({ username }) => {
     dispatch({
       type: LOAD_USER_TAGS_REQUEST,
     });
-  }, [username, currentTag]);
+  }, [dispatch, username, currentTag]);
 
   return (
     <>
@@ -37,6 +38,10 @@ const UserTags = ({ username }) => {
       )}
     </>
   );
+};
+
+UserTags.propTypes = {
+  username: PropTypes.string.isRequired
 };
 
 export default UserTags;

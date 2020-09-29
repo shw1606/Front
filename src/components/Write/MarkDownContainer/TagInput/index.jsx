@@ -1,43 +1,49 @@
 import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+// action
+import { addTag, removeTag, removeClickedTag } from "store/actions/writeAction";
 
 // style
 import * as S from "./style";
 
 const TagInput = () => {
+  const dispatch = useDispatch();
   const [tagInput, setTagInput] = useState("");
-  const [tagList, setTagList] = useState([]);
   const [focus, setFocus] = useState(false);
-
-  const removeClickedTag = useCallback(
-    (clickedTag) => {
-      const nextTags = tagList.filter((tag) => tag !== clickedTag);
-      setTagList(nextTags);
-    },
-    [tagList]
-  );
+  const tagList = useSelector((store) => store.write.tagList);
 
   // tag 텍스트 변경
   const changeTagInput = useCallback((event) => {
     setTagInput(event.target.value);
   }, []);
 
+  // 특정 태그 클릭
+  const clickTagItem = useCallback(
+    (clickedTag) => {
+      dispatch(removeClickedTag(clickedTag));
+    },
+    [tagList]
+  );
+
   // 엔터, 쉼표 자판키 감지
   const perceiveKeyDown = useCallback(
     (event) => {
       const keys = [",", "Enter"];
-      if (event.key === "Backspace") {
-        setTagList((prev) => prev.slice(0, prev.length - 1));
+      const { key, target } = event;
+      if (key === "Backspace") {
+        if (tagList.length === 0) return;
+        dispatch(removeTag());
         return;
       }
-      if (keys.includes(event.key)) {
-        const text = event.target.value;
-        event.preventDefault();
-        if (text === "") return;
+      if (keys.includes(key)) {
+        const text = target.value;
+        if (text.trim() === "") return;
         if (tagList.includes(text.trim())) {
           setTagInput("");
           return;
         }
-        setTagList((prev) => [...prev, text.trim()]);
+        dispatch(addTag(text.trim()));
         setTagInput("");
       }
     },
@@ -58,14 +64,13 @@ const TagInput = () => {
     <>
       <S.Layout>
         {tagList.map((tag) => (
-          <S.Tag key={tag} onClick={() => removeClickedTag(tag)}>
+          <S.Tag key={tag} onClick={() => clickTagItem(tag)}>
             {tag}
           </S.Tag>
         ))}
         <S.TagInput
           className="tagInput"
           placeholder="태그를 입력하세요"
-          tabIndex="2"
           onChange={changeTagInput}
           onKeyDown={perceiveKeyDown}
           onFocus={focusInput}

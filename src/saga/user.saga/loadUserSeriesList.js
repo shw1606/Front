@@ -6,9 +6,9 @@ import {
   LOAD_USER_SERIES_LIST_FAILURE
 } from "store/actions/userAction";
 
-import dummy from '../userSeriesDummy';
+import dummy from '../userSeriesDummy.json';
 
-function loadUserSeriesListAPI(id) {
+function loadUserSeriesListAPI() {
   return dummy;
 }
 

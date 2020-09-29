@@ -5,7 +5,7 @@ import { BsFillHeartFill as Heart } from "react-icons/bs";
 // style
 
 // components
-import Modal from "components/Modal";
+import Modal from "components/Common/Modal";
 import Login from "components/Login";
 
 // action

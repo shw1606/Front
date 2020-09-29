@@ -12,6 +12,7 @@ import write from "./write.saga";
 import save from "./save.saga";
 import search from "./search.saga";
 import setting from "./setting.saga";
+import series from "./series.saga";
 
 axios.defaults.baseURL = "localhost:3000/velog.io";
 axios.defaults.withCredentials = true;
@@ -29,5 +30,6 @@ export default function* () {
     call(save),
     call(search),
     call(setting),
+    call(series),
   ]);
 }

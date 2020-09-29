@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // component
 import { changeTitle } from "store/actions/writeAction";
@@ -12,7 +13,8 @@ import * as S from "./style";
 
 const MainHeader = () => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
+  const title = useSelector((store) => store.write.title);
+  const [_, setTitle] = useState("");
 
   // title 값 변경
   const changeTitleInput = useCallback(

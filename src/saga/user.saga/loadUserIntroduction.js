@@ -8,7 +8,7 @@ import {
 
 import dummy from "../postDetailDummy.json";
 
-function loadUserIntroductionAPI(id) {
+function loadUserIntroductionAPI() {
   return dummy;
 }
 
